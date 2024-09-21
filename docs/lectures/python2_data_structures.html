@@ -495,7 +495,7 @@
 <li><strong>Mutable elements:</strong> If any of the elements within the container are mutable (like lists or dictionaries), modifying them through the copy will also modify them in the original.</li>
 <li><strong>Common use cases:</strong> Shallow copies are suitable when you want a separate object but do not anticipate modifying the nested, mutable elements. They are also faster to create than deep copies.</li>
 </ul>
-<div id="a76e63a5" class="cell" data-execution_count="1">
+<div id="7fae70af" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>original_list <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb1-2"><a href=""></a>shallow_copy <span class="op">=</span> original_list.copy()</span>
 <span id="cb1-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Original list:"</span>, original_list)</span>
@@ -505,7 +505,7 @@
 Shallow copy: [[1, 2], 3, 4]</code></pre>
 </div>
 </div>
-<div id="2642629c" class="cell" data-execution_count="2">
+<div id="fe6f6af8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># Modifying the copy itself</span></span>
 <span id="cb3-2"><a href=""></a>shallow_copy.append(<span class="dv">5</span>)</span>
 <span id="cb3-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Original list:"</span>, original_list)</span>
@@ -515,7 +515,7 @@ Shallow copy: [[1, 2], 3, 4]</code></pre>
 Shallow copy: [[1, 2], 3, 4, 5]</code></pre>
 </div>
 </div>
-<div id="f23f531e" class="cell" data-execution_count="3">
+<div id="41ef0235" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># Modifying a mutable element within the copy</span></span>
 <span id="cb5-2"><a href=""></a>shallow_copy[<span class="dv">0</span>].append(<span class="dv">3</span>)</span>
 <span id="cb5-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Original list:"</span>, original_list)</span>
@@ -695,7 +695,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <div class="fragment">
 <!-- -->
 <h3 id="solution">Solution:</h3>
-<div id="89c6ade8" class="cell" data-execution_count="4">
+<div id="37bd0765" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>lst <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb7-2"><a href=""></a>lst[<span class="dv">1</span>], lst[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> lst[<span class="op">-</span><span class="dv">1</span>], lst[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -713,7 +713,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <div class="fragment">
 <!-- -->
 <h3 id="solution-1">Solution:</h3>
-<div id="bbcb34e2" class="cell" data-execution_count="5">
+<div id="ee7ca77e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>lst <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb8-2"><a href=""></a>unique_lst <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(lst))</span>
 <span id="cb8-3"><a href=""></a>unique_lst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -735,7 +735,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <div class="fragment">
 <!-- -->
 <h3 id="solution-2">Solution:</h3>
-<div id="4c7c3a0d" class="cell" data-execution_count="6">
+<div id="4dc8250e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>person <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'John'</span>, <span class="st">'age'</span>: <span class="dv">30</span>}</span>
 <span id="cb10-2"><a href=""></a>person.get(<span class="st">'age'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -771,7 +771,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <div class="fragment">
 <!-- -->
 <h3 id="solution-4">Solution:</h3>
-<div id="1a37cf32" class="cell" data-execution_count="7">
+<div id="96de3111" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>original_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb12-2"><a href=""></a>original_tuple[<span class="op">-</span><span class="dv">1</span>:] <span class="op">+</span> original_tuple[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> original_tuple[:<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -792,7 +792,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <div class="fragment">
 <!-- -->
 <h3 id="solution-5">Solution:</h3>
-<div id="47d9bba8" class="cell" data-execution_count="8">
+<div id="dcb1d79c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>data <span class="op">=</span> {<span class="st">'a'</span>: {<span class="st">'b'</span>: {<span class="st">'c'</span>: <span class="st">'d'</span>}}}</span>
 <span id="cb14-2"><a href=""></a>keys <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
 <span id="cb14-3"><a href=""></a>data[keys[<span class="dv">0</span>]][keys[<span class="dv">1</span>]][keys[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -807,7 +807,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <section id="exercise-tracing-string-operations" class="slide level2">
 <h2>Exercise: Tracing String Operations</h2>
 <h3 id="code">Code</h3>
-<div id="1d79ed5c" class="cell" data-execution_count="9">
+<div id="c0fa9494" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>s <span class="op">=</span> <span class="st">'Python'</span></span>
 <span id="cb16-2"><a href=""></a>output <span class="op">=</span> s[<span class="dv">1</span>:<span class="dv">4</span>] <span class="op">+</span> s[:<span class="dv">2</span>] <span class="op">+</span> s[<span class="op">-</span><span class="dv">2</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -822,7 +822,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <section id="exercise-tracing-list-operations" class="slide level2">
 <h2>Exercise: Tracing List Operations</h2>
 <h3 id="code-1">Code</h3>
-<div id="01efddd8" class="cell" data-execution_count="10">
+<div id="077e89ce" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>lst <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">3</span>, <span class="dv">4</span>], (<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>)]</span>
 <span id="cb17-2"><a href=""></a>output <span class="op">=</span> lst[<span class="dv">2</span>][<span class="dv">1</span>] <span class="op">+</span> lst[<span class="dv">3</span>][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -837,7 +837,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <section id="exercise-tracing-dictionary-operations" class="slide level2">
 <h2>Exercise: Tracing Dictionary Operations</h2>
 <h3 id="code-2">Code</h3>
-<div id="577e3114" class="cell" data-execution_count="11">
+<div id="100b0669" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>d <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
 <span id="cb18-2"><a href=""></a>keys <span class="op">=</span> <span class="bu">list</span>(d.keys())</span>
 <span id="cb18-3"><a href=""></a>output <span class="op">=</span> d[keys[<span class="dv">1</span>]] <span class="op">+</span> d.get(<span class="st">'c'</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="bu">len</span>(keys)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -853,7 +853,7 @@ Shallow copy: [[1, 2, 3], 3, 4, 5]</code></pre>
 <section id="exercise-tracing-tuple-and-string-operations" class="slide level2">
 <h2>Exercise: Tracing Tuple and String Operations</h2>
 <h3 id="code-3">Code</h3>
-<div id="a88e0b7b" class="cell" data-execution_count="12">
+<div id="06bee6cc" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>t <span class="op">=</span> (<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>)</span>
 <span id="cb19-2"><a href=""></a>output <span class="op">=</span> t[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="bu">tuple</span>(<span class="st">'x'</span>) <span class="op">+</span> t[:<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
