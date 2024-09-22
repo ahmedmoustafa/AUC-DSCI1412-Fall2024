@@ -405,37 +405,39 @@ Ahmed Moustafa
 </section>
 <section id="why-is-it-called-python" class="slide level2">
 <h2>Why is it called Python?</h2>
-<p>When he began implementing Python, <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> (left) was also reading the published scripts from <a href="https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus">Monty Python’s Flying Circus</a> (Right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ] <img data-src="images/python.png" alt="Python"></p>
-</section>
+<p>When he began implementing Python, <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> (left) was also reading the published scripts from <a href="https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus">Monty Python’s Flying Circus</a> (Right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ]</p>
+
+<img data-src="images/python.png" class="r-stretch quarto-figure-center"><p class="caption">Guido van Rossum &amp; Monty Python’s Flying Circus</p></section>
 <section id="working-with-python-using-google-colab" class="slide level2">
 <h2>Working with Python using Google Colab</h2>
-<p>Homepage: <a href="https://colab.research.google.com/">https://colab.research.google.com/</a> (runs online, cloud-computing like) <img data-src="images/colab.png" alt="Google Colab"></p>
-</section>
+<p>Homepage: <a href="https://colab.research.google.com/">https://colab.research.google.com/</a> (runs online, cloud-computing like)</p>
+
+<img data-src="images/colab.png" class="r-stretch quarto-figure-center"><p class="caption">Google Colab</p></section>
 <section id="working-with-python-using-jupyterlab-desktop" class="slide level2">
 <h2>Working with Python using JupyterLab Desktop</h2>
-<p>Homepage: <a href="https://github.com/jupyterlab/jupyterlab-desktop">https://github.com/jupyterlab/jupyterlab-desktop</a> (runs offline, desktop) <img data-src="https://raw.githubusercontent.com/jupyterlab/jupyterlab-desktop/master/media/jupyterlab-desktop.png" alt="JupyterLab Desktop"></p>
-</section>
+<p>Homepage: <a href="https://github.com/jupyterlab/jupyterlab-desktop">https://github.com/jupyterlab/jupyterlab-desktop</a> (runs offline, desktop)</p>
+
+<img data-src="https://raw.githubusercontent.com/jupyterlab/jupyterlab-desktop/master/media/jupyterlab-desktop.png" class="r-stretch quarto-figure-center"><p class="caption">JupyterLab Desktop</p></section>
 <section id="working-with-python-using-visual-source-code" class="slide level2">
 <h2>Working with Python using Visual Source Code</h2>
-<p>Homepage: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> (runs offline, desktop) <img data-src="https://code.visualstudio.com/assets/home/home-screenshot-mac-2x-v2.png" alt="VS Code"></p>
-</section>
+<p>Homepage: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> (runs offline, desktop)</p>
+
+<img data-src="https://code.visualstudio.com/assets/home/home-screenshot-mac-2x-v2.png" class="r-stretch quarto-figure-center"><p class="caption">VS Code</p></section>
 <section id="first-things-first" class="slide level2">
 <h2>First Things First</h2>
 <p>As with any programming course, here is the <code>Hello World!</code> in Python.</p>
-<div id="dd6f2da9" class="cell" data-execution_count="1">
+<div id="9daef9ef" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello World!</code></pre>
 </div>
 </div>
 
-<img data-src="https://i.redd.it/zbqqkmy3kyqy.png" class="r-stretch"></section>
+<img data-src="https://i.redd.it/zbqqkmy3kyqy.png" class="r-stretch quarto-figure-center"><p class="caption">Hello, World!</p></section>
 <section id="variables-in-python" class="slide level2">
 <h2>Variables in Python</h2>
 <p>Variables are containers for storing data values. In Python, variables are created the moment you assign a value to it.</p>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<h3 id="example">Example</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb3-2"><a href=""></a>name <span class="op">=</span> <span class="st">"Alice"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -477,13 +479,15 @@ Ahmed Moustafa
 </section>
 <section id="boolean-variables-and-logic-operations" class="slide level2">
 <h2>Boolean Variables and Logic Operations</h2>
-<p>Boolean variables in Python are defined by two constant objects <code>True</code> and <code>False</code>. Understanding how boolean operations work is crucial for control flow in programming.</p>
+<p>Boolean variables in Python are defined by two constant objects <code>True</code> and <code>False</code>. Understanding how Boolean operations work is crucial for control flow in programming.</p>
 <h3 id="truth-table">Truth Table</h3>
 <ul>
 <li><strong><code>AND</code></strong> operation (<code>True</code> if both are true)</li>
 <li><strong><code>OR</code></strong> operation (<code>True</code> if at least one is true)</li>
 <li><strong><code>NOT</code></strong> operation (Inverts the Boolean value)</li>
 </ul>
+
+<img data-src="images/truth_table.png" class="r-stretch quarto-figure-center"><p class="caption">The Truth Table</p><p><small>(Modified from <a href="https://introcs.cs.princeton.edu/java/71boolean/">Intro To Programming</a>)</small></p>
 </section>
 <section id="types-of-operators" class="slide level2">
 <h2>Types of Operators</h2>
@@ -610,7 +614,7 @@ Ahmed Moustafa
 <li><p>Use <code>\</code> to insert special characters, e.g.,</p></li>
 <li><p>new line:</p></li>
 </ul>
-<div id="a31a847b" class="cell" data-execution_count="2">
+<div id="57608dbd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\n</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello
@@ -620,7 +624,7 @@ World!</code></pre>
 <ul>
 <li>tab:</li>
 </ul>
-<div id="2608d468" class="cell" data-execution_count="3">
+<div id="af3f438d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\t</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello   World!</code></pre>
@@ -640,7 +644,7 @@ World!</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b272db3c" class="cell" data-execution_count="4">
+<div id="552299ca" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Thank you!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Thank you!</code></pre>

@@ -11,18 +11,23 @@ format:
 ## Why is it called Python?
 
 When he began implementing Python, [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) (left) was also reading the published scripts from [Monty Python's Flying Circus](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) (Right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ]
-![Python](images/python.png)
+
+![Guido van Rossum & Monty Python's Flying Circus](images/python.png)
 
 ## Working with Python using Google Colab
+
 Homepage: [https://colab.research.google.com/](https://colab.research.google.com/) (runs online, cloud-computing like)
+
 ![Google Colab](images/colab.png)
 
 ## Working with Python using JupyterLab Desktop
 Homepage: [https://github.com/jupyterlab/jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) (runs offline, desktop)
+
 ![JupyterLab Desktop](https://raw.githubusercontent.com/jupyterlab/jupyterlab-desktop/master/media/jupyterlab-desktop.png)
 
 ## Working with Python using Visual Source Code
 Homepage: [https://code.visualstudio.com/](https://code.visualstudio.com/) (runs offline, desktop)
+
 ![VS Code](https://code.visualstudio.com/assets/home/home-screenshot-mac-2x-v2.png)
 
 ## First Things First
@@ -34,13 +39,13 @@ As with any programming course, here is the `Hello World!` in Python.
 print ("Hello World!")
 ```
 
-![](https://i.redd.it/zbqqkmy3kyqy.png)
+![Hello, World!](https://i.redd.it/zbqqkmy3kyqy.png)
 
 ## Variables in Python
 
 Variables are containers for storing data values. In Python, variables are created the moment you assign a value to it.
 
-## Example
+### Example
 
 ```python
 x = 5
@@ -79,13 +84,19 @@ x = "Sally" # x is now a string
 
 ## Boolean Variables and Logic Operations
 
-Boolean variables in Python are defined by two constant objects `True` and `False`. Understanding how boolean operations work is crucial for control flow in programming.
+Boolean variables in Python are defined by two constant objects `True` and `False`. Understanding how Boolean operations work is crucial for control flow in programming.
 
 ### Truth Table
 
 - **`AND`** operation (`True` if both are true)
 - **`OR`** operation (`True` if at least one is true)
 - **`NOT`** operation (Inverts the Boolean value)
+
+![The Truth Table](images/truth_table.png)
+
+
+<small>(Modified from [Intro To Programming](https://introcs.cs.princeton.edu/java/71boolean/))</small>
+
 
 ## Types of Operators
 
@@ -204,7 +215,6 @@ print ("Hello\nWorld!")
 #| echo: true
 print ("Hello\tWorld!")
 ```
-
 
 ## Summary
 - Python is awesome
