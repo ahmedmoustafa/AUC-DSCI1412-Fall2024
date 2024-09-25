@@ -70,11 +70,7 @@ else:
 
 **Objective**: Categorize life stages by age.
 
-- Input: `age = 20`
-- Output: `"Adult"`
-
-```{python}
-#| echo: true
+```python
 age = 20
 if age < 13:
     print("Child")
@@ -83,6 +79,21 @@ elif age < 20:
 else:
     print("Adult")
 ```
+
+::: {.fragment}
+
+```{python}
+#| echo: false
+age = 20
+if age < 13:
+    print("Child")
+elif age < 20:
+    print("Teenager")
+else:
+    print("Adult")
+```
+
+:::
 
 ## Loops in Python
 
@@ -250,3 +261,26 @@ Write a program that generates the first 20 numbers in the Fibonacci sequence.
 
 **Example output**:
 `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181`
+
+::: {.fragment}
+
+**Solution**
+
+```{python}
+#| echo: true
+# Initialize the first two numbers
+a = 0
+b = 1
+
+# Print the first two numbers
+print(a, end=" ")
+print(b, end=" ")
+
+# Generate the next 18 numbers
+for _ in range(18):
+    next_number = a + b
+    print(next_number, end=" ")
+    a = b
+    b = next_number
+```
+:::
