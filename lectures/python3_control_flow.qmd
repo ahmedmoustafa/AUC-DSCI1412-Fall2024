@@ -249,7 +249,8 @@ except ZeroDivisionError:
 
 
 ## Exercise: Fibonacci Sequence
-![](images/fibonacci_spiral.png)
+
+![Fibonacci Spiral](images/fibonacci_spiral.png)
 
 Write a program that generates the first 20 numbers in the Fibonacci sequence.
 
