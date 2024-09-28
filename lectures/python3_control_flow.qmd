@@ -10,7 +10,6 @@ format:
 ## Python vs. C
 ![](images/c_level_joke.png)
 
-
 ## Definition of Control Flow
 - Control flow is the order in which statements and instructions are executed in a program
 - Control flow can be affected by decision-making statements, loops, and function calls.
@@ -34,14 +33,15 @@ if True:
 print("This is outside the if block")  # No indentation
 ```
 
+
 ## Conditional Flow Control
 
 ```{mermaid}
 graph TD;
-    A{Condition 1?} -->|Yes| B[Execute Block 1]
+    A{Condition 1?} -->|Yes| B[Block 1: Action if Condition 1 is true]
     A -->|No| C{Condition 2?}
-    C -->|Yes| D[Execute Block 2]
-    C -->|No| E[Execute Block 3]
+    C -->|Yes| D[Block 2: Action if Condition 2 is true]
+    C -->|No| E[Block 3: Action if both are false]
 ```
 
 - if-statement
@@ -97,14 +97,15 @@ else:
 
 ## Loops in Python
 
-Loops in Python are used to execute a block of code repeatedly. Python provides two types of loops: `for` and `while`.
-
 ```{mermaid}
 graph TB;
     A[Start Loop<br/>for item in iterable:] --> B[Execute Block]
     B --> A
     A -->|No More Items| C[End Loop]
 ```
+
+
+Loops in Python are used to execute a block of code repeatedly. Python provides two types of loops: `for` and `while`.
 
 ## `for` Loops
 
@@ -249,8 +250,7 @@ except ZeroDivisionError:
 
 
 ## Exercise: Fibonacci Sequence
-
-![Fibonacci Spiral](images/fibonacci_spiral.png)
+![](images/fibonacci_spiral.png)
 
 Write a program that generates the first 20 numbers in the Fibonacci sequence.
 
