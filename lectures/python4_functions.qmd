@@ -108,18 +108,140 @@ print(double(3))
 
 
 ## Recursion
+
+:::: {.columns}
+
+::: {.column width="65%"}
+
 - Recursion is a technique where a function calls itself
 - It is useful for solving problems that can be broken down into smaller subproblems
+- Termination Condition is essential for preventing infinite loops in recursion
+- Each recursive call consumes stack memory; deep recursion can lead to stack overflow if not properly managed
+
+:::
+
+::: {.column width="35%"}
+![](images/inception.jpg)
+:::
+
+::::
+
+## Understanding Recursion with Factorial
+
+A factorial of a non-negative integer $n$ is the product of all positive integers less than or equal to $n$. It is denoted by $n!$. Factorials are widely used in permutations and combinations.
+
+The factorial of a number $n$ is defined as:
+
+$$
+n! = n \times (n - 1) \times (n - 2) \times ... \times 1
+$$
+
+For example:
+
+$$
+5! = 5 \times 4 \times 3 \times 2 \times 1 = 120
+$$
+
+One of the elegant ways to compute factorials in programming is by using **recursion**.
+
+## Recursive Factorial Function in Python
 
 ```{python}
 #| echo: true
 def factorial(n):
-  if n == 0:
+  """
+  This function calculates the factorial of a non-negative integer.
+
+  Args:
+      n: The non-negative integer whose factorial is to be calculated.
+
+  Returns:
+      The factorial of n.
+  """
+  if n == 0: # Base case
     return 1
   else:
-    return n * factorial(n-1)
-print(factorial(5))
+    return n * factorial(n-1) # Recursive case
+
+# Test the function
+factorial(5)
 ```
+
+## Sequence Diagram
+
+```{mermaid}
+sequenceDiagram
+    participant Main
+    participant f5 as factorial(5)
+    participant f4 as factorial(4)
+    participant f3 as factorial(3)
+    participant f2 as factorial(2)
+    participant f1 as factorial(1)
+    participant f0 as factorial(0)
+    
+    Main->>f5: Call factorial(5)
+    activate f5
+    f5->>f4: Call factorial(4)
+    activate f4
+    f4->>f3: Call factorial(3)
+    activate f3
+    f3->>f2: Call factorial(2)
+    activate f2
+    f2->>f1: Call factorial(1)
+    activate f1
+    f1->>f0: Call factorial(0)
+    activate f0
+    f0-->>f1: Return 1
+    deactivate f0
+    f1-->>f2: Return 1
+    deactivate f1
+    f2-->>f3: Return 2 * 1 = 2
+    deactivate f2
+    f3-->>f4: Return 3 * 2 = 6
+    deactivate f3
+    f4-->>f5: Return 4 * 6 = 24
+    deactivate f4
+    f5-->>Main: Return 5 * 24 = 120
+    deactivate f5
+```
+
+### Explanation
+
+1. Main Function Calls `factorial(5)`:
+
+- The main program starts by calling `factorial(5)`.
+
+2. Recursive Calls:
+
+- `factorial(5)` checks `if n == 1`. Since it is not, it calls `factorial(4)`.
+- `factorial(4)` calls `factorial(3)`, and this pattern continues until `factorial(1)` is called.
+
+3. Base Case:
+
+-  `factorial(0)` reaches the base case where `n == 0` and returns `1`.
+
+4. Unwinding the Call Stack:
+
+Each function now returns to its caller:
+
+- `factorial(1)` receives `1` and returns `1 * 1 = 1`.
+- `factorial(2)` receives `1` and returns `2 * 1 = 2`.
+- `factorial(3)` receives `2` and returns `3 * 2 = 6`.
+- `factorial(4)` receives `6` and returns `4 * 6 = 24`.
+- `factorial(5)` receives `24` and returns `5 * 24 = 120`.
+
+5. Final Result:
+The main function receives `120` from `factorial(5)`.
+
+
+## Advantages and Disadvantages of Recursion
+### Advantages
+- **Simplicity**: Recursive solutions can be more readable and easier to understand.
+- **Natural Fit**: Some problems, like tree traversals, are naturally recursive.
+
+### Disadvantages
+- **Performance**: Recursive calls can be slower due to overhead.
+- **Memory Usage**: Each recursive call consumes stack memory; deep recursion can lead to stack overflow.
 
 
 ## Global vs Local Variables
