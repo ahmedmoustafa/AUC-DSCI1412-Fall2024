@@ -2,16 +2,10 @@
 title: "Functions Problem Set"
 subtitle: "Part 1"
 format:
-  pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
-    fig-align: "center"
-    code-line-numbers: true
-include-in-header: 
-  text: |
-    \usepackage{fvextra}
-    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+  revealjs:
+    slide-number: true
+    preview-links: true
+    scrollable: true
 ---
 
 ## Problem 1: Even numbers
@@ -23,7 +17,7 @@ Write a Python function `filter_even_numbers` that takes a list of numbers and r
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -38,11 +32,28 @@ def filter_even_numbers(numbers):
 filter_even_numbers([1, 2, 3, 4])
 ```
 
+
+### Explanation for the Solution:
+
+The task is to filter out only the even numbers from a list and return them in a new list. The function `filter_even_numbers` uses a simple loop to achieve this.
+
+#### Step-by-Step Breakdown:
+
+1. **Initialization:**
+   - An empty list `even_numbers` is created to store the even numbers found in the input list `numbers`.
+
+2. **Loop through the List:**
+   - For each number `num` in the input list, the function checks if the number is divisible by 2 using `num % 2 == 0`. If the condition is true, the number is even.
+   - If the number is even, it is appended to the `even_numbers` list.
+
+3. **Return the Result:**
+   - After processing all numbers in the input list, the function returns the `even_numbers` list, which contains only the even numbers.
+
 :::
 
 ::: {.fragment}
 
-- Solution #2
+### Solution #2:
 
 ```{python}
 #| echo: true
@@ -53,69 +64,23 @@ def filter_even_numbers_v2(numbers):
 filter_even_numbers_v2([1, 2, 3, 4])
 ```
 
-:::
+### Explanation for Solution #2:
 
+This version of the solution uses Python's list comprehension feature to make the function more concise and efficient.
 
-## Problem 2: Fizz Buzz
+#### Step-by-Step Breakdown:
 
-Write a Python function `fizzbuzz` that takes a number and returns `"Fizz"` if the number is divisible by 3, `"Buzz"` if the number is divisible by 5, and `"FizzBuzz"` if the number is divisible by both 3 and 5. Otherwise, returns the number.
+1. **List Comprehension:**
+   - The expression `[num for num in numbers if num % 2 == 0]` creates a new list by iterating over each number `num` in the input list `numbers`.
+   - For each number, it checks if the number is divisible by 2 (`num % 2 == 0`), which means the number is even.
+   - Only even numbers are added to the new list.
 
-::: {.fragment}
-
-- Solution
-
-```{python}
-#| echo: true
-def fizzbuzz(number):
-  if number % 3 == 0 and number % 5 == 0:
-    return "FizzBuzz"
-  elif number % 3 == 0:
-    return "Fizz"
-  elif number % 5 == 0:
-    return "Buzz"
-  else:
-    return number
-```
+2. **Return the Result:**
+   - The list comprehension generates the list of even numbers, which is immediately returned by the function.
 
 :::
 
-::: {.fragment}
-
-```{python}
-#| echo: true
-fizzbuzz(15)
-```
-
-:::
-
-::: {.fragment}
-
-```{python}
-#| echo: true
-fizzbuzz(5)
-```
-
-:::
-
-::: {.fragment}
-
-```{python}
-#| echo: true
-fizzbuzz(3)
-```
-
-:::
-
-::: {.fragment}
-
-```{python}
-#| echo: true
-fizzbuzz(1)
-```
-
-:::
-
-## Problem 3: Second largest
+## Problem 2: Second largest
 
 Write a Python function `find_second_largest` that takes a list of positive numbers and returns the second largest number in the list *without* sorting the list.
 
@@ -124,7 +89,7 @@ Write a Python function `find_second_largest` that takes a list of positive numb
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -142,9 +107,41 @@ def find_second_largest(numbers):
 find_second_largest([2, 5, 7, 1, 8, 3, 9])
 ```
 
+### Explanation for the Solution:
+
+The task is to find the second largest number in a list of positive numbers without sorting the list. The function `find_second_largest` solves this by scanning the list once and keeping track of both the largest and second-largest numbers.
+
+#### Step-by-Step Breakdown:
+
+1. **Initialization:**
+   - Two variables `largest` and `second_largest` are initialized to `-1`. This ensures that any number in the list will replace these values since the list contains only positive numbers.
+
+2. **Loop through the List:**
+   - The function iterates through the list of numbers.
+   - For each number `num`:
+     - If `num` is greater than `largest`, update `second_largest` to the value of `largest`, then update `largest` to `num`. This ensures that the previous largest number becomes the second largest.
+     - Otherwise, if `num` is greater than `second_largest` but less than `largest`, update `second_largest` to `num`.
+
+3. **Return the Result:**
+   - After the loop finishes, `second_largest` will hold the second largest number in the list.
+
+#### Example Walkthrough:
+
+For the input `[2, 5, 7, 1, 8, 3, 9]`:
+
+- After processing:
+  - `2` becomes the largest, second largest remains `-1`.
+  - `5` becomes the largest, `2` becomes the second largest.
+  - `7` becomes the largest, `5` becomes the second largest.
+  - `1` is ignored.
+  - `8` becomes the largest, `7` becomes the second largest.
+  - `3` is ignored.
+  - `9` becomes the largest, `8` becomes the second largest.
+- The function returns `8`.
+
 :::
 
-## Problem 4: Most common letter
+## Problem 3: Most common letter
 
 Write a Python function `find_most_common_letter` that takes a string and returns the most common letter in the string.
 
@@ -153,7 +150,7 @@ Write a Python function `find_most_common_letter` that takes a string and return
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -177,10 +174,41 @@ def find_most_common_letter(string):
   
 find_most_common_letter("Hello, World!")
 ```
-  
+
+### Explanation:
+
+The task is to find the most common letter in a given string. The function `find_most_common_letter` counts the occurrences of each letter, ignoring case, and returns the letter with the highest frequency.
+
+#### Step-by-Step Breakdown:
+
+1. **Initialization:**
+   - We initialize an empty dictionary `letter_counts` to store each letter and its corresponding count.
+
+2. **Loop through the string:**
+   - Convert the string to uppercase using `string.upper()` to handle case insensitivity.
+   - For each character:
+     - If the character is already in `letter_counts`, increase its count by 1.
+     - If the character is not in the dictionary, add it with an initial count of 1.
+
+3. **Find the most common letter:**
+   - Initialize `max_count` to `-1` and `max_letter` to an empty string.
+   - Loop through the dictionary to find the letter with the highest count.
+
+4. **Return the result:**
+   - The function returns the letter with the maximum count.
+
+#### Example Walkthrough:
+
+For the input `"Hello, World!"`:
+
+- After converting to uppercase: `"HELLO, WORLD!"`
+- The dictionary `letter_counts` will look like: `{'H': 1, 'E': 1, 'L': 3, 'O': 2, 'W': 1, 'R': 1, 'D': 1}`.
+- The most common letter is `'L'` with a count of 3.
+
+
 :::
 
-## Problem 5: Recursive sum
+## Problem 4: Recursive sum
 
 Write a *recursive* Python function `recursive_sum` that takes a list of integers and returns the sum of all the numbers in the list.
 
@@ -189,7 +217,7 @@ Write a *recursive* Python function `recursive_sum` that takes a list of integer
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -203,9 +231,34 @@ def recursive_sum(numbers):
 recursive_sum([1, 2, 3, 4, 5])
 ```
 
+
+### Explanation:
+
+The task is to calculate the sum of a list of integers using recursion. The function `recursive_sum` achieves this by breaking down the problem into smaller subproblems.
+
+#### Step-by-Step Breakdown:
+
+1. **Base Case:**
+   - If the list `numbers` is empty (`not numbers`), the sum is `0`. This is the base case for the recursion, stopping the function when no numbers are left to sum.
+
+2. **Recursive Case:**
+   - If the list is not empty, the function takes the first number in the list (`numbers[0]`) and adds it to the result of a recursive call on the rest of the list (`numbers[1:]`).
+   - This recursive process continues until the base case is reached (an empty list).
+
+3. **Return the Result:**
+   - Each recursive call returns a partial sum, and when the base case is reached, the accumulated sums are returned all the way back up the call stack.
+
+#### Example Walkthrough:
+
+For the input `[1, 2, 3, 4, 5]`:
+
+- The function first returns `1 + recursive_sum([2, 3, 4, 5])`.
+- Then it returns `2 + recursive_sum([3, 4, 5])`, and so on, until it reaches the empty list and returns `0`.
+- The final result is `1 + 2 + 3 + 4 + 5 = 15`.
+
 :::
 
-## Problem 6: Sum of Squares
+## Problem 5: Sum of Squares
 Write a Python function `sum_of_squares` that takes a list of numbers and returns the sum of their squares.
 
 - Example Input: `[1, 2, 3]`
@@ -213,7 +266,7 @@ Write a Python function `sum_of_squares` that takes a list of numbers and return
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -223,10 +276,31 @@ def sum_of_squares(numbers):
 sum_of_squares([1, 2, 3])
 ```
 
+### Explanation:
+
+The task is to calculate the sum of the squares of a list of numbers. The function `sum_of_squares` achieves this using list comprehension and the built-in `sum()` function.
+
+#### Step-by-Step Breakdown:
+
+1. **List Comprehension:**
+   - `[num**2 for num in numbers]` creates a list of the squares of each number in the input list `numbers`. For each `num` in the list, `num**2` computes the square of that number.
+
+2. **Sum of the Squares:**
+   - The `sum()` function then adds up all the squared numbers in the list produced by the list comprehension.
+
+3. **Return the Result:**
+   - The function returns the sum of the squares of all numbers in the input list.
+
+#### Example Walkthrough:
+
+For the input `[1, 2, 3]`:
+- The list comprehension `[num**2 for num in numbers]` produces `[1, 4, 9]`.
+- The `sum()` function adds these values: `1 + 4 + 9 = 14`.
+
 :::
 
 
-## Problem 7: Unique words
+## Problem 6: Unique words
 
 Write a Python function `count_unique_words` that takes a list of strings and returns the number of unique words in the list.
 
@@ -235,7 +309,7 @@ Write a Python function `count_unique_words` that takes a list of strings and re
 
 ::: {.fragment}
 
-- Solution
+### Solution:
 
 ```{python}
 #| echo: true
@@ -249,12 +323,28 @@ def count_unique_words(words):
 count_unique_words(['apple', 'banana', 'apple', 'cherry', 'banana', 'date'])
 ```
 
+### Explanation for the Solution:
+
+The task is to count the number of unique words in a given list of strings. The function `count_unique_words` uses a simple approach by checking each word and building a list of unique words.
+
+#### Step-by-Step Breakdown:
+
+1. **Initialization:**
+   - We start by creating an empty list `unique_words` that will store the words that appear only once.
+
+2. **Loop through the list of words:**
+   - For each word in the input list `words`, check if the word is already in the `unique_words` list.
+   - If the word is not in the list, it is added to the `unique_words` list.
+
+3. **Return the result:**
+   - After processing all words, the length of the `unique_words` list is returned, which represents the number of unique words.
+
 :::
 
 
 ::: {.fragment}
 
-- Solution #2
+### Solution #2:
 
 ```{python}
 #| echo: true
@@ -263,6 +353,18 @@ def count_unique_words_v2(words):
 
 count_unique_words_v2(['apple', 'banana', 'apple', 'cherry', 'banana', 'date'])
 ```
+
+### Explanation for Solution #2:
+
+This version of the solution leverages Python's built-in `set` data structure, which automatically removes duplicates, making the process more efficient.
+
+#### Step-by-Step Breakdown:
+
+1. **Convert List to Set:**
+   - The function converts the input list `words` to a set using `set(words)`. Since sets only store unique elements, any duplicate words are automatically removed.
+
+2. **Return the Length of the Set:**
+   - The length of the set is then calculated using `len()`, which gives the number of unique words.
 
 :::
 
