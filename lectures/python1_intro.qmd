@@ -1,18 +1,120 @@
 ---
 title: "Introduction to Python"
-author: "Ahmed Moustafa"
+subtitle: "DSCI 1412 - Fall 2024"
+author:
+  - name: "Ahmed Moustafa"
+    email: amoustafa@auceypt.edu
+    affiliations:
+      - name: The American University in Cairo
 format:
-  revealjs:
-    slide-number: true
-    preview-links: true
-    scrollable: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-align: "center"
+    code-line-numbers: true
+include-in-header: 
+  text: |
+    \usepackage{fvextra}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
+
+## What is Python?
+
+- Python is an **interpreted**, **high-level**, **general-purpose** programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+
+- It was developed by [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) and first released in 1991.
+
+![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/701px-Python-logo-notext.svg.png)
 
 ## Why is it called Python?
 
-When he began implementing Python, [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) (left) was also reading the published scripts from [Monty Python's Flying Circus](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) (Right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ]
+When he began implementing Python, [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) (left) was also reading the published scripts from [Monty Python's Flying Circus](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) (right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ]
 
 ![Guido van Rossum & Monty Python's Flying Circus](images/python.png)
+
+## Design Philosophy
+
+Python is built on the philosophy of **simplicity** and **elegance**. The core philosophy, outlined in [The Zen of Python](https://peps.python.org/pep-0020/) by [Tim Peters](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)), highlights principles like "**Readability counts**" and "**There should be one—and preferably only one—obvious way to do it.**"
+
+![The Zen of Python](images/the_zen_of_python.png)
+
+
+## Python Popularity
+
+![The Most Popular Programming Languages](https://cdn.statcdn.com/Infographic/images/normal/16567.jpeg)
+
+
+## Why Python?
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- Easy to Learn and Use:
+  - Simple, readable syntax similar to English
+  - Gentle learning curve ideal for beginners
+
+- Versatile and Powerful:
+  - Supports multiple programming paradigms (functional, object-oriented)
+  - Extensive standard library and rich ecosystem of third-party packages
+
+- Wide Range of Applications:
+  - Web development ([Django](https://www.djangoproject.com), [Flask](https://flask.palletsprojects.com/))
+  - Data science and machine learning ([NumPy](https://numpy.org), [Pandas](https://pandas.pydata.org), [TensorFlow](https://www.tensorflow.org))
+  -   Automation, scripting, and more
+
+- Strong Community Support:
+  - Large, active community contributes to continuous improvement
+  - Abundant resources, tutorials, and documentation available
+
+- High Demand in the Job Market: Widely used across industries
+
+:::
+
+::: {.column width="30%"}
+
+![](https://media.gettyimages.com/id/172990730/photo/all-purpose-knife.jpg?s=2048x2048&w=gi&k=20&c=JmLxk7lOXTGC_ozD1l68iWP3XndGuXZx6XdVRW3cP-Q=)
+
+
+![](https://media.gettyimages.com/id/1372192189/photo/vibrant-chameleon-on-succulent-close-up-of-chameleon-on-plant-seven-points-texas-united.jpg?s=2048x2048&w=gi&k=20&c=1ePwfCiQwQOAYZmLsHbB48j5YzEDVTVdFJ5NnYhL1Hc=)
+
+![](https://media.gettyimages.com/id/1498955543/photo/industrial-robots-at-the-automatic-car-manufacturing-factory-assembly-line.jpg?s=2048x2048&w=gi&k=20&c=ku_6TqwqJ8N3Vq_PAILHyuL9RVodSPhDvV3bPXqF-RI=)
+
+:::
+::::
+
+
+## Who Uses Python?
+
+![Top Companies Use Python](images/companies.png)
+
+<small>([Source: Top 10 Python Development Company to Hire](https://medium.com/nerd-for-tech/top-10-python-development-company-to-hire-d83507a33755))</small>
+
+## First Image of a Black Hole
+
+:::: {.columns}
+::: {.column width="60%"}
+
+![Katie Bouman's moment when the first black hole image was processed](https://girlgeek.io/wp-content/uploads/2019/04/katie-bouman-black-hole-image.jpg)
+
+<small><small>
+Source: [Girl Geek X](https://girlgeek.io/katherine-l-katie-bouman-supermassive-black-hole-algorithm-event-horizon-telescope-eht/)
+</small></small>
+
+:::
+
+::: {.column width="40%"}
+![First Image of a Black Hole, Boston, April 2019](images/blackhole.png)
+
+<small><small>
+Source: [NASA](https://science.nasa.gov/resource/first-image-of-a-black-hole/). Credit: [Event Horizon Telescope Collaboration](https://eventhorizontelescope.org/)
+</small></small>
+
+:::
+::::
+
+
 
 ## Working with Python using Google Colab
 
@@ -93,9 +195,7 @@ Boolean variables in Python are defined by two constant objects `True` and `Fals
 - **`NOT`** operation (Inverts the Boolean value)
 
 ![The Truth Table](images/truth_table.png)
-
-
-<small>(Modified from [Intro To Programming](https://introcs.cs.princeton.edu/java/71boolean/))</small>
+<small><small>(Modified from [Intro To Programming](https://introcs.cs.princeton.edu/java/71boolean/))</small></small>
 
 
 ## Types of Operators
@@ -231,4 +331,4 @@ print ("Hello\tWorld!")
 print ("Thank you!")
 ```
 
-![](https://miro.medium.com/v2/resize:fit:800/format:webp/0*6GbsTL8b7L2EBvu1.jpg)
+![](images/how_good.png)
