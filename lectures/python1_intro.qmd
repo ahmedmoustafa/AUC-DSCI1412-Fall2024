@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Python"
-subtitle: "AUC DSCI 1412 - Fall 2024"
+subtitle: "DSCI 1412 - Fall 2024"
 author:
   - name: "Ahmed Moustafa"
     email: amoustafa@auceypt.edu
