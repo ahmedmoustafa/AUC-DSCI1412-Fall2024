@@ -386,14 +386,17 @@
       margin-right: 0; 
     }
   </style>
+  <script src="python1_intro_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="python1_intro_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="python1_intro_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="title-slide-with-logo center" data-background-image="">
   <h1 class="title">Introduction to Python</h1>
-  <p class="subtitle">DSCI 1412 - Fall 2024</p>
+  <p class="subtitle">AUC DSCI 1412 - Fall 2024</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -510,10 +513,10 @@ Ahmed Moustafa
 <section id="first-things-first" class="slide level2">
 <h2>First Things First</h2>
 <p>As with any programming course, here is the <code>Hello World!</code> in Python.</p>
-<div id="01868fa5" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ac443853" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hello World!</code></pre>
+<pre><code>Hello, World!</code></pre>
 </div>
 </div>
 
@@ -601,14 +604,36 @@ Ahmed Moustafa
 <h2>Working with Strings</h2>
 <p>Strings in Python are used to handle textual data. They can be enclosed in either single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>).</p>
 </section>
-<section id="operations" class="slide level2">
-<h2>Operations</h2>
-<ul>
-<li>Concatenation: <code>'Hello ' + 'world!'</code></li>
-<li>Repetition: <code>'Ha' * 3</code></li>
-<li>Indexing: <code>'Hello'[1]</code> returns <code>'e'</code></li>
-<li>Slicing: <code>'Hello'[1:4]</code> returns <code>'ell'</code></li>
-</ul>
+<section id="string-operations" class="slide level2">
+<h2>String Operations</h2>
+<h3 id="concatenation">Concatenation</h3>
+<div id="2cfda692" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co">'Hello '</span> <span class="op">+</span> <span class="st">'World!'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="206">
+<pre><code>'Hello World!'</code></pre>
+</div>
+</div>
+<h3 id="repetition">Repetition</h3>
+<div id="3aef300e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co">'Ha'</span> <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="207">
+<pre><code>'HaHaHa'</code></pre>
+</div>
+</div>
+<h3 id="indexing">Indexing</h3>
+<div id="e042646a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co">'Hello'</span>[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="208">
+<pre><code>'e'</code></pre>
+</div>
+</div>
+<h3 id="slicing">Slicing</h3>
+<div id="461c004b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co">'Hello'</span>[<span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="209">
+<pre><code>'ell'</code></pre>
+</div>
+</div>
 </section>
 <section id="useful-string-methods" class="slide level2">
 <h2>Useful String Methods</h2>
@@ -625,19 +650,77 @@ Ahmed Moustafa
 <section>
 <section id="introduction-to-lists" class="title-slide slide level1 center">
 <h1>Introduction to Lists</h1>
-<p>Lists in Python are used to store multiple items in a single variable. Lists are ordered, changeable, and allow duplicate values.</p>
+<p>Lists in Python are used to store multiple items in a single variable. Lists are ordered, mutable (changeable), and allow duplicate values.</p>
 </section>
 <section id="creating-a-list" class="slide level2">
 <h2>Creating a List</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb6-2"><a href=""></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>my_list</code></li>
+</ul>
+<div id="25eb921a" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb14-2"><a href=""></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="210">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR;
+    A["my_list[0] = 1"] --&gt; B["my_list[1] = 2"] --&gt; C["my_list[2] = 3"];
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><code>names</code></li>
+</ul>
+<div id="559cb6a9" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
+<span id="cb16-2"><a href=""></a>names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="211">
+<pre><code>['Alice', 'Bob', 'Charlie']</code></pre>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR;
+    A["names[0] = Alice"] --&gt; B["names[1] = Bob"] --&gt; C["names[2] = Charlie"];
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="accessing-elements" class="slide level2">
 <h2>Accessing Elements</h2>
 <ul>
-<li>Access by index: <code>my_list[0]</code> returns <code>1</code>.</li>
-<li>Slicing: <code>names[1:3]</code> returns <code>['Bob', 'Charlie']</code>.</li>
+<li>Access by index:</li>
 </ul>
+<div id="3155e95b" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>my_list[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="212">
+<pre><code>1</code></pre>
+</div>
+</div>
+<ul>
+<li>Slicing:</li>
+</ul>
+<div id="e77124d3" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>names[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="213">
+<pre><code>['Bob', 'Charlie']</code></pre>
+</div>
+</div>
 </section>
 <section id="list-operations" class="slide level2">
 <h2>List Operations</h2>
@@ -678,11 +761,79 @@ Ahmed Moustafa
 <li><strong>Ranges</strong>: Immutable sequence of numbers. <code>range(1, 10)</code></li>
 </ul>
 </section>
-<section id="mapping-type" class="slide level2">
-<h2>Mapping Type</h2>
+<section id="dictionaries" class="slide level2">
+<h2>Dictionaries</h2>
+
+<img data-src="https://media.gettyimages.com/id/1725762596/photo/dictionary-and-magnifying-glass.jpg?s=2048x2048&amp;w=gi&amp;k=20&amp;c=zv3V8fZk8_ER6geFJHKkozll9no81ORuXPi0UUX1TSc=" class="r-stretch"><h3 id="definition">Definition</h3>
+<p>A <strong>dictionary</strong> in Python is a collection of key-value pairs, where each key is unique, and it maps to a specific value.</p>
+<h3 id="key-features-dictionaries">Key Features Dictionaries</h3>
 <ul>
-<li><strong>Dictionaries</strong>: Key-value pairs. <code>my_dict = {"name": "Alice", "age": 30}</code></li>
+<li><strong>Unordered:</strong> The items in a dictionary are not stored in any particular order. However, in Python 3.7 and later, dictionaries maintain the insertion order.</li>
+<li><strong>Mutable:</strong> The values in a dictionary can be modified, added, or deleted.</li>
+<li><strong>Indexed by Keys:</strong> Instead of using indices (like in lists), dictionaries use keys to access the corresponding values.</li>
+<li><strong>Unique Keys:</strong> Each key must be unique within a dictionary. If a duplicate key is assigned a value, it will overwrite the previous value.</li>
 </ul>
+<h3 id="syntax">Syntax</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>my_dict <span class="op">=</span> {</span>
+<span id="cb22-2"><a href=""></a>    <span class="st">"key1"</span>: <span class="st">"value1"</span>,</span>
+<span id="cb22-3"><a href=""></a>    <span class="st">"key2"</span>: <span class="st">"value2"</span>,</span>
+<span id="cb22-4"><a href=""></a>    <span class="st">"key3"</span>: <span class="st">"value3"</span></span>
+<span id="cb22-5"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="example-of-dictionaries">Example of Dictionaries</h3>
+<div id="f2f83b0e" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a><span class="co"># Creating a dictionary</span></span>
+<span id="cb23-2"><a href=""></a>my_dict <span class="op">=</span> {</span>
+<span id="cb23-3"><a href=""></a>    <span class="st">"name"</span>: <span class="st">"Alice"</span>,</span>
+<span id="cb23-4"><a href=""></a>    <span class="st">"age"</span>: <span class="dv">30</span>,</span>
+<span id="cb23-5"><a href=""></a>    <span class="st">"city"</span>: <span class="st">"New York"</span></span>
+<span id="cb23-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD;
+    A["my_dict"] --&gt; B["name: Alice"];
+    A --&gt; C["age: 30"];
+    A --&gt; D["city: New York"];
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<h4 id="accessing-a-value-by-key">Accessing a value by key</h4>
+<div id="8f755ba7" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>my_dict[<span class="st">"name"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="215">
+<pre><code>'Alice'</code></pre>
+</div>
+</div>
+<h4 id="adding-a-new-key-value-pair">Adding a new key-value pair</h4>
+<div id="0b16d77a" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>my_dict[<span class="st">"email"</span>] <span class="op">=</span> <span class="st">"alice@example.com"</span></span>
+<span id="cb26-2"><a href=""></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="216">
+<pre><code>{'name': 'Alice', 'age': 30, 'city': 'New York', 'email': 'alice@example.com'}</code></pre>
+</div>
+</div>
+<h4 id="modifying-an-existing-value">Modifying an existing value</h4>
+<div id="dd7b4efc" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>my_dict[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">31</span></span>
+<span id="cb28-2"><a href=""></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="217">
+<pre><code>{'name': 'Alice', 'age': 31, 'city': 'New York', 'email': 'alice@example.com'}</code></pre>
+</div>
+</div>
+<h4 id="deleting-a-key-value-pair">Deleting a key-value pair</h4>
+<div id="25ae5474" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="kw">del</span> my_dict[<span class="st">"city"</span>]</span>
+<span id="cb30-2"><a href=""></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="218">
+<pre><code>{'name': 'Alice', 'age': 31, 'email': 'alice@example.com'}</code></pre>
+</div>
+</div>
 </section>
 <section id="set-types" class="slide level2">
 <h2>Set Types</h2>
@@ -697,8 +848,8 @@ Ahmed Moustafa
 <li><p>Use <code>\</code> to insert special characters, e.g.,</p></li>
 <li><p>new line:</p></li>
 </ul>
-<div id="fd046ca6" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\n</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="776171ad" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\n</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello
 World!</code></pre>
@@ -707,8 +858,8 @@ World!</code></pre>
 <ul>
 <li>tab:</li>
 </ul>
-<div id="8a8974ff" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\t</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fc8dee84" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Hello</span><span class="ch">\t</span><span class="st">World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello   World!</code></pre>
 </div>
@@ -727,14 +878,15 @@ World!</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="bc50d6b6" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Thank you!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="df3493d8" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="bu">print</span> (<span class="st">"Thank you!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Thank you!</code></pre>
 </div>
 </div>
-
-<img data-src="images/how_good.png" class="r-stretch"><div class="quarto-auto-generated-content">
+<p><img data-src="images/how_good.png"></p>
+<div class="quarto-auto-generated-content">
+<p><img src="images/auc.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>

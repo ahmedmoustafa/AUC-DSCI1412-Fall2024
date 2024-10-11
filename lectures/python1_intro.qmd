@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Python"
-subtitle: "DSCI 1412 - Fall 2024"
+subtitle: "AUC DSCI 1412 - Fall 2024"
 author:
   - name: "Ahmed Moustafa"
     email: amoustafa@auceypt.edu
@@ -11,6 +11,10 @@ format:
     slide-number: true
     preview-links: true
     scrollable: true
+    title-slide-attributes:
+      data-background-image: ""
+      class: "title-slide-with-logo"
+    logo: "images/auc.png"
 ---
 
 ## What is Python?
@@ -132,7 +136,7 @@ As with any programming course, here is the `Hello World!` in Python.
 
 ```{python}
 #| echo: true
-print ("Hello World!")
+print ("Hello, World!")
 ```
 
 ![Hello, World!](https://i.redd.it/zbqqkmy3kyqy.png)
@@ -220,12 +224,29 @@ float("3.14") # Converts to float
 
 Strings in Python are used to handle textual data. They can be enclosed in either single quotes (`'...'`) or double quotes (`"..."`).
 
-## Operations
+## String Operations
 
-- Concatenation: `'Hello ' + 'world!'`
-- Repetition: `'Ha' * 3`
-- Indexing: `'Hello'[1]` returns `'e'`
-- Slicing: `'Hello'[1:4]` returns `'ell'`
+### Concatenation
+```{python}
+#| echo: true
+'Hello ' + 'World!'
+```
+
+### Repetition
+```{python}
+#| echo: true
+'Ha' * 3
+```
+### Indexing
+```{python}
+#| echo: true
+'Hello'[1]
+```
+### Slicing
+```{python}
+#| echo: true
+'Hello'[1:4]
+```
 
 ## Useful String Methods
 
@@ -240,19 +261,49 @@ Strings in Python are used to handle textual data. They can be enclosed in eithe
 
 # Introduction to Lists
 
-Lists in Python are used to store multiple items in a single variable. Lists are ordered, changeable, and allow duplicate values.
+Lists in Python are used to store multiple items in a single variable. Lists are ordered, mutable (changeable), and allow duplicate values.
 
 ## Creating a List
 
-```python
+- `my_list`
+```{python}
+#| echo: true
 my_list = [1, 2, 3]
-names = ["Alice", "Bob", "Charlie"]
+my_list
 ```
+
+```{mermaid}
+graph LR;
+    A["my_list[0] = 1"] --> B["my_list[1] = 2"] --> C["my_list[2] = 3"];
+```
+
+- `names`
+
+```{python}
+#| echo: true
+names = ["Alice", "Bob", "Charlie"]
+names
+```
+
+```{mermaid}
+graph LR;
+    A["names[0] = Alice"] --> B["names[1] = Bob"] --> C["names[2] = Charlie"];
+```
+
 
 ## Accessing Elements
 
-- Access by index: `my_list[0]` returns `1`.
-- Slicing: `names[1:3]` returns `['Bob', 'Charlie']`.
+- Access by index:
+```{python}
+#| echo: true
+my_list[0]
+```
+
+- Slicing:
+```{python}
+#| echo: true
+names[1:3]
+```
 
 ## List Operations
 
@@ -283,9 +334,78 @@ Exploring Python's built-in data types reveals the language's flexibility.
 - **Tuples**: Immutable and ordered. `my_tuple = (1, 2, 3)`
 - **Ranges**: Immutable sequence of numbers. `range(1, 10)`
 
-## Mapping Type
+## Dictionaries
+![](https://media.gettyimages.com/id/1725762596/photo/dictionary-and-magnifying-glass.jpg?s=2048x2048&w=gi&k=20&c=zv3V8fZk8_ER6geFJHKkozll9no81ORuXPi0UUX1TSc=)
 
-- **Dictionaries**: Key-value pairs. `my_dict = {"name": "Alice", "age": 30}`
+### Definition
+A **dictionary** in Python is a collection of key-value pairs, where each key is unique, and it maps to a specific value.
+
+### Key Features Dictionaries
+- **Unordered:** The items in a dictionary are not stored in any particular order. However, in Python 3.7 and later, dictionaries maintain the insertion order.
+- **Mutable:** The values in a dictionary can be modified, added, or deleted.
+- **Indexed by Keys:** Instead of using indices (like in lists), dictionaries use keys to access the corresponding values.
+- **Unique Keys:** Each key must be unique within a dictionary. If a duplicate key is assigned a value, it will overwrite the previous value.
+
+### Syntax
+
+```python
+my_dict = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+```
+
+### Example of Dictionaries
+
+```{python}
+#| echo: true
+# Creating a dictionary
+my_dict = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+```
+
+```{mermaid}
+graph TD;
+    A["my_dict"] --> B["name: Alice"];
+    A --> C["age: 30"];
+    A --> D["city: New York"];
+```
+
+#### Accessing a value by key
+
+```{python}
+#| echo: true
+my_dict["name"]
+```
+
+#### Adding a new key-value pair
+
+```{python}
+#| echo: true
+my_dict["email"] = "alice@example.com"
+my_dict
+```
+
+#### Modifying an existing value
+
+```{python}
+#| echo: true
+my_dict["age"] = 31
+my_dict
+```
+
+#### Deleting a key-value pair
+
+```{python}
+#| echo: true
+del my_dict["city"]
+my_dict
+```
+
 
 ## Set Types
 
