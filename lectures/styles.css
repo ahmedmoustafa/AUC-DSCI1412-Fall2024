@@ -1,9 +1,0 @@
-.title-slide-with-logo::after {
-    content: url('images/auc_400x400.jpg');  /* Replace with the correct path to your logo */
-    position: absolute;
-    top: 20px;   /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    width: 100px; /* Adjust size as needed */
-    height: auto;
-  }
-  
