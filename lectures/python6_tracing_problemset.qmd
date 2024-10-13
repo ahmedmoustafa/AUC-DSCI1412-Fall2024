@@ -11,7 +11,7 @@ format:
     logo: "images/auc.png"
 ---
 
-## Problem 1:
+## Problem 1
 
 What is the output of the following code?
 
