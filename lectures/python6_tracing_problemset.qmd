@@ -1,0 +1,153 @@
+---
+title: "Tracing Problem Set"
+format:
+  revealjs:
+    slide-number: true
+    preview-links: true
+    scrollable: true
+    title-slide-attributes:
+      data-background-image: ""
+      class: "title-slide-with-logo"
+    logo: "images/auc.png"
+---
+
+## Problem 1:
+
+What is the output of the following code?
+
+```python
+x = 10
+y = 5
+while x > 5:
+    x = x - y
+print(x)
+```
+
+::: {.fragment}
+
+### Solution
+```{python}
+#| echo: false
+x = 10
+y = 5
+while x > 5:
+    x = x - y
+print(x)
+```
+
+### Explanation  
+The loop runs once and reduces `x` to `5`, ending the loop.
+
+:::
+
+
+## Problem 2
+What is the output of the following code?
+
+```python
+lst = [10, 20, 30, 40, 50]
+for i in range(len(lst)):
+    if lst[i] % 20 == 0:
+        lst[i] = lst[i] + 1
+print(lst)
+```
+::: {.fragment}
+
+### Solution
+```{python}
+#| echo: false
+lst = [10, 20, 30, 40, 50]
+for i in range(len(lst)):
+    if lst[i] % 20 == 0:
+        lst[i] = lst[i] + 1
+print(lst)
+```
+
+### Explanation
+Only elements divisible by `20` are modified:
+
+- `20` $\to$ `21`
+- `40` $\to$ `41`
+
+:::
+
+## Problem 3  
+What is the output of the following code?
+
+```python
+scores = {"Alice": 85, "Bob": 90, "Charlie": 75}
+total = 0
+for key in scores:
+    total += scores[key]
+print(total)
+```
+
+::: {.fragment}
+
+### Solution
+
+```{python}
+#| echo: false
+scores = {"Alice": 85, "Bob": 90, "Charlie": 75}
+total = 0
+for key in scores:
+    total += scores[key]
+print(total)
+```
+
+:::
+
+## Problem 4
+What is the output of the following code?
+
+```python
+grades = {"John": [80, 85], "Alice": [90, 95], "Bob": [70, 75]}
+for student in grades:
+    grades[student].append(sum(grades[student]) / len(grades[student]))
+print(grades)
+```
+
+### Solution
+
+```{python}
+#| echo: false
+grades = {"John": [80, 85], "Alice": [90, 95], "Bob": [70, 75]}
+for student in grades:
+    grades[student].append(sum(grades[student]) / len(grades[student]))
+print(grades)
+```
+
+
+## Problem 5
+What is the output of the following code?
+
+```python
+def mystery(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + mystery(n - 2)
+
+print(mystery(5))
+```
+
+::: {.fragment}
+
+### Solution
+```{python}
+#| echo: false
+def mystery(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + mystery(n - 2)
+
+print(mystery(5))
+```
+
+### Explanation
+
+The recursion adds values `5`, `3`, and `1`, resulting in `9`.
+
+:::
+

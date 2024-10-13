@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="python5_functions_problemset_part1_files/libs/clipboard/clipboard.min.js"></script>
-<script src="python5_functions_problemset_part1_files/libs/quarto-html/tabby.min.js"></script>
-<script src="python5_functions_problemset_part1_files/libs/quarto-html/popper.min.js"></script>
-<script src="python5_functions_problemset_part1_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="python5_functions_problemset_part1_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="python5_functions_problemset_part1_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="python5_functions_problemset_part1_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="python5_functions_problemset_part1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="python6_tracing_problemset_files/libs/clipboard/clipboard.min.js"></script>
+<script src="python6_tracing_problemset_files/libs/quarto-html/tabby.min.js"></script>
+<script src="python6_tracing_problemset_files/libs/quarto-html/popper.min.js"></script>
+<script src="python6_tracing_problemset_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="python6_tracing_problemset_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="python6_tracing_problemset_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="python6_tracing_problemset_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="python6_tracing_problemset_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.56">
 
-  <title>Functions Problem Set</title>
+  <title>Tracing Problem Set</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="python5_functions_problemset_part1_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="python5_functions_problemset_part1_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="python6_tracing_problemset_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="python6_tracing_problemset_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,11 +94,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="python5_functions_problemset_part1_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="python5_functions_problemset_part1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="python5_functions_problemset_part1_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="python5_functions_problemset_part1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="python5_functions_problemset_part1_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="python6_tracing_problemset_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="python6_tracing_problemset_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="python6_tracing_problemset_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="python6_tracing_problemset_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="python6_tracing_problemset_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -390,380 +390,112 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Functions Problem Set</h1>
-  <p class="subtitle">Part 1</p>
+<section id="title-slide" class="title-slide-with-logo center" data-background-image="">
+  <h1 class="title">Tracing Problem Set</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="problem-1-even-numbers" class="slide level2 scrollable">
-<h2>Problem 1: Even numbers</h2>
-<p>Write a Python function <code>filter_even_numbers</code> that takes a list of numbers and returns a new list containing only the even numbers.</p>
-<ul>
-<li>Example Input: <code>[1, 2, 3, 4]</code></li>
-<li>Example Output: <code>[2, 4]</code></li>
-</ul>
+<section id="problem-1" class="slide level2">
+<h2>Problem 1:</h2>
+<p>What is the output of the following code?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-2"><a href=""></a>y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-3"><a href=""></a><span class="cf">while</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb1-4"><a href=""></a>    x <span class="op">=</span> x <span class="op">-</span> y</span>
+<span id="cb1-5"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <!-- -->
-<h3 id="solution">Solution:</h3>
-<div id="aed95f90" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> filter_even_numbers(numbers):</span>
-<span id="cb1-2"><a href=""></a>  even_numbers <span class="op">=</span> [] <span class="co"># create an empty list for the even numbers</span></span>
-<span id="cb1-3"><a href=""></a>  <span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
-<span id="cb1-4"><a href=""></a>    <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># if the number is divisable by 2 then it is even</span></span>
-<span id="cb1-5"><a href=""></a>      even_numbers.append (num) <span class="co"># if so, add it to the list of even numbers</span></span>
-<span id="cb1-6"><a href=""></a>  <span class="cf">return</span> even_numbers</span>
-<span id="cb1-7"><a href=""></a></span>
-<span id="cb1-8"><a href=""></a>filter_even_numbers([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>[2, 4]</code></pre>
+<h3 id="solution">Solution</h3>
+<div id="b221976a" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<pre><code>5</code></pre>
 </div>
 </div>
-<h3 id="explanation-for-the-solution">Explanation for the Solution:</h3>
-<p>The task is to filter out only the even numbers from a list and return them in a new list. The function <code>filter_even_numbers</code> uses a simple loop to achieve this.</p>
-<h4 id="step-by-step-breakdown">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Initialization:</strong>
-<ul>
-<li>An empty list <code>even_numbers</code> is created to store the even numbers found in the input list <code>numbers</code>.</li>
-</ul></li>
-<li><strong>Loop through the List:</strong>
-<ul>
-<li>For each number <code>num</code> in the input list, the function checks if the number is divisible by 2 using <code>num % 2 == 0</code>. If the condition is true, the number is even.</li>
-<li>If the number is even, it is appended to the <code>even_numbers</code> list.</li>
-</ul></li>
-<li><strong>Return the Result:</strong>
-<ul>
-<li>After processing all numbers in the input list, the function returns the <code>even_numbers</code> list, which contains only the even numbers.</li>
-</ul></li>
-</ol>
-</div>
-<div class="fragment">
-<!-- -->
-<h3 id="solution-2">Solution #2:</h3>
-<div id="ab4deb9b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="kw">def</span> filter_even_numbers_v2(numbers):</span>
-<span id="cb3-2"><a href=""></a>  <span class="cf">return</span> [num <span class="cf">for</span> num <span class="kw">in</span> numbers <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
-<span id="cb3-3"><a href=""></a></span>
-<span id="cb3-4"><a href=""></a>filter_even_numbers_v2([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[2, 4]</code></pre>
-</div>
-</div>
-<h3 id="explanation-for-solution-2">Explanation for Solution #2:</h3>
-<p>This version of the solution uses Python’s list comprehension feature to make the function more concise and efficient.</p>
-<h4 id="step-by-step-breakdown-1">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>List Comprehension:</strong>
-<ul>
-<li>The expression <code>[num for num in numbers if num % 2 == 0]</code> creates a new list by iterating over each number <code>num</code> in the input list <code>numbers</code>.</li>
-<li>For each number, it checks if the number is divisible by 2 (<code>num % 2 == 0</code>), which means the number is even.</li>
-<li>Only even numbers are added to the new list.</li>
-</ul></li>
-<li><strong>Return the Result:</strong>
-<ul>
-<li>The list comprehension generates the list of even numbers, which is immediately returned by the function.</li>
-</ul></li>
-</ol>
+<h3 id="explanation">Explanation</h3>
+<p>The loop runs once and reduces <code>x</code> to <code>5</code>, ending the loop.</p>
 </div>
 </section>
-<section id="problem-2-second-largest" class="slide level2 scrollable">
-<h2>Problem 2: Second largest</h2>
-<p>Write a Python function <code>find_second_largest</code> that takes a list of positive numbers and returns the second largest number in the list <em>without</em> sorting the list.</p>
-<ul>
-<li>Example Input: <code>[2, 5, 7, 1, 8, 3, 9]</code></li>
-<li>Example Output: <code>8</code></li>
-</ul>
+<section id="problem-2" class="slide level2">
+<h2>Problem 2</h2>
+<p>What is the output of the following code?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>lst <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb3-2"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
+<span id="cb3-3"><a href=""></a>    <span class="cf">if</span> lst[i] <span class="op">%</span> <span class="dv">20</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-4"><a href=""></a>        lst[i] <span class="op">=</span> lst[i] <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-5"><a href=""></a><span class="bu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <!-- -->
-<h3 id="solution-1">Solution:</h3>
-<div id="cdc190d6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="kw">def</span> find_second_largest(numbers):</span>
-<span id="cb5-2"><a href=""></a>  largest <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb5-3"><a href=""></a>  second_largest <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb5-4"><a href=""></a>  <span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
-<span id="cb5-5"><a href=""></a>    <span class="cf">if</span> num <span class="op">&gt;</span> largest:</span>
-<span id="cb5-6"><a href=""></a>      second_largest <span class="op">=</span> largest</span>
-<span id="cb5-7"><a href=""></a>      largest <span class="op">=</span> num</span>
-<span id="cb5-8"><a href=""></a>    <span class="cf">elif</span> num <span class="op">&gt;</span> second_largest:</span>
-<span id="cb5-9"><a href=""></a>      second_largest <span class="op">=</span> num</span>
-<span id="cb5-10"><a href=""></a>  <span class="cf">return</span> second_largest</span>
-<span id="cb5-11"><a href=""></a></span>
-<span id="cb5-12"><a href=""></a>find_second_largest([<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">9</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>8</code></pre>
+<h3 id="solution-1">Solution</h3>
+<div id="158a6c4e" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>[10, 21, 30, 41, 50]</code></pre>
 </div>
 </div>
-<h3 id="explanation-for-the-solution-1">Explanation for the Solution:</h3>
-<p>The task is to find the second largest number in a list of positive numbers without sorting the list. The function <code>find_second_largest</code> solves this by scanning the list once and keeping track of both the largest and second-largest numbers.</p>
-<h4 id="step-by-step-breakdown-2">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Initialization:</strong>
+<h3 id="explanation-1">Explanation</h3>
+<p>Only elements divisible by <code>20</code> are modified:</p>
 <ul>
-<li>Two variables <code>largest</code> and <code>second_largest</code> are initialized to <code>-1</code>. This ensures that any number in the list will replace these values since the list contains only positive numbers.</li>
-</ul></li>
-<li><strong>Loop through the List:</strong>
-<ul>
-<li>The function iterates through the list of numbers.</li>
-<li>For each number <code>num</code>:
-<ul>
-<li>If <code>num</code> is greater than <code>largest</code>, update <code>second_largest</code> to the value of <code>largest</code>, then update <code>largest</code> to <code>num</code>. This ensures that the previous largest number becomes the second largest.</li>
-<li>Otherwise, if <code>num</code> is greater than <code>second_largest</code> but less than <code>largest</code>, update <code>second_largest</code> to <code>num</code>.</li>
-</ul></li>
-</ul></li>
-<li><strong>Return the Result:</strong>
-<ul>
-<li>After the loop finishes, <code>second_largest</code> will hold the second largest number in the list.</li>
-</ul></li>
-</ol>
-<h4 id="example-walkthrough">Example Walkthrough:</h4>
-<p>For the input <code>[2, 5, 7, 1, 8, 3, 9]</code>:</p>
-<ul>
-<li>After processing:
-<ul>
-<li><code>2</code> becomes the largest, second largest remains <code>-1</code>.</li>
-<li><code>5</code> becomes the largest, <code>2</code> becomes the second largest.</li>
-<li><code>7</code> becomes the largest, <code>5</code> becomes the second largest.</li>
-<li><code>1</code> is ignored.</li>
-<li><code>8</code> becomes the largest, <code>7</code> becomes the second largest.</li>
-<li><code>3</code> is ignored.</li>
-<li><code>9</code> becomes the largest, <code>8</code> becomes the second largest.</li>
-</ul></li>
-<li>The function returns <code>8</code>.</li>
+<li><code>20</code> <span class="math inline">\(\to\)</span> <code>21</code></li>
+<li><code>40</code> <span class="math inline">\(\to\)</span> <code>41</code></li>
 </ul>
 </div>
 </section>
-<section id="problem-3-most-common-letter" class="slide level2 scrollable">
-<h2>Problem 3: Most common letter</h2>
-<p>Write a Python function <code>find_most_common_letter</code> that takes a string and returns the most common letter in the string.</p>
-<ul>
-<li>Example Input: <code>"Hello, World!"</code></li>
-<li>Example Output: <code>'L'</code></li>
-</ul>
+<section id="problem-3" class="slide level2">
+<h2>Problem 3</h2>
+<p>What is the output of the following code?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>scores <span class="op">=</span> {<span class="st">"Alice"</span>: <span class="dv">85</span>, <span class="st">"Bob"</span>: <span class="dv">90</span>, <span class="st">"Charlie"</span>: <span class="dv">75</span>}</span>
+<span id="cb5-2"><a href=""></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href=""></a><span class="cf">for</span> key <span class="kw">in</span> scores:</span>
+<span id="cb5-4"><a href=""></a>    total <span class="op">+=</span> scores[key]</span>
+<span id="cb5-5"><a href=""></a><span class="bu">print</span>(total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <!-- -->
-<h3 id="solution-3">Solution:</h3>
-<div id="a9d7dc43" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">def</span> find_most_common_letter(string):</span>
-<span id="cb7-2"><a href=""></a>  letter_counts <span class="op">=</span> {} <span class="co"># empty dictionary of the characters and their counts</span></span>
-<span id="cb7-3"><a href=""></a>  <span class="cf">for</span> letter <span class="kw">in</span> string.upper(): <span class="co"># for each character in the string (upper case)</span></span>
-<span id="cb7-4"><a href=""></a>    <span class="cf">if</span> letter <span class="kw">in</span> letter_counts: <span class="co"># if the char in the dictionary</span></span>
-<span id="cb7-5"><a href=""></a>      letter_counts[letter] <span class="op">+=</span> <span class="dv">1</span> <span class="co"># increase the count by 1</span></span>
-<span id="cb7-6"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb7-7"><a href=""></a>      letter_counts[letter] <span class="op">=</span> <span class="dv">1</span> <span class="co"># otherwise, set the count to 1</span></span>
-<span id="cb7-8"><a href=""></a>  </span>
-<span id="cb7-9"><a href=""></a>  <span class="co"># Now let's find the largest count</span></span>
-<span id="cb7-10"><a href=""></a>  max_count <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="co"># set the max count to -1</span></span>
-<span id="cb7-11"><a href=""></a>  max_letter <span class="op">=</span> <span class="st">''</span> <span class="co"># set the letter with the max count to ''</span></span>
-<span id="cb7-12"><a href=""></a>  <span class="cf">for</span> letter <span class="kw">in</span> letter_counts:</span>
-<span id="cb7-13"><a href=""></a>    <span class="cf">if</span> letter_counts[letter] <span class="op">&gt;</span> max_count:</span>
-<span id="cb7-14"><a href=""></a>      max_count <span class="op">=</span> letter_counts[letter]</span>
-<span id="cb7-15"><a href=""></a>      max_letter <span class="op">=</span> letter</span>
-<span id="cb7-16"><a href=""></a>  </span>
-<span id="cb7-17"><a href=""></a>  <span class="cf">return</span> (max_letter)</span>
-<span id="cb7-18"><a href=""></a>  </span>
-<span id="cb7-19"><a href=""></a>find_most_common_letter(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'L'</code></pre>
+<h3 id="solution-2">Solution</h3>
+<div id="234bb3bc" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>250</code></pre>
 </div>
 </div>
-<h3 id="explanation">Explanation:</h3>
-<p>The task is to find the most common letter in a given string. The function <code>find_most_common_letter</code> counts the occurrences of each letter, ignoring case, and returns the letter with the highest frequency.</p>
-<h4 id="step-by-step-breakdown-3">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Initialization:</strong>
-<ul>
-<li>We initialize an empty dictionary <code>letter_counts</code> to store each letter and its corresponding count.</li>
-</ul></li>
-<li><strong>Loop through the string:</strong>
-<ul>
-<li>Convert the string to uppercase using <code>string.upper()</code> to handle case insensitivity.</li>
-<li>For each character:
-<ul>
-<li>If the character is already in <code>letter_counts</code>, increase its count by 1.</li>
-<li>If the character is not in the dictionary, add it with an initial count of 1.</li>
-</ul></li>
-</ul></li>
-<li><strong>Find the most common letter:</strong>
-<ul>
-<li>Initialize <code>max_count</code> to <code>-1</code> and <code>max_letter</code> to an empty string.</li>
-<li>Loop through the dictionary to find the letter with the highest count.</li>
-</ul></li>
-<li><strong>Return the result:</strong>
-<ul>
-<li>The function returns the letter with the maximum count.</li>
-</ul></li>
-</ol>
-<h4 id="example-walkthrough-1">Example Walkthrough:</h4>
-<p>For the input <code>"Hello, World!"</code>:</p>
-<ul>
-<li>After converting to uppercase: <code>"HELLO, WORLD!"</code></li>
-<li>The dictionary <code>letter_counts</code> will look like: <code>{'H': 1, 'E': 1, 'L': 3, 'O': 2, 'W': 1, 'R': 1, 'D': 1}</code>.</li>
-<li>The most common letter is <code>'L'</code> with a count of 3.</li>
-</ul>
 </div>
 </section>
-<section id="problem-4-recursive-sum" class="slide level2 scrollable">
-<h2>Problem 4: Recursive sum</h2>
-<p>Write a <em>recursive</em> Python function <code>recursive_sum</code> that takes a list of integers and returns the sum of all the numbers in the list.</p>
-<ul>
-<li>Example Input: <code>[1, 2, 3, 4, 5]</code></li>
-<li>Example Output: <code>15</code></li>
-</ul>
-<div class="fragment">
-<!-- -->
-<h3 id="solution-4">Solution:</h3>
-<div id="fbb9290e" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="kw">def</span> recursive_sum(numbers):</span>
-<span id="cb9-2"><a href=""></a>  <span class="cf">if</span> <span class="kw">not</span> numbers: <span class="co"># if the list of numbers is empty</span></span>
-<span id="cb9-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="co"># return zero</span></span>
-<span id="cb9-4"><a href=""></a>  <span class="cf">else</span>: <span class="co"># otherwise</span></span>
-<span id="cb9-5"><a href=""></a>    <span class="co"># return sum the first num in the list and </span></span>
-<span id="cb9-6"><a href=""></a>    <span class="co"># the sum of the remaining items in the list</span></span>
-<span id="cb9-7"><a href=""></a>    <span class="cf">return</span> numbers[<span class="dv">0</span>] <span class="op">+</span> recursive_sum(numbers[<span class="dv">1</span>:])</span>
-<span id="cb9-8"><a href=""></a>recursive_sum([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>15</code></pre>
+<section id="problem-4" class="slide level2">
+<h2>Problem 4</h2>
+<p>What is the output of the following code?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>grades <span class="op">=</span> {<span class="st">"John"</span>: [<span class="dv">80</span>, <span class="dv">85</span>], <span class="st">"Alice"</span>: [<span class="dv">90</span>, <span class="dv">95</span>], <span class="st">"Bob"</span>: [<span class="dv">70</span>, <span class="dv">75</span>]}</span>
+<span id="cb7-2"><a href=""></a><span class="cf">for</span> student <span class="kw">in</span> grades:</span>
+<span id="cb7-3"><a href=""></a>    grades[student].append(<span class="bu">sum</span>(grades[student]) <span class="op">/</span> <span class="bu">len</span>(grades[student]))</span>
+<span id="cb7-4"><a href=""></a><span class="bu">print</span>(grades)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="solution-3">Solution</h3>
+<div id="f72bd9cf" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>{'John': [80, 85, 82.5], 'Alice': [90, 95, 92.5], 'Bob': [70, 75, 72.5]}</code></pre>
 </div>
-</div>
-<h3 id="explanation-1">Explanation:</h3>
-<p>The task is to calculate the sum of a list of integers using recursion. The function <code>recursive_sum</code> achieves this by breaking down the problem into smaller subproblems.</p>
-<h4 id="step-by-step-breakdown-4">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Base Case:</strong>
-<ul>
-<li>If the list <code>numbers</code> is empty (<code>not numbers</code>), the sum is <code>0</code>. This is the base case for the recursion, stopping the function when no numbers are left to sum.</li>
-</ul></li>
-<li><strong>Recursive Case:</strong>
-<ul>
-<li>If the list is not empty, the function takes the first number in the list (<code>numbers[0]</code>) and adds it to the result of a recursive call on the rest of the list (<code>numbers[1:]</code>).</li>
-<li>This recursive process continues until the base case is reached (an empty list).</li>
-</ul></li>
-<li><strong>Return the Result:</strong>
-<ul>
-<li>Each recursive call returns a partial sum, and when the base case is reached, the accumulated sums are returned all the way back up the call stack.</li>
-</ul></li>
-</ol>
-<h4 id="example-walkthrough-2">Example Walkthrough:</h4>
-<p>For the input <code>[1, 2, 3, 4, 5]</code>:</p>
-<ul>
-<li>The function first returns <code>1 + recursive_sum([2, 3, 4, 5])</code>.</li>
-<li>Then it returns <code>2 + recursive_sum([3, 4, 5])</code>, and so on, until it reaches the empty list and returns <code>0</code>.</li>
-<li>The final result is <code>1 + 2 + 3 + 4 + 5 = 15</code>.</li>
-</ul>
 </div>
 </section>
-<section id="problem-5-sum-of-squares" class="slide level2 scrollable">
-<h2>Problem 5: Sum of Squares</h2>
-<p>Write a Python function <code>sum_of_squares</code> that takes a list of numbers and returns the sum of their squares.</p>
-<ul>
-<li>Example Input: <code>[1, 2, 3]</code></li>
-<li>Example Output: <code>14</code></li>
-</ul>
+<section id="problem-5" class="slide level2">
+<h2>Problem 5</h2>
+<p>What is the output of the following code?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="kw">def</span> mystery(n):</span>
+<span id="cb9-2"><a href=""></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb9-3"><a href=""></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb9-5"><a href=""></a>        <span class="cf">return</span> n <span class="op">+</span> mystery(n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb9-6"><a href=""></a></span>
+<span id="cb9-7"><a href=""></a><span class="bu">print</span>(mystery(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <!-- -->
-<h3 id="solution-5">Solution:</h3>
-<div id="1045b629" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">def</span> sum_of_squares(numbers):</span>
-<span id="cb11-2"><a href=""></a>    <span class="cf">return</span> <span class="bu">sum</span>([num<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> num <span class="kw">in</span> numbers])</span>
-<span id="cb11-3"><a href=""></a></span>
-<span id="cb11-4"><a href=""></a>sum_of_squares([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>14</code></pre>
+<h3 id="solution-4">Solution</h3>
+<div id="243d7694" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>9</code></pre>
 </div>
 </div>
-<h3 id="explanation-2">Explanation:</h3>
-<p>The task is to calculate the sum of the squares of a list of numbers. The function <code>sum_of_squares</code> achieves this using list comprehension and the built-in <code>sum()</code> function.</p>
-<h4 id="step-by-step-breakdown-5">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>List Comprehension:</strong>
-<ul>
-<li><code>[num**2 for num in numbers]</code> creates a list of the squares of each number in the input list <code>numbers</code>. For each <code>num</code> in the list, <code>num**2</code> computes the square of that number.</li>
-</ul></li>
-<li><strong>Sum of the Squares:</strong>
-<ul>
-<li>The <code>sum()</code> function then adds up all the squared numbers in the list produced by the list comprehension.</li>
-</ul></li>
-<li><strong>Return the Result:</strong>
-<ul>
-<li>The function returns the sum of the squares of all numbers in the input list.</li>
-</ul></li>
-</ol>
-<h4 id="example-walkthrough-3">Example Walkthrough:</h4>
-<p>For the input <code>[1, 2, 3]</code>: - The list comprehension <code>[num**2 for num in numbers]</code> produces <code>[1, 4, 9]</code>. - The <code>sum()</code> function adds these values: <code>1 + 4 + 9 = 14</code>.</p>
-</div>
-</section>
-<section id="problem-6-unique-words" class="slide level2 scrollable">
-<h2>Problem 6: Unique words</h2>
-<p>Write a Python function <code>count_unique_words</code> that takes a list of strings and returns the number of unique words in the list.</p>
-<ul>
-<li>Example Input: <code>['apple', 'banana', 'apple', 'cherry', 'banana', 'date']</code></li>
-<li>Example Output: <code>4</code></li>
-</ul>
-<div class="fragment">
-<!-- -->
-<h3 id="solution-6">Solution:</h3>
-<div id="bd5c21b7" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> count_unique_words(words):</span>
-<span id="cb13-2"><a href=""></a>  unique_words <span class="op">=</span> [] <span class="co"># create an empty list to store the unique words</span></span>
-<span id="cb13-3"><a href=""></a>  <span class="cf">for</span> word <span class="kw">in</span> words: <span class="co"># for each word in the original list of words</span></span>
-<span id="cb13-4"><a href=""></a>    <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> unique_words: <span class="co"># if the word is not the unique list</span></span>
-<span id="cb13-5"><a href=""></a>      unique_words.append(word) <span class="co"># add that word to the unique list</span></span>
-<span id="cb13-6"><a href=""></a>  <span class="cf">return</span> <span class="bu">len</span>(unique_words) <span class="co"># return the length of the list of the unique words</span></span>
-<span id="cb13-7"><a href=""></a></span>
-<span id="cb13-8"><a href=""></a>count_unique_words([<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'apple'</span>, <span class="st">'cherry'</span>, <span class="st">'banana'</span>, <span class="st">'date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>4</code></pre>
-</div>
-</div>
-<h3 id="explanation-for-the-solution-2">Explanation for the Solution:</h3>
-<p>The task is to count the number of unique words in a given list of strings. The function <code>count_unique_words</code> uses a simple approach by checking each word and building a list of unique words.</p>
-<h4 id="step-by-step-breakdown-6">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Initialization:</strong>
-<ul>
-<li>We start by creating an empty list <code>unique_words</code> that will store the words that appear only once.</li>
-</ul></li>
-<li><strong>Loop through the list of words:</strong>
-<ul>
-<li>For each word in the input list <code>words</code>, check if the word is already in the <code>unique_words</code> list.</li>
-<li>If the word is not in the list, it is added to the <code>unique_words</code> list.</li>
-</ul></li>
-<li><strong>Return the result:</strong>
-<ul>
-<li>After processing all words, the length of the <code>unique_words</code> list is returned, which represents the number of unique words.</li>
-</ul></li>
-</ol>
-</div>
-<div class="fragment">
-<!-- -->
-<h3 id="solution-2-1">Solution #2:</h3>
-<div id="b92ed8c5" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">def</span> count_unique_words_v2(words):</span>
-<span id="cb15-2"><a href=""></a>  <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">set</span>(words)) <span class="co"># return the length of the set version of the list words</span></span>
-<span id="cb15-3"><a href=""></a></span>
-<span id="cb15-4"><a href=""></a>count_unique_words_v2([<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'apple'</span>, <span class="st">'cherry'</span>, <span class="st">'banana'</span>, <span class="st">'date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>4</code></pre>
-</div>
-</div>
-<h3 id="explanation-for-solution-2-1">Explanation for Solution #2:</h3>
-<p>This version of the solution leverages Python’s built-in <code>set</code> data structure, which automatically removes duplicates, making the process more efficient.</p>
-<h4 id="step-by-step-breakdown-7">Step-by-Step Breakdown:</h4>
-<ol type="1">
-<li><strong>Convert List to Set:</strong>
-<ul>
-<li>The function converts the input list <code>words</code> to a set using <code>set(words)</code>. Since sets only store unique elements, any duplicate words are automatically removed.</li>
-</ul></li>
-<li><strong>Return the Length of the Set:</strong>
-<ul>
-<li>The length of the set is then calculated using <code>len()</code>, which gives the number of unique words.</li>
-</ul></li>
-</ol>
+<h3 id="explanation-2">Explanation</h3>
+<p>The recursion adds values <code>5</code>, <code>3</code>, and <code>1</code>, resulting in <code>9</code>.</p>
 </div>
 <div class="quarto-auto-generated-content">
+<p><img src="images/auc.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -773,19 +505,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="python5_functions_problemset_part1_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="python6_tracing_problemset_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
