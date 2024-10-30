@@ -1,0 +1,335 @@
+---
+title: "Python Packages"
+format:
+  revealjs:
+    slide-number: true
+    transition: 'slide'
+    preview-links: true
+    scrollable: true
+    title-slide-attributes:
+      data-background-image: ""
+      class: "title-slide-with-logo"
+    logo: "images/auc.png"
+    width: 1280
+    height: 720
+    margin: 0.1
+    minScale: 0.2
+    maxScale: 1.0
+---
+
+## Packages for Data Analysis
+
+We will be discussing key Python packages that are commonly used for data analysis such as **pandas**, **matplotlib**, and **numpy**.
+
+![Python Packages](images/packages.png)
+
+## Packages in Python
+
+- In Python, a *package* is a collection of modules organized within a directory structure, allowing developers to logically group related code components, such as functions, classes, and constants, into a single namespace. 
+- This structure enables modularity and reuse across projects, making code easier to maintain, import, and share with others.
+- The most common way to import a package is using the `import` statement followed by the name of the package.
+- For example, to import the `math` package, we would use the following statement:
+
+```{python}
+#| echo: true
+import math
+
+math.sqrt(25)
+```
+
+##  Importing Packages with Aliases
+
+- We can also import a package with an *alias* using the `as` keyword.
+- This can be useful when we want to use a shorter name for a package in our code.
+- For example, to import the `math` package with the alias `m`, we would use the following statement:
+
+```{python}
+#| echo: true
+import math as m
+
+m.sqrt(25)
+```
+
+
+## Installing a package
+
+- If a package is not already installed, we can install within our notebook using:
+
+```python
+%pip install package_name
+```
+- Example to install **`pandas`**:
+
+```python
+%pip install pandas
+```
+
+![](images/pip_install_pandas.png)
+(Note: `pip` stands for "Pip Installs Packages")
+
+## `Pandas`
+
+- `Pandas` is a Python package that is used for data manipulation and analysis.
+- It provides data structures for efficiently storing and manipulating large datasets.
+
+
+![Pandas](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1024px-Pandas_logo.svg.png)
+
+## The Titanic Dataset
+
+![Titantic departing Southampton on April 10, 1912](https://media.gettyimages.com/id/188056589/photo/digitally-restored-vintage-maritime-history-photo-of-the-rms-titantic-departing-southampton-on.jpg?s=2048x2048&w=gi&k=20&c=UUgRikYArk0uhrOMQbs994YaoRuCWU4TrcsjYGI8Tj0=)
+
+- The Titanic dataset contains data on the passengers of Titanic, including their survival status, age, gender, class, and other attributes.
+
+
+## Loading a CSV file with Pandas
+
+```{python}
+#| echo: true
+import pandas as pd
+
+url = 'https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv'
+titanic = pd.read_csv(url) # Load Titanic dataset
+
+titanic.shape # The dimension of the dataframe (the table)
+```
+
+
+## Viewing Data 1/2
+
+- Once we have loaded data into a `DataFrame`, we can start exploring it using various Pandas functions.
+- The `head()` and `tail` functions are useful functions for quickly viewing the first and last few rows of a `DataFrame`.
+
+```{python}
+#| echo: true
+titanic.head() # Print the first few rows of the DataFrame
+```
+
+## Viewing Data 2/2
+
+```{python}
+#| echo: true
+titanic.tail() # Print the last few rows of the DataFrame
+```
+
+
+## Basic Statistics
+
+- We can use `Pandas` to calculate basic statistics on our data, such as mean, median, and standard deviation.
+
+- The `describe()` function provides a summary of the basic statistics of each column in the DataFrame.
+
+```{python}
+#| echo: true
+titanic.describe()
+```
+
+
+## Indexing and Selection 1/2
+
+- We can use indexing and selection to retrieve specific data from a `DataFrame`.
+- The `iloc[]` function is used for integer-based indexing, where we can specify the row and column numbers.
+
+```{python}
+#| echo: true
+titanic.iloc[2:5]
+```
+
+## Indexing and Selection 2/2
+
+- The `loc[]` function is used for label-based indexing, where we can specify the row and column labels.
+
+```{python}
+#| echo: true
+titanic.loc[2:5, ['Survived', 'Pclass']]
+```
+
+
+## Filtering Data
+
+- We can use Boolean indexing to filter data in a DataFrame based on a certain condition.
+
+- For example, we can filter the Titanic dataset to only show passengers who survived:
+
+```{python}
+#| echo: true
+# Filter Titanic dataset to only show passengers who survived
+survivors = titanic[titanic['Survived'] == 1]
+survivors.head()
+```
+
+## Grouping and Aggregation
+
+- Grouping and aggregation are powerful tools for summarizing and analyzing data in a DataFrame.
+- We can group data in a DataFrame based on one or more columns, and then apply an aggregation function like `sum()`, `mean()`, or `count()`.
+- For example, we can group the Titanic dataset by ticket class and calculate the average age for each class:
+
+```{python}
+#| echo: true
+# Group Titanic dataset by ticket class and calculate the average age for each class
+age_by_class = titanic.groupby('Pclass')['Age'].mean()
+age_by_class
+```
+
+
+## `Matplotlib`
+
+- `Matplotlib` is a Python package used for creating data visualizations.
+- It provides a wide range of tools for creating line plots, bar plots, histograms, scatterplots
+
+![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/1024px-Matplotlib_logo.svg.png)
+
+## Plotting a Simple Line Graph with `Matplotlib`
+
+![Power Station](https://media.gettyimages.com/id/1445772340/photo/drone-point-view-of-power-station.jpg?s=2048x2048&w=gi&k=20&c=qMVveLgAq5dCTOmPQ90ZSIAEJcQhuoOC9-jyRSBcFxM=)
+
+- Let us start with an example of how to use Matplotlib to create a simple line graph for global CO<sub>2</sub> emissions from 1960 to 2014.
+
+- Here is the code to load the dataset:
+
+```{python}
+#| echo: true
+import pandas as pd
+
+url = 'https://raw.githubusercontent.com/datasets/co2-fossil-global/master/global.csv'
+co2 = pd.read_csv(url)
+
+co2.head()
+```
+
+:::{.fragment}
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.plot(co2['Year'], co2['Total'])
+plt.xlabel('Year')
+plt.ylabel('CO2 Emissions (million metric tons)')
+plt.title('Global CO2 Emissions from Fossil Fuels')
+plt.show()
+```
+
+:::
+
+## Creating a Bar Plot with `Matplotlib`
+
+- We can also use `Matplotlib` to create a bar plot.
+- Here is the code to load the dataset and create a bar plot:
+
+```{python}
+#| echo: true
+plt.bar(age_by_class.index, age_by_class.values)
+
+plt.title('Mean Age by Class')
+plt.xlabel('Class')
+plt.ylabel('Mean Age (Years)')
+
+plt.show()
+```
+
+
+## `Numpy`
+
+- `NumPy` is a Python package used for numerical computing.
+- It provides a wide range of tools for working with arrays and matrices.
+- `NumPy` is used in many scientific computing applications.
+
+![NumPy](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1024px-NumPy_logo_2020.svg.png)
+
+## Creating a `NumPy` Array
+
+- To create a `NumPy` array, we can use the `numpy.array()` function.
+- Here is the code to create a `NumPy` array:
+
+```{python}
+#| echo: true
+import numpy as np
+
+data = [1, 2, 3, 4, 5]
+arr = np.array(data)
+arr
+```
+
+## `NumPy` Array Operations
+
+- We can perform various operations on `NumPy` arrays.
+- For example, we can add, subtract, multiply, and divide arrays.
+- Here is the code to add two arrays:
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr3 = arr1 + arr2
+arr3
+```
+
+
+## `NumPy` Array Indexing and Slicing
+
+- We can also index and slice `NumPy` arrays.
+- Here is the code to create a `NumPy` array and slice it:
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+arr[2]
+```
+
+```{python}
+#| echo: true
+arr[1:4]
+```
+
+
+## `NumPy` Broadcasting
+
+- **Broadcasting** is a powerful `NumPy` feature that allows us to perform operations on arrays of different shapes.
+- Here is an example:
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Create a 2D array of shape (3, 4)
+arr1 = np.array([[1, 2, 3, 4],
+                 [5, 6, 7, 8],
+                 [9, 10, 11, 12]])
+
+# Create a 1D array of shape (4,)
+arr2 = np.array([2, 2, 2, 2])
+
+# Add the 1D array to each row of the 2D array using broadcasting
+result = arr1 + arr2
+
+print(result)
+```
+
+
+- In this example, we have a 2D `NumPy` array `arr1` with shape `(3, 4)` and a 1D NumPy array `arr2` with shape `(4, )`. We want to add the values in `arr2` to each row of `arr1`.
+
+- Normally, this operation would not be possible because the two arrays have different shapes.
+
+- However, `NumPy` broadcasting allows us to perform this operation by "stretching" or "broadcasting" the 1D array to match the shape of the 2D array.
+
+- In this case, `NumPy` broadcasts the 1D array `arr2` to a 2D array of shape `(3, 4)` by duplicating its values along the first dimension. This allows us to perform *element-wise* addition between the two arrays.
+
+## `Seaborn`
+
+- `Seaborn` is a Python data visualization package based on `Matplotlib`.
+- It provides a high-level interface for creating informative and attractive statistical graphics.
+
+![Seaborn](https://seaborn.pydata.org/_static/logo-wide-lightbg.svg)
+
+- `Seaborn` works well with pandas dataframes and provides tools for visualizing relationships between variables.
+
+```{python}
+#| echo: true
+import seaborn as sns
+sns.countplot (data = titanic, x = 'Survived', hue = 'Sex')
+```
