@@ -17,7 +17,7 @@ format:
     maxScale: 1.0
 ---
 
-## Packages for Data Analysis
+# Packages for Data Analysis
 
 We will be discussing key Python packages that are commonly used for data analysis such as **pandas**, **matplotlib**, **seaborn**, and **numpy**.
 
@@ -51,7 +51,7 @@ m.sqrt(25)
 ```
 
 
-## Installing a package
+## Installing a Package
 
 - If a package is *not* already installed, we can install within our notebook/environment using the following **command line**:
 
@@ -70,13 +70,13 @@ m.sqrt(25)
 - `pip` stands for 'Pip Installs Packages,' a recursive acronym.
 - `pip` is a command-line tool (not a Python statement) typically run in the shell on macOS or Linux or in PowerShell on Windows. However, it can also be run within Jupyter notebooks using [magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html), specifically by prefixing it with `%`.
 
-## `Pandas`
+# `Pandas`
 
 - `Pandas` is a Python package that is used for data manipulation and analysis.
 - It provides data structures for efficiently storing and manipulating large datasets.
 
 
-![Pandas](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1024px-Pandas_logo.svg.png)
+![Pandas](images/pandas.png)
 
 ## The Titanic Dataset
 
@@ -148,6 +148,20 @@ titanic.iloc[2:5]
 titanic.loc[2:5, ['Survived', 'Pclass']]
 ```
 
+## Comparison of `.loc` and `.iloc` in `pandas` `DataFrame`
+
+| Feature                     | `.loc` (Label-based)                              | `.iloc` (Integer-based)                         |
+|-----------------------------|---------------------------------------------------|------------------------------------------------|
+| **Primary Use**             | Access data by row and column labels (names)      | Access data by row and column integer positions|
+| **Syntax**                  | `df.loc[row_label, column_label]`                 | `df.iloc[row_position, column_position]`       |
+| **Row/Column Identification** | Uses label names for rows and columns           | Uses integer positions (like list indexing)    |
+| **Indexing Type**           | **Label**-based (requires exact match for labels)     | **Integer**-based (`0`-based index like Python lists)|
+| **Row Selection**           | `df.loc['row_label']`                             | `df.iloc[row_position]`                        |
+| **Column Selection**        | `df.loc[:, 'column_label']`                       | `df.iloc[:, column_position]`                  |
+| **Single Value Access**     | `df.loc['row_label', 'column_label']`             | `df.iloc[row_position, column_position]`       |
+| **Range Slicing**           | Inclusive of the endpoint (e.g., `df.loc['A':'C']` includes both `A` and `C`) | Exclusive of the endpoint (e.g., `df.iloc[0:2]` includes only positions `0` and `1`) |
+| **Boolean Indexing**        | Works with Boolean masks for label-based filtering (e.g., `df.loc[df['Age'] > 25]`) | Not typically used with Boolean masks, though possible |
+
 
 ## Filtering Data
 
@@ -196,12 +210,12 @@ age_by_class
 
 - **Final output:** now, `Pclass` appears as a regular column, making it easier to interpret and manipulate.
 
-## `Matplotlib`
+# `Matplotlib`
 
 - `Matplotlib` is a Python package used for creating data visualizations.
 - It provides a wide range of tools for creating line plots, bar plots, histograms, scatterplots
 
-![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/1024px-Matplotlib_logo.svg.png)
+![Matplotlib](images/matplotlib.png)
 
 ## Plotting a Simple Line Graph with `Matplotlib`
 
@@ -222,19 +236,27 @@ co2.head()
 ```
 
 :::{.fragment}
-
+- Now, here is the code to create a line plot using `matplotlib`:
 ```{python}
 #| echo: true
 import matplotlib.pyplot as plt
+plt.plot(co2['Year'], co2['Total'])
+```
+:::
 
+:::{.fragment}
+- Let us add annotations to the plot:
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
 plt.plot(co2['Year'], co2['Total'])
 plt.xlabel('Year')
 plt.ylabel('CO2 Emissions (million metric tons)')
 plt.title('Global CO2 Emissions from Fossil Fuels')
 plt.show()
 ```
-
 :::
+
 
 ## Creating a Bar Plot with `Matplotlib`
 
@@ -252,12 +274,12 @@ plt.ylabel('Mean Age (Years)')
 plt.show()
 ```
 
-## `Seaborn`
+# `Seaborn`
 
 - `Seaborn` is a Python data visualization package based on `Matplotlib`.
 - It provides a high-level interface for creating informative and attractive statistical graphics.
 
-![Seaborn](https://seaborn.pydata.org/_static/logo-wide-lightbg.svg)
+![Seaborn](images/seaborn.png)
 
 - `Seaborn` works well with pandas dataframes and provides tools for visualizing relationships between variables.
 
@@ -289,7 +311,7 @@ normalized_counts.head()
 sns.barplot (data = normalized_counts, x = 'Pclass', y = "proportion", hue = 'Sex')
 ```
 
-## `Numpy`
+# `Numpy`
 
 - `NumPy` is a Python package used for numerical computing.
 - It provides a wide range of tools for working with arrays and matrices.
