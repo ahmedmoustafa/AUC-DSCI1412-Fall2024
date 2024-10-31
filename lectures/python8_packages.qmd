@@ -19,16 +19,16 @@ format:
 
 ## Packages for Data Analysis
 
-We will be discussing key Python packages that are commonly used for data analysis such as **pandas**, **matplotlib**, and **numpy**.
+We will be discussing key Python packages that are commonly used for data analysis such as **pandas**, **matplotlib**, **seaborn**, and **numpy**.
 
 ![Python Packages](images/packages.png)
 
 ## Packages in Python
 
-- In Python, a *package* is a collection of modules organized within a directory structure, allowing developers to logically group related code components, such as functions, classes, and constants, into a single namespace. 
+- In Python, a *package* is a collection of modules organized within a directory structure, allowing grouping related code components, such as functions, classes, and constants, into a single namespace. 
 - This structure enables modularity and reuse across projects, making code easier to maintain, import, and share with others.
 - The most common way to import a package is using the `import` statement followed by the name of the package.
-- For example, to import the `math` package, we would use the following statement:
+- For example, to import the `math` package:
 
 ```{python}
 #| echo: true
@@ -53,9 +53,9 @@ m.sqrt(25)
 
 ## Installing a package
 
-- If a package is not already installed, we can install within our notebook using:
+- If a package is *not* already installed, we can install within our notebook/environment using the following **command line**:
 
-```python
+```bash
 %pip install package_name
 ```
 - Example to install **`pandas`**:
@@ -65,7 +65,10 @@ m.sqrt(25)
 ```
 
 ![](images/pip_install_pandas.png)
-(Note: `pip` stands for "Pip Installs Packages")
+**Notes:**
+
+- `pip` stands for 'Pip Installs Packages,' a recursive acronym.
+- `pip` is a command-line tool (not a Python statement) typically run in the shell on macOS or Linux or in PowerShell on Windows. However, it can also be run within Jupyter notebooks using [magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html), specifically by prefixing it with `%`.
 
 ## `Pandas`
 
@@ -95,17 +98,19 @@ titanic.shape # The dimension of the dataframe (the table)
 ```
 
 
-## Viewing Data 1/2
+## Viewing `DataFrame`
 
 - Once we have loaded data into a `DataFrame`, we can start exploring it using various Pandas functions.
 - The `head()` and `tail` functions are useful functions for quickly viewing the first and last few rows of a `DataFrame`.
+
+  - `head()` for the top records in the `DataFrame`:
 
 ```{python}
 #| echo: true
 titanic.head() # Print the first few rows of the DataFrame
 ```
 
-## Viewing Data 2/2
+  - `tail()` for the bottom records in the `DataFrame`:
 
 ```{python}
 #| echo: true
@@ -123,7 +128,6 @@ titanic.tail() # Print the last few rows of the DataFrame
 #| echo: true
 titanic.describe()
 ```
-
 
 ## Indexing and Selection 1/2
 
@@ -160,9 +164,14 @@ survivors.head()
 
 ## Grouping and Aggregation
 
-- Grouping and aggregation are powerful tools for summarizing and analyzing data in a DataFrame.
-- We can group data in a DataFrame based on one or more columns, and then apply an aggregation function like `sum()`, `mean()`, or `count()`.
-- For example, we can group the Titanic dataset by ticket class and calculate the average age for each class:
+- Grouping: Categorizes data based on one or more columns, creating distinct groups within the dataset.
+- Aggregation: Summarizes each group using functions like `sum()`, `mean()`, or `count()`, revealing trends within categories.
+
+### Why Use Grouping and Aggregation?
+
+- Grouping and summarizing large datasets make it easier to compare and analyze patterns across different categories.
+- Commonly used to calculate summary statistics, such as averages or totals, within groups.
+- **Example:** to see grouping and summarization in action, we will group the Titanic dataset by ticket class (`Pclass`) to calculate the average age of passengers in each class.
 
 ```{python}
 #| echo: true
@@ -171,6 +180,21 @@ age_by_class = titanic.groupby('Pclass')['Age'].mean()
 age_by_class
 ```
 
+- Here, `Pclass()` becomes the **index** in the resulting `DataFrame`. While this is useful for quick summaries, it can sometimes make further data manipulation less intuitive.
+
+- Why Use `reset_index()`?
+  - Applying `reset_index()` converts the **index** back into a regular column.
+  - This makes the `DataFrame` easier to read and more convenient for additional operations (e.g., merging with other `DataFrame` or plotting).
+- So, let us apply `reset_index()` to make `Pclass` a *standard* column:
+
+```{python}
+#| echo: true
+# Grouping, aggregation, and reset index
+age_by_class = titanic.groupby('Pclass')['Age'].mean().reset_index()
+age_by_class
+```
+
+- **Final output:** now, `Pclass` appears as a regular column, making it easier to interpret and manipulate.
 
 ## `Matplotlib`
 
@@ -219,7 +243,7 @@ plt.show()
 
 ```{python}
 #| echo: true
-plt.bar(age_by_class.index, age_by_class.values)
+plt.bar(age_by_class['Pclass'], age_by_class['Age'])
 
 plt.title('Mean Age by Class')
 plt.xlabel('Class')
@@ -228,6 +252,42 @@ plt.ylabel('Mean Age (Years)')
 plt.show()
 ```
 
+## `Seaborn`
+
+- `Seaborn` is a Python data visualization package based on `Matplotlib`.
+- It provides a high-level interface for creating informative and attractive statistical graphics.
+
+![Seaborn](https://seaborn.pydata.org/_static/logo-wide-lightbg.svg)
+
+- `Seaborn` works well with pandas dataframes and provides tools for visualizing relationships between variables.
+
+## Titanic: Survived vs. Sex
+
+```{python}
+#| echo: true
+import seaborn as sns
+sns.countplot (data = titanic, x = 'Survived', hue = 'Sex')
+```
+
+## Titanic: Age vs. Class vs. Age
+
+```{python}
+#| echo: true
+sns.boxplot (data = titanic, x = 'Pclass', y = "Age", hue = 'Sex')
+```
+
+## Titanic: Sex Ratio vs. Class
+
+```{python}
+#| echo: true
+normalized_counts = titanic[['Pclass', 'Sex']].groupby(['Pclass']).value_counts(normalize=True).reset_index()
+normalized_counts.head()
+```
+
+```{python}
+#| echo: true
+sns.barplot (data = normalized_counts, x = 'Pclass', y = "proportion", hue = 'Sex')
+```
 
 ## `Numpy`
 
@@ -318,18 +378,3 @@ print(result)
 - However, `NumPy` broadcasting allows us to perform this operation by "stretching" or "broadcasting" the 1D array to match the shape of the 2D array.
 
 - In this case, `NumPy` broadcasts the 1D array `arr2` to a 2D array of shape `(3, 4)` by duplicating its values along the first dimension. This allows us to perform *element-wise* addition between the two arrays.
-
-## `Seaborn`
-
-- `Seaborn` is a Python data visualization package based on `Matplotlib`.
-- It provides a high-level interface for creating informative and attractive statistical graphics.
-
-![Seaborn](https://seaborn.pydata.org/_static/logo-wide-lightbg.svg)
-
-- `Seaborn` works well with pandas dataframes and provides tools for visualizing relationships between variables.
-
-```{python}
-#| echo: true
-import seaborn as sns
-sns.countplot (data = titanic, x = 'Survived', hue = 'Sex')
-```
