@@ -1,0 +1,180 @@
+---
+title: "Maternal Smoking"
+format:
+  revealjs:
+    slide-number: true
+    preview-links: true
+    scrollable: true
+    title-slide-attributes:
+      data-background-image: ""
+      class: "title-slide-with-logo"
+    logo: "images/auc.png"
+---
+
+# Maternal Smoking
+::::{.columns}
+:::{.column width="70%"}
+<!-- Main visual representation of maternal smoking behavior -->
+![](https://media.gettyimages.com/id/702551325/photo/pregnant-woman-finishing-cigarette.jpg?s=2048x2048&w=gi&k=20&c=zUKT8g49WaCFyNnuyvyYRFTAuLB74IEwn9JQ8hg0Li0=)
+:::
+:::{.column width="30%"}
+<!-- QR code image that links to relevant resources or additional information on maternal smoking -->
+![](images/qr_maternal_smoking.svg)
+:::
+::::
+
+<!-- Link to further resources on maternal smoking -->
+[https://bit.ly/maternal-smoking](https://bit.ly/maternal-smoking)
+
+## Import Packages
+
+```{python}
+#| echo: true
+# Importing the necessary libraries
+import pandas as pd # 'pandas' for data manipulation and analysis, with alias 'pd'
+import seaborn as sns # 'seaborn' for statistical data visualization, with alias 'sns'
+```
+
+## Load the Dataset
+
+```{python}
+#| echo: true
+# Load the dataset from a given URL in a tab-separated format (TSV)
+# This will store the data in a DataFrame named 'df' for easy manipulation
+df = pd.read_table("https://raw.githubusercontent.com/ahmedmoustafa/datasets/refs/heads/main/maternal_smoking/maternal_smoking.tsv")
+
+# Display the dimensions of the dataset as (rows, columns)
+df.shape
+```
+
+## Explore the dataset
+
+```{python}
+#| echo: true
+# Display the first five rows of the dataset to understand its structure and contents
+df.head()
+```
+
+## Check the data types of the columns
+
+```{python}
+#| echo: true
+# Display the data types of each column to check if they are appropriate for analysis
+df.dtypes
+```
+
+## Adjust the data type of the categorical columns
+
+```{python}
+#| echo: true
+# Convert certain columns to 'category' data type to optimize memory usage and improve processing efficiency
+df = df.astype({
+    'parity': 'category',       # Number of previous pregnancies (categorical)
+    'mom.race': 'category',      # Mother's race (categorical)
+    'mom.edu': 'category',       # Mother's education level (categorical)
+    'dad.race': 'category',      # Father's race (categorical)
+    'dad.edu': 'category',       # Father's education level (categorical)
+    'marital': 'category',       # Marital status (categorical)
+    'income': 'category',        # Income level (categorical)
+    'smoke': 'category'          # Smoking status (categorical)
+})
+
+# Check if the data types have been correctly updated
+df.dtypes
+```
+
+## Adjust the data type of the columns 2/2
+
+```{python}
+#| echo: true
+# Define an ordered categorical data type for the 'smoke' column
+# where different smoking behaviors are arranged in a logical sequence
+from pandas.api.types import CategoricalDtype
+
+# Defining the ordered sequence for smoking habits
+smoking_order = ['never', 'once_not_now', 'until_pregnancy', 'now']
+
+# Creating a categorical data type with the specified order
+smoking_type = CategoricalDtype(categories=smoking_order, ordered=True)
+smoking_type
+```
+
+```{python}
+#| echo: true
+# Apply the ordered categorical type to the 'smoke' column
+df['smoke'] = df['smoke'].astype(smoking_type)
+
+# Confirm that the data type of 'smoke' is now an ordered category
+df.dtypes
+```
+
+## Q1. How many unique entries are in the following categorical column (`mom.race` and `smoke`)?
+
+### Method 1: Using `.unique()` and `.nunique()` functions
+
+```{python}
+#| echo: true
+# Display the unique categories in the `mom.race` column
+df['mom.race'].unique()
+```
+
+```{python}
+#| echo: true
+# Count the number of unique categories in the `mom.race` column
+df['mom.race'].nunique()
+```
+
+```{python}
+#| echo: true
+# Display the unique categories in the `smoke` column
+df['smoke'].unique()
+```
+
+```{python}
+#| echo: true
+# Count the number of unique categories in the `smoke` column
+df['smoke'].nunique()
+```
+
+
+### Method 2: Using `.value_counts()` for a frequency distribution
+
+```{python}
+#| echo: true
+# Get the frequency distribution of each category in the `smoke` column and reset the index
+df['smoke'].value_counts().reset_index()
+```
+
+```{python}
+#| echo: true
+# Get the frequency distribution of each category in the `mom.race` column and reset the index
+df['mom.race'].value_counts().reset_index()
+```
+
+### Method 3: Using `set` for unique values in columns
+
+```{python}
+#| echo: true
+# Use set to get unique categories in the `mom.race` column
+set(df['mom.race'])
+```
+
+```{python}
+#| echo: true
+# Use set and len to count the unique categories in the `mom.race` column
+len(set(df['mom.race']))
+```
+
+
+```{python}
+#| echo: true
+# Use set to get unique categories in the `smoke` column
+set(df['smoke'])
+```
+
+```{python}
+#| echo: true
+# Use set and len to count the unique categories in the `smoke` column
+len(set(df['smoke']))
+```
+
