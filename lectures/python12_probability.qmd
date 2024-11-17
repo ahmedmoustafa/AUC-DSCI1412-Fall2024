@@ -1,5 +1,5 @@
 ---
-title: "Probability with Python"
+title: "Probability"
 format:
   revealjs:
     slide-number: true
@@ -17,9 +17,211 @@ format:
     maxScale: 1.0
 ---
 
-# The `random` Package in Python
+# Probability Refresher
 
-![Random](https://media.gettyimages.com/id/172858773/photo/says.jpg?s=2048x2048&w=gi&k=20&c=f1K7iXQpwcYdWdMwcQbH32avv-hUmyPzISstXdBbIF0=)
+![Rolling dice](https://media.gettyimages.com/id/172858773/photo/says.jpg?s=2048x2048&w=gi&k=20&c=f1K7iXQpwcYdWdMwcQbH32avv-hUmyPzISstXdBbIF0=)
+
+
+## Basic Definitions
+
+- **Probability**: A measure of the likelihood of an event happening.
+- **Experiment**: An action with a measurable outcome (e.g., rolling a die).
+- **Outcome**: The result of a single trial of an experiment.
+- **Sample Space (S or $\Omega$ ) **: All possible outcomes of an experiment.
+- **Event**: A subset of the sample space.
+
+- **Example**: Tossing a coin:
+  - **Experiment**: Tossing the coin.
+  - **Sample Space**: {Heads, Tails}.
+  - **Event**: Getting Heads.
+
+## Examples of Sample Space
+
+::: {.incremental}
+- Throwing a dice:
+  - $\Omega$ = {1, 2, 3, 4, 5, 6}
+- Tossing a coin three times:
+  - $\Omega$ = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}
+- Tossing a coin three times and observe the number of H’s:
+  - $\Omega$ = {0, 1, 2, 3}
+- Tossing a coin until we obtain a Head:
+  - $\Omega$ = {H, TH, TTH, TTTH, …}; (infinite)
+:::
+
+## Sets and Set Operations
+
+Introduction to sets using Venn diagrams.
+
+- **Union (A ∪ B)**: Elements in either set A, set B, or both.
+- **Intersection (A ∩ B)**: Elements common to both sets.
+- **Complement (A')**: Elements not in set A.
+
+**Example**: Given a set of numbers from 1 to 10, find the union, intersection, and complement for subsets A = {odd numbers} and B = {numbers less than 5}.
+
+::: {.incremental}
+   - **Union (A ∪ B)**: {1, 2, 3, 4, 5, 7, 9}
+   - **Intersection (A ∩ B)**: {1, 3}
+   - **Complement of A (A')**: {2, 4, 6, 8, 10}
+   - **Complement of B (B')**: {5, 6, 7, 8, 9, 10}
+:::
+
+## Probability Rules
+
+-   **Addition Rule**: $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
+-   **Multiplication Rule**: $P(A ∩ B) = P(A) \times P(B | A)$
+-   **Complementary Rule**: $P(A') = 1 - P(A)$
+
+**Example**: A box contains 2 red balls, 3 blue balls, and 5 green balls. What is the probability of drawing a red or a blue ball?
+
+::: {.fragment}
+- **Total balls** = 10
+- **Red balls (A)** = 2, **Blue balls (B)** = 3
+- **P(A)** = 2/10, **P(B)** = 3/10
+- **P(A ∪ B)** = P(A) + P(B) = 2/10 + 3/10 = 5/10 = 1/2
+:::
+
+## Conditional Probability
+
+Conditional Probability is the probability of an event occurring given that another event has already occurred.
+
+-   **Formula**: $P(A | B) = \frac{P(A ∩ B)}{P(B)}$
+-   Example: Probability of drawing an ace after a king from a deck of cards.
+
+**Example**: What is the probability of drawing 2 aces in a row from a deck of 52 cards?
+
+::: {.fragment}
+- **P(Ace on first draw)** = $\frac{4}{52}$
+- **P(Ace on second draw given first was Ace)** = $\frac{3}{51}$
+- **P(Two Aces in a row)** = $P(\text{First Ace}) \times P(\text{Second Ace} ∣ \text{First Ace})$
+- **P(Two Aces in a row)** = $\frac{4}{52} \times \frac{3}{51} ≈ 0.0045$
+- **Explanation**: The probability of each event is conditioned on the preceding draw reducing the total number of cards and aces.
+:::
+
+# Probability Exercises
+
+## Exercise #1
+
+If a woman takes an early pregnancy test, she will either test positive, meaning that the test says she is pregnant, or test negative, meaning that the test says she is not pregnant. Suppose that if a woman really is pregnant, there is a 98% chance that she will test positive. Also suppose that if a woman really is not pregnant, there is a 99% chance that she will test negative.
+
+a) Suppose that 1,000 woman take early pregnancy tests and that 100 of them truly pregnant. What is the probability that a randomly chosen woman from this group will test positive?
+
+b) Suppose a woman tests positive. What is the probability that she really is pregnant?
+
+::: {.fragment}
+
+### Overview
+This analysis uses a sample of 1,000 women undergoing early pregnancy tests, with the following assumptions:
+- If a woman is truly pregnant, the test is positive 98% of the time.
+- If a woman is not pregnant, the test is negative 99% of the time.
+
+### Total Population:
+- 1,000 women, with 100 truly pregnant (10%) and 900 not pregnant (90%).
+
+### Probability Calculations:
+1. **Probability of a Positive Test (Overall)**
+   - $$ P(\text{Test Positive}) = P(\text{Test Positive | Pregnant}) \times P(\text{Pregnant}) + P(\text{Test Positive | Not Pregnant}) \times P(\text{Not Pregnant}) $$
+   - $$ = 0.98 \times 0.1 + 0.01 \times 0.9 = 0.107 $$
+   - **Result**: 10.7% chance of testing positive across all 1,000 women.
+
+2. **Probability of Being Pregnant Given a Positive Test**
+   - $$ P(\text{Pregnant | Test Positive}) = \frac{P(\text{Test Positive | Pregnant}) \times P(\text{Pregnant})}{P(\text{Test Positive})} $$
+   - $$ = \frac{0.98 \times 0.1}{0.107} \approx 0.916 $$
+   - **Result**: 91.6% chance of being pregnant if tested positive.
+
+### Tree Diagram for Probability Calculation
+This diagram illustrates the probability pathways based on pregnancy status and test outcomes:
+
+```{mermaid}
+graph TD;
+    A[Start: 1,000 Women] -->|10% Pregnant| B[Pregnant]
+    A -->|90% Not Pregnant| C[Not Pregnant]
+    B -->|98% Test Positive| D[Test Positive]
+    B -->|2% Test Negative| E[Test Negative]
+    C -->|1% Test Positive| F[Test Positive]
+    C -->|99% Test Negative| G[Test Negative]
+
+    style D fill:#f9f,stroke:#333,stroke-width:4px
+    style F fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+:::
+
+## Exercise #2
+
+A box contains 3 blue, 2 green, and 4 red marbles. If you draw 2 marbles at random without replacement, what is the probability both are green?
+
+::: {.fragment}
+
+### Probability Calculation: Drawing Two Green Marbles
+
+Given a box with 3 blue, 2 green, and 4 red marbles, we are asked to find the probability of drawing two green marbles when drawing two marbles at random without replacement. Here's the step-by-step calculation:
+
+### Total Number of Marbles
+- **Blue Marbles:** 3
+- **Green Marbles:** 2
+- **Red Marbles:** 4
+- **Total:** 3 + 2 + 4 = 9 marbles
+
+### Total Ways to Draw 2 Marbles from 9
+Using the combination formula $\binom{n}{k}$ which represents the number of ways to choose $k$ items from $n$ items without regard to the order, we calculate:
+
+$$
+\binom{9}{2} = \frac{9 \times 8}{2 \times 1} = 36
+$$
+
+### Ways to Draw 2 Green Marbles from 2 Available
+There are 2 green marbles and we need to draw both:
+
+$$
+\binom{2}{2} = \frac{2 \times 1}{2 \times 1} = 1
+$$
+
+### Probability Both Marbles Drawn Are Green
+The probability is the ratio of the number of favorable outcomes (drawing 2 green marbles) to the total number of outcomes (drawing any 2 marbles):
+
+$$
+\text{Probability} = \frac{\text{Number of ways to draw 2 green marbles}}{\text{Total number of ways to draw 2 marbles}} = \frac{1}{36}
+$$
+:::
+
+## Exercise #3
+
+A bag contains 5 white and 7 black balls. Two balls are drawn successively without replacement. What is the probability that one is white, and one is black?
+
+::: {.fragment}
+
+### Overview
+
+Given a bag containing 5 white and 7 black balls, we are asked to calculate the probability of drawing two balls successively without replacement where one ball is white and the other is black.
+
+#### 1. **Probability of Drawing a White Ball First, then a Black Ball**
+- **Probability of First Ball Being White:** Since there are 5 white balls out of 12 total balls,
+  $$ P(\text{White first}) = \frac{5}{12} $$
+- **Probability of Second Ball Being Black (after one white is taken):** Now, 7 black balls are among the remaining 11 balls,
+  $$ P(\text{Black second | White first}) = \frac{7}{11} $$
+- **Combined Probability for this Sequence:**
+  $$ P(\text{White first, Black second}) = \frac{5}{12} \times \frac{7}{11} = \frac{35}{132} $$
+
+#### 2. **Probability of Drawing a Black Ball First, then a White Ball**
+- **Probability of First Ball Being Black:** There are 7 black balls out of 12 total balls,
+  $$ P(\text{Black first}) = \frac{7}{12} $$
+- **Probability of Second Ball Being White (after one black is taken):** Now, 5 white balls are among the remaining 11 balls,
+  $$ P(\text{White second | Black first}) = \frac{5}{11} $$
+- **Combined Probability for this Sequence:**
+  $$ P(\text{Black first, White second}) = \frac{7}{12} \times \frac{5}{11} = \frac{35}{132} $$
+
+#### Total Probability
+Adding these two mutually exclusive probabilities gives:
+$$ P(\text{One white, one black}) = \frac{35}{132} + \frac{35}{132} = \frac{70}{132} $$
+
+This simplifies to:
+$$ \frac{70}{132} = \frac{35}{66} \approx 0.5303 $$
+
+:::
+
+# Probability Simulation
+
+![Casino Royale](images/casino_royale.png)
 
 ## What is the `random` Package?
 - The `random` package is a built-in Python library used to generate random numbers and perform random operations.
@@ -51,11 +253,11 @@ format:
 | `seed(a)`                      | Sets the seed for reproducibility.                              | `random.seed(42); random.random()`          | `0.6394267984578837`       |
 | `gauss(mu, sigma)`             | Random value from Gaussian distribution.                        | `random.gauss(0, 1)`                        | `-0.143265`                |
 
-## Probability with Python
+# Probability using Python Exercises
 
 For the following probability problems, solve them analytically first. Then, write a Python program to simulate the situations and find the approximate probabilities. Compare these results with your analytical findings.
 
-## Tossing Coin
+## Exercise #1: Tossing Coin
 
 Calculate the probability of obtaining a head when tossing a fair coin once
 
@@ -112,7 +314,7 @@ simulate_coin_toss(num_trials)
 ```
 :::
 
-## Rolling Dice
+## Exercise #2: Rolling Dice
 
 Calculate the probability of rolling a number greater than 4 at least once in two rolls.
 
@@ -180,9 +382,9 @@ simulate_dice_rolls(num_trials)
 :::
 
 
-## Dice Roll Sum
+## Exercise #3: Drawing Balls from a Bag
 
-What is the probability of rolling a sum of 10 with three six-sided dice?
+A bag contains 3 red balls and 2 blue balls. You randomly draw 2 balls without replacement. What is the probability that both balls are red?
 
 ::: {.fragment}
 
@@ -190,60 +392,30 @@ What is the probability of rolling a sum of 10 with three six-sided dice?
 
 #### Overview
 
-To find the probability of rolling a sum of 10 with three six-sided dice, we need to calculate:
+To calculate the probability of drawing 2 red balls without replacement from a bag of 5 balls (3 red and 2 blue), consider:
 
-1. **Total Outcomes:** Since each die has 6 sides, when rolling three dice, the total number of outcomes is calculated as:
-   $$ 6 \times 6 \times 6 = 216 $$
+1. **Total possible outcomes:**  
+   The total number of ways to draw 2 balls from 5 is given by the combination formula:
+   $$
+   \binom{5}{2} = \frac{5!}{2!(5-2)!} = 10
+   $$
 
-2. **Favorable Outcomes:** We need to identify all combinations of dice rolls that sum to 10, considering only the combinations where each die's result ranges from 1 to 6.
-
-#### Total Outcomes
-
-Each die has 6 sides, and each side can independently result in any number from 1 to 6. Therefore, when rolling three dice, the total number of possible outcomes is:
-$$ 6^3 = 216 $$
-
-#### Favorable Outcomes
-
-We consider combinations where the sum of the three dice equals 10. Valid combinations are listed below:
-
-- (1, 3, 6)
-- (1, 4, 5)
-- (1, 5, 4)
-- (1, 6, 3)
-- (2, 2, 6)
-- (2, 3, 5)
-- (2, 4, 4)
-- (2, 5, 3)
-- (2, 6, 2)
-- (3, 1, 6)
-- (3, 2, 5)
-- (3, 3, 4)
-- (3, 4, 3)
-- (3, 5, 2)
-- (3, 6, 1)
-- (4, 1, 5)
-- (4, 2, 4)
-- (4, 3, 3)
-- (4, 4, 2)
-- (4, 5, 1)
-- (5, 1, 4)
-- (5, 2, 3)
-- (5, 3, 2)
-- (5, 4, 1)
-- (6, 1, 3)
-- (6, 2, 2)
-- (6, 3, 1)
+2. **Favorable outcomes:**  
+   The number of ways to draw 2 red balls from the 3 available is:
+   $$
+   \binom{3}{2} = \frac{3!}{2!(3-2)!} = 3
+   $$
 
 #### Probability Calculation
 
-The probability $P$ of rolling a sum of 10 is the ratio of favorable outcomes to total outcomes:
+The probability is calculated as the ratio of favorable outcomes to total outcomes:
+$$
+P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}} = \frac{3}{10} = 0.3
+$$
 
-$$
-P = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}} = \frac{27}{216} = 12.5%
-$$
+So, the probability of drawing 2 red balls is 0.3, or 30%.
 
 :::
-
 
 ::: {.fragment}
 
@@ -253,253 +425,20 @@ $$
 #| echo: true
 import random
 
-def simulate_sum_of_dice(trials):
-    count_success = 0
+def simulate_ball_draw(trials):
+    count_red_pairs = 0
     for _ in range(trials):
-        # Roll three six-sided dice
-        roll1 = random.randint(1, 6)
-        roll2 = random.randint(1, 6)
-        roll3 = random.randint(1, 6)
-        # Calculate the sum of the three rolls
-        dice_sum = roll1 + roll2 + roll3
-        # Check if the sum is exactly 10
-        if dice_sum == 10:
-            count_success += 1
-    return count_success / trials  # Calculate the probability
+        bag = ['R', 'R', 'R', 'B', 'B']  # 3 red balls, 2 blue balls
+        draw = random.sample(bag, 2)  # Randomly draw 2 balls without replacement
+        if draw.count('R') == 2:  # Check if both balls are red
+            count_red_pairs += 1
+    return count_red_pairs / trials  # Calculate the probability
 
 # Number of trials for the simulation
 num_trials = 100000
 
 # Perform the simulation
-simulate_sum_of_dice(num_trials)
+simulate_ball_draw(num_trials)
 ```
 :::
 
-## Three Fair Coins
-
-You toss three fair coins simultaneously. Each coin can result in either heads (H) or tails (T). You want to determine the probability of getting exactly two heads in one toss of all three coins.
-
-::: {.fragment}
-
-### Analytical
-
-#### Overview
-
-Each coin has two possible outcomes: heads (H) or tails (T). When tossing three coins, we are interested in finding the probability of getting exactly two heads. 
-
-#### Total Possible Outcomes
-
-There are a total of $2^3 = 8$ outcomes for three coin tosses:
-
-- HHH
-- HHT
-- HTH
-- HTT
-- THH
-- THT
-- TTH
-- TTT
-
-#### Favorable Outcomes
-
-The favorable outcomes where exactly two coins show heads are:
-
-- HHT
-- HTH
-- THH
-
-This gives us 3 favorable outcomes.
-
-#### Probability Calculation
-
-The probability is calculated as the number of favorable outcomes divided by the total number of outcomes:
-$$ P(\text{Exactly two heads}) = \frac{3}{8} = 0.375 $$
-
-:::
-
-
-::: {.fragment}
-
-### Simulation
-
-```{python}
-#| echo: true
-import random
-
-def coin_toss():
-    return random.choice(['H', 'T'])
-
-def simulate_trials(num_trials):
-    two_heads_count = 0
-
-    for _ in range(num_trials):
-        results = [coin_toss() for _ in range(3)]
-        if results.count('H') == 2:
-            two_heads_count += 1
-
-    return two_heads_count / num_trials
-
-# Run the simulation
-num_trials = 100000
-simulated_probability = simulate_trials(num_trials)
-print(f"Simulated Probability of getting exactly two heads: {simulated_probability}")
-```
-
-:::
-
-
-
-## The Card Drawing Problem
-
-Calculate the probability of drawing three specific cards in a specific order from a shuffled deck.
-
-::: {.fragment}
-
-### Analytical
-
-#### Overview
-
-To calculate the probability of drawing three specific cards in a specific order from a standard shuffled deck of 52 cards, consider each draw independently. Suppose you want to draw the Queen of Hearts, then the Ace of Spades, and then the 10 of Diamonds. Here’s how to calculate the probability:
-
-1. **Probability of drawing the Queen of Hearts first:**
-   - There is exactly one Queen of Hearts in the deck of 52 cards.
-   - Thus, the probability of drawing the Queen of Hearts on the first draw is:
-
-   $$
-   \frac{1}{52}
-   $$
-
-2. **Probability of drawing the Ace of Spades second:**
-   - After drawing the Queen of Hearts, there are 51 cards left.
-   - There is exactly one Ace of Spades in these remaining cards.
-   - Thus, the probability of drawing the Ace of Spades second is:
-
-   $$
-   \frac{1}{51}
-   $$
-
-3. **Probability of drawing the 10 of Diamonds third:**
-   - After the first two cards have been drawn, there are 50 cards left.
-   - There is exactly one 10 of Diamonds in these remaining cards.
-   - Thus, the probability of drawing the 10 of Diamonds third is:
-
-   $$
-   \frac{1}{50}
-   $$
-
-To find the total probability of drawing all three cards in this specific order, multiply the probabilities of each individual event occurring in sequence:
-
-$$
-\text{Total Probability} = \left(\frac{1}{52}\right) \times \left(\frac{1}{51}\right) \times \left(\frac{1}{50}\right) = \frac{1}{132600}
-$$
-
-Thus, the probability of drawing these three specific cards in this specific order from a shuffled deck is $\frac{1}{132600}$, which is approximately 0.00075% or 7.55e-6.
-
-:::
-
-
-::: {.fragment}
-
-### Simulation
-
-```{python}
-#| echo: true
-import random
-
-def draw_specific_cards():
-    deck = list(range(52))  # Represent cards as numbers 0-51
-    random.shuffle(deck)
-    # Specific cards are indices 0, 1, 2
-    return deck.pop() == 0 and deck.pop() == 1 and deck.pop() == 2
-
-num_trials = 10000
-successes = sum(1 for _ in range(num_trials) if draw_specific_cards())
-successes/num_trials
-```
-
-:::
-
-
-
-
-
-
-
-## Lottery Ticket Selection
-
-Calculate the probability of winning a lottery where participants choose 6 numbers from 1 to 49.
-
-::: {.fragment}
-
-### Analytical
-
-#### Overview
-
-In this scenario, we consider a lottery where participants must choose 6 numbers from a set of 49. The winner of the lottery is determined by matching all six numbers drawn.
-
-
-The combination formula $\binom{n}{k}$ is used to calculate the total number of possible combinations that can be formed by selecting $k$ numbers from $n$ items without regard to order:
-
-- **Total numbers available $n$:** 49
-- **Numbers to be chosen $k$:** 6
-
-#### Formula for Combinations
-
-$$
-\binom{49}{6} = \frac{49 \times 48 \times 47 \times 46 \times 45 \times 44}{6 \times 5 \times 4 \times 3 \times 2 \times 1}
-$$
-
-This calculation will yield the total number of ways to choose 6 numbers from 49.
-
-#### Probability Calculation
-
-Since there is only one winning combination, the probability of winning $P$ is calculated as:
-$$
-P(\text{winning}) = \frac{1}{\text{Total combinations}}
-$$
-
-Substituting in the total combinations calculated:
-$$
-P(\text{winning}) = \frac{1}{13,983,816}
-$$
-
-#### Conclusion
-
-The probability of winning by correctly guessing all six numbers is $\frac{1}{13,983,816}$. This illustrates the extremely low likelihood of winning the lottery, which is typically characterized by such high odds against winning.
-
-:::
-
-::: {.fragment}
-
-### Simulation
-
-```{python}
-#| echo: true
-import random
-
-def generate_lottery_ticket():
-    """Generate a lottery ticket as a set of 6 unique numbers."""
-    return sorted(random.sample(range(1, 50), 6))
-
-def simulate_lottery(draws):
-    """Simulate the lottery for a specified number of draws."""
-    winning_ticket = generate_lottery_ticket()  # Define a winning ticket
-    wins = 0
-
-    for _ in range(draws):
-        ticket = generate_lottery_ticket()
-        if ticket == winning_ticket:
-            wins += 1
-
-    return wins, winning_ticket
-
-# Set the number of simulations
-num_simulations = 1000000  # One million simulations
-wins, winning_ticket = simulate_lottery(num_simulations)
-
-print(f"Winning ticket: {winning_ticket}")
-print(f"Total wins in {num_simulations} draws: {wins}")
-print(f"Estimated probability of winning: {wins / num_simulations}")
-
-```
-:::
