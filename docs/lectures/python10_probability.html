@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="python12_probability_files/libs/clipboard/clipboard.min.js"></script>
-<script src="python12_probability_files/libs/quarto-html/tabby.min.js"></script>
-<script src="python12_probability_files/libs/quarto-html/popper.min.js"></script>
-<script src="python12_probability_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="python12_probability_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="python12_probability_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="python12_probability_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="python12_probability_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="python10_probability_files/libs/clipboard/clipboard.min.js"></script>
+<script src="python10_probability_files/libs/quarto-html/tabby.min.js"></script>
+<script src="python10_probability_files/libs/quarto-html/popper.min.js"></script>
+<script src="python10_probability_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="python10_probability_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="python10_probability_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="python10_probability_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="python10_probability_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <title>Probability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="python12_probability_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="python12_probability_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="python10_probability_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="python10_probability_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,11 +94,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="python12_probability_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="python12_probability_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="python12_probability_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="python12_probability_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="python12_probability_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="python10_probability_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="python10_probability_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="python10_probability_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="python10_probability_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="python10_probability_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -385,9 +385,9 @@
       margin-right: 0; 
     }
   </style>
-  <script src="python12_probability_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="python12_probability_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="python12_probability_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="python10_probability_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="python10_probability_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="python10_probability_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -750,7 +750,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <div class="fragment">
 <!-- -->
 <h3 id="simulation">Simulation</h3>
-<div id="7ba884d9" class="cell" data-execution_count="1">
+<div id="2fef0eb3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href=""></a></span>
 <span id="cb1-3"><a href=""></a><span class="kw">def</span> simulate_coin_toss(trials):</span>
@@ -767,7 +767,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <span id="cb1-14"><a href=""></a><span class="co"># Perform the simulation</span></span>
 <span id="cb1-15"><a href=""></a>simulate_coin_toss(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.50155</code></pre>
+<pre><code>0.50176</code></pre>
 </div>
 </div>
 </div>
@@ -811,7 +811,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <div class="fragment">
 <!-- -->
 <h3 id="simulation-1">Simulation</h3>
-<div id="bd5fa0e8" class="cell" data-execution_count="2">
+<div id="7c0c8be1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> random</span>
 <span id="cb3-2"><a href=""></a></span>
 <span id="cb3-3"><a href=""></a><span class="kw">def</span> simulate_dice_rolls(trials):</span>
@@ -830,7 +830,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <span id="cb3-16"><a href=""></a><span class="co"># Perform the simulation</span></span>
 <span id="cb3-17"><a href=""></a>simulate_dice_rolls(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>0.5547</code></pre>
+<pre><code>0.55633</code></pre>
 </div>
 </div>
 </div>
@@ -862,7 +862,7 @@ P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Tota
 <div class="fragment">
 <!-- -->
 <h3 id="simulation-2">Simulation</h3>
-<div id="c974973c" class="cell" data-execution_count="3">
+<div id="e2d56d21" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">import</span> random</span>
 <span id="cb5-2"><a href=""></a></span>
 <span id="cb5-3"><a href=""></a><span class="kw">def</span> simulate_ball_draw(trials):</span>
@@ -880,7 +880,7 @@ P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Tota
 <span id="cb5-15"><a href=""></a><span class="co"># Perform the simulation</span></span>
 <span id="cb5-16"><a href=""></a>simulate_ball_draw(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>0.30078</code></pre>
+<pre><code>0.2985</code></pre>
 </div>
 </div>
 </div>
@@ -895,19 +895,19 @@ P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Tota
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="python12_probability_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="python10_probability_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="python12_probability_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="python12_probability_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="python12_probability_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="python10_probability_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
