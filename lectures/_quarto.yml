@@ -1,0 +1,41 @@
+project:
+  type: book
+
+book:
+  title: "AUC DSCI 1412 Fundamentals of Data Science II"
+  subtitle: "Fall 2024"
+  author: "Ahmed Moustafa"
+  description: ""
+  language: en
+  chapters:
+    - index.qmd
+    - python1_intro.qmd
+    - python2_data_structures.qmd
+    - python3_control_flow.qmd
+    - python4_functions.qmd
+    - python5_functions_problemset.qmd
+    - python6_tracing_problemset.qmd
+    - python7_time_complexity.qmd
+    - python8_packages.qmd
+    - python9_data_visualization.qmd
+    - python10_probability.qmd
+    - python11_statistical_tests.qmd
+
+format:
+  html: 
+    toc: true
+    theme: cosmo
+    toc-title: "Contents"
+    number-sections: true
+  pdf: 
+    toc: true
+    number-sections: true
+    #documentclass: scrreprt
+    colorlinks: true
+    fig-align: "center"
+    code-line-numbers: true
+include-in-header: 
+  text: |
+    \usepackage{fvextra}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+

@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Probability – AUC DSCI 1412 Fundamentals of Data Science II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./python11_statistical_tests.html" rel="next">
+<link href="./python9_data_visualization.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head><body class="nav-sidebar floating">\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python10_probability.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AUC DSCI 1412 Fundamentals of Data Science II</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python2_data_structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python Data Structures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python3_control_flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flow Control in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python4_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python5_functions_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Functions Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python6_tracing_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tracing Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python7_time_complexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Time Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python8_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python9_data_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python10_probability.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python11_statistical_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistical Tests using Python</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#probability-refresher" id="toc-probability-refresher" class="nav-link active" data-scroll-target="#probability-refresher"><span class="header-section-number">12</span> Probability Refresher</a>
+  <ul class="collapse">
+  <li><a href="#basic-definitions" id="toc-basic-definitions" class="nav-link" data-scroll-target="#basic-definitions"><span class="header-section-number">12.1</span> Basic Definitions</a></li>
+  <li><a href="#examples-of-sample-space" id="toc-examples-of-sample-space" class="nav-link" data-scroll-target="#examples-of-sample-space"><span class="header-section-number">12.2</span> Examples of Sample Space</a></li>
+  <li><a href="#sets-and-set-operations" id="toc-sets-and-set-operations" class="nav-link" data-scroll-target="#sets-and-set-operations"><span class="header-section-number">12.3</span> Sets and Set Operations</a></li>
+  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link" data-scroll-target="#probability-rules"><span class="header-section-number">12.4</span> Probability Rules</a></li>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">12.5</span> Conditional Probability</a></li>
+  </ul></li>
+  <li><a href="#probability-exercises" id="toc-probability-exercises" class="nav-link" data-scroll-target="#probability-exercises"><span class="header-section-number">13</span> Probability Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">13.1</span> Exercise #1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">13.2</span> Exercise #2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">13.3</span> Exercise #3</a>
+  <ul class="collapse">
+  <li><a href="#overview-1" id="toc-overview-1" class="nav-link" data-scroll-target="#overview-1"><span class="header-section-number">13.3.1</span> Overview</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#probability-simulation" id="toc-probability-simulation" class="nav-link" data-scroll-target="#probability-simulation"><span class="header-section-number">14</span> Probability Simulation</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-random-package" id="toc-what-is-the-random-package" class="nav-link" data-scroll-target="#what-is-the-random-package"><span class="header-section-number">14.1</span> What is the <code>random</code> Package?</a></li>
+  <li><a href="#why-use-the-random-package" id="toc-why-use-the-random-package" class="nav-link" data-scroll-target="#why-use-the-random-package"><span class="header-section-number">14.2</span> Why Use the <code>random</code> Package?</a></li>
+  <li><a href="#main-methods-of-the-random-package-in-python" id="toc-main-methods-of-the-random-package-in-python" class="nav-link" data-scroll-target="#main-methods-of-the-random-package-in-python"><span class="header-section-number">14.3</span> Main Methods of the <code>random</code> Package in Python</a></li>
+  </ul></li>
+  <li><a href="#probability-using-python-exercises" id="toc-probability-using-python-exercises" class="nav-link" data-scroll-target="#probability-using-python-exercises"><span class="header-section-number">15</span> Probability using Python Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-tossing-coin" id="toc-exercise-1-tossing-coin" class="nav-link" data-scroll-target="#exercise-1-tossing-coin"><span class="header-section-number">15.1</span> Exercise #1: Tossing Coin</a>
+  <ul class="collapse">
+  <li><a href="#analytical" id="toc-analytical" class="nav-link" data-scroll-target="#analytical"><span class="header-section-number">15.1.1</span> Analytical</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation"><span class="header-section-number">15.1.2</span> Simulation</a></li>
+  </ul></li>
+  <li><a href="#exercise-2-rolling-dice" id="toc-exercise-2-rolling-dice" class="nav-link" data-scroll-target="#exercise-2-rolling-dice"><span class="header-section-number">15.2</span> Exercise #2: Rolling Dice</a>
+  <ul class="collapse">
+  <li><a href="#analytical-1" id="toc-analytical-1" class="nav-link" data-scroll-target="#analytical-1"><span class="header-section-number">15.2.1</span> Analytical</a></li>
+  <li><a href="#simulation-1" id="toc-simulation-1" class="nav-link" data-scroll-target="#simulation-1"><span class="header-section-number">15.2.2</span> Simulation</a></li>
+  </ul></li>
+  <li><a href="#exercise-3-drawing-balls-from-a-bag" id="toc-exercise-3-drawing-balls-from-a-bag" class="nav-link" data-scroll-target="#exercise-3-drawing-balls-from-a-bag"><span class="header-section-number">15.3</span> Exercise #3: Drawing Balls from a Bag</a>
+  <ul class="collapse">
+  <li><a href="#analytical-2" id="toc-analytical-2" class="nav-link" data-scroll-target="#analytical-2"><span class="header-section-number">15.3.1</span> Analytical</a></li>
+  <li><a href="#simulation-2" id="toc-simulation-2" class="nav-link" data-scroll-target="#simulation-2"><span class="header-section-number">15.3.2</span> Simulation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="probability-refresher" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Probability Refresher</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.gettyimages.com/id/172858773/photo/says.jpg?s=2048x2048&amp;w=gi&amp;k=20&amp;c=f1K7iXQpwcYdWdMwcQbH32avv-hUmyPzISstXdBbIF0=" class="img-fluid figure-img"></p>
+<figcaption>Rolling dice</figcaption>
+</figure>
+</div>
+<section id="basic-definitions" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="basic-definitions"><span class="header-section-number">12.1</span> Basic Definitions</h2>
+<ul>
+<li><p><strong>Probability</strong>: A measure of the likelihood of an event happening.</p></li>
+<li><p><strong>Experiment</strong>: An action with a measurable outcome (e.g., rolling a die).</p></li>
+<li><p><strong>Outcome</strong>: The result of a single trial of an experiment.</p></li>
+<li><p><strong>Sample Space (S or <span class="math inline">\(\Omega\)</span> ) </strong>: All possible outcomes of an experiment.</p></li>
+<li><p><strong>Event</strong>: A subset of the sample space.</p></li>
+<li><p><strong>Example</strong>: Tossing a coin:</p>
+<ul>
+<li><strong>Experiment</strong>: Tossing the coin.</li>
+<li><strong>Sample Space</strong>: {Heads, Tails}.</li>
+<li><strong>Event</strong>: Getting Heads.</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-of-sample-space" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="examples-of-sample-space"><span class="header-section-number">12.2</span> Examples of Sample Space</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Throwing a dice:
+<ul class="incremental">
+<li><span class="math inline">\(\Omega\)</span> = {1, 2, 3, 4, 5, 6}</li>
+</ul></li>
+<li>Tossing a coin three times:
+<ul class="incremental">
+<li><span class="math inline">\(\Omega\)</span> = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}</li>
+</ul></li>
+<li>Tossing a coin three times and observe the number of H’s:
+<ul class="incremental">
+<li><span class="math inline">\(\Omega\)</span> = {0, 1, 2, 3}</li>
+</ul></li>
+<li>Tossing a coin until we obtain a Head:
+<ul class="incremental">
+<li><span class="math inline">\(\Omega\)</span> = {H, TH, TTH, TTTH, …}; (infinite)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="sets-and-set-operations" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sets-and-set-operations"><span class="header-section-number">12.3</span> Sets and Set Operations</h2>
+<p>Introduction to sets using Venn diagrams.</p>
+<ul>
+<li><strong>Union (A ∪ B)</strong>: Elements in either set A, set B, or both.</li>
+<li><strong>Intersection (A ∩ B)</strong>: Elements common to both sets.</li>
+<li><strong>Complement (A’)</strong>: Elements not in set A.</li>
+</ul>
+<p><strong>Example</strong>: Given a set of numbers from 1 to 10, find the union, intersection, and complement for subsets A = {odd numbers} and B = {numbers less than 5}.</p>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Union (A ∪ B)</strong>: {1, 2, 3, 4, 5, 7, 9}</li>
+<li><strong>Intersection (A ∩ B)</strong>: {1, 3}</li>
+<li><strong>Complement of A (A’)</strong>: {2, 4, 6, 8, 10}</li>
+<li><strong>Complement of B (B’)</strong>: {5, 6, 7, 8, 9, 10}</li>
+</ul>
+</div>
+</section>
+<section id="probability-rules" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="probability-rules"><span class="header-section-number">12.4</span> Probability Rules</h2>
+<ul>
+<li><strong>Addition Rule</strong>: <span class="math inline">\(P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\)</span></li>
+<li><strong>Multiplication Rule</strong>: <span class="math inline">\(P(A ∩ B) = P(A) \times P(B | A)\)</span></li>
+<li><strong>Complementary Rule</strong>: <span class="math inline">\(P(A') = 1 - P(A)\)</span></li>
+</ul>
+<p><strong>Example</strong>: A box contains 2 red balls, 3 blue balls, and 5 green balls. What is the probability of drawing a red or a blue ball?</p>
+<div class="fragment">
+<ul>
+<li><strong>Total balls</strong> = 10</li>
+<li><strong>Red balls (A)</strong> = 2, <strong>Blue balls (B)</strong> = 3</li>
+<li><strong>P(A)</strong> = 2/10, <strong>P(B)</strong> = 3/10</li>
+<li><strong>P(A ∪ B)</strong> = P(A) + P(B) = 2/10 + 3/10 = 5/10 = 1/2</li>
+</ul>
+</div>
+</section>
+<section id="conditional-probability" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="conditional-probability"><span class="header-section-number">12.5</span> Conditional Probability</h2>
+<p>Conditional Probability is the probability of an event occurring given that another event has already occurred.</p>
+<ul>
+<li><strong>Formula</strong>: <span class="math inline">\(P(A | B) = \frac{P(A ∩ B)}{P(B)}\)</span></li>
+<li>Example: Probability of drawing an ace after a king from a deck of cards.</li>
+</ul>
+<p><strong>Example</strong>: What is the probability of drawing 2 aces in a row from a deck of 52 cards?</p>
+<div class="fragment">
+<ul>
+<li><strong>P(Ace on first draw)</strong> = <span class="math inline">\(\frac{4}{52}\)</span></li>
+<li><strong>P(Ace on second draw given first was Ace)</strong> = <span class="math inline">\(\frac{3}{51}\)</span></li>
+<li><strong>P(Two Aces in a row)</strong> = <span class="math inline">\(P(\text{First Ace}) \times P(\text{Second Ace} ∣ \text{First Ace})\)</span></li>
+<li><strong>P(Two Aces in a row)</strong> = <span class="math inline">\(\frac{4}{52} \times \frac{3}{51} ≈ 0.0045\)</span></li>
+<li><strong>Explanation</strong>: The probability of each event is conditioned on the preceding draw reducing the total number of cards and aces.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="probability-exercises" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Probability Exercises</h1>
+<section id="exercise-1" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">13.1</span> Exercise #1</h2>
+<p>If a woman takes an early pregnancy test, she will either test positive, meaning that the test says she is pregnant, or test negative, meaning that the test says she is not pregnant. Suppose that if a woman really is pregnant, there is a 98% chance that she will test positive. Also suppose that if a woman really is not pregnant, there is a 99% chance that she will test negative.</p>
+<ol type="a">
+<li><p>Suppose that 1,000 woman take early pregnancy tests and that 100 of them truly pregnant. What is the probability that a randomly chosen woman from this group will test positive?</p></li>
+<li><p>Suppose a woman tests positive. What is the probability that she really is pregnant?</p></li>
+</ol>
+<div class="fragment">
+<section id="overview" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">13.1.1</span> Overview</h3>
+<p>This analysis uses a sample of 1,000 women undergoing early pregnancy tests, with the following assumptions: - If a woman is truly pregnant, the test is positive 98% of the time. - If a woman is not pregnant, the test is negative 99% of the time.</p>
+</section>
+<section id="total-population" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="total-population"><span class="header-section-number">13.1.2</span> Total Population:</h3>
+<ul>
+<li>1,000 women, with 100 truly pregnant (10%) and 900 not pregnant (90%).</li>
+</ul>
+</section>
+<section id="probability-calculations" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="probability-calculations"><span class="header-section-number">13.1.3</span> Probability Calculations:</h3>
+<ol type="1">
+<li><strong>Probability of a Positive Test (Overall)</strong>
+<ul>
+<li><span class="math display">\[ P(\text{Test Positive}) = P(\text{Test Positive | Pregnant}) \times P(\text{Pregnant}) + P(\text{Test Positive | Not Pregnant}) \times P(\text{Not Pregnant}) \]</span></li>
+<li><span class="math display">\[ = 0.98 \times 0.1 + 0.01 \times 0.9 = 0.107 \]</span></li>
+<li><strong>Result</strong>: 10.7% chance of testing positive across all 1,000 women.</li>
+</ul></li>
+<li><strong>Probability of Being Pregnant Given a Positive Test</strong>
+<ul>
+<li><span class="math display">\[ P(\text{Pregnant | Test Positive}) = \frac{P(\text{Test Positive | Pregnant}) \times P(\text{Pregnant})}{P(\text{Test Positive})} \]</span></li>
+<li><span class="math display">\[ = \frac{0.98 \times 0.1}{0.107} \approx 0.916 \]</span></li>
+<li><strong>Result</strong>: 91.6% chance of being pregnant if tested positive.</li>
+</ul></li>
+</ol>
+</section>
+<section id="tree-diagram-for-probability-calculation" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="tree-diagram-for-probability-calculation"><span class="header-section-number">13.1.4</span> Tree Diagram for Probability Calculation</h3>
+<p>This diagram illustrates the probability pathways based on pregnancy status and test outcomes:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD;
+    A[Start: 1,000 Women] --&gt;|10% Pregnant| B[Pregnant]
+    A --&gt;|90% Not Pregnant| C[Not Pregnant]
+    B --&gt;|98% Test Positive| D[Test Positive]
+    B --&gt;|2% Test Negative| E[Test Negative]
+    C --&gt;|1% Test Positive| F[Test Positive]
+    C --&gt;|99% Test Negative| G[Test Negative]
+
+    style D fill:#f9f,stroke:#333,stroke-width:4px
+    style F fill:#f9f,stroke:#333,stroke-width:4px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="exercise-2" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">13.2</span> Exercise #2</h2>
+<p>A box contains 3 blue, 2 green, and 4 red marbles. If you draw 2 marbles at random without replacement, what is the probability both are green?</p>
+<div class="fragment">
+<section id="probability-calculation-drawing-two-green-marbles" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="probability-calculation-drawing-two-green-marbles"><span class="header-section-number">13.2.1</span> Probability Calculation: Drawing Two Green Marbles</h3>
+<p>Given a box with 3 blue, 2 green, and 4 red marbles, we are asked to find the probability of drawing two green marbles when drawing two marbles at random without replacement. Here’s the step-by-step calculation:</p>
+</section>
+<section id="total-number-of-marbles" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="total-number-of-marbles"><span class="header-section-number">13.2.2</span> Total Number of Marbles</h3>
+<ul>
+<li><strong>Blue Marbles:</strong> 3</li>
+<li><strong>Green Marbles:</strong> 2</li>
+<li><strong>Red Marbles:</strong> 4</li>
+<li><strong>Total:</strong> 3 + 2 + 4 = 9 marbles</li>
+</ul>
+</section>
+<section id="total-ways-to-draw-2-marbles-from-9" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="total-ways-to-draw-2-marbles-from-9"><span class="header-section-number">13.2.3</span> Total Ways to Draw 2 Marbles from 9</h3>
+<p>Using the combination formula <span class="math inline">\(\binom{n}{k}\)</span> which represents the number of ways to choose <span class="math inline">\(k\)</span> items from <span class="math inline">\(n\)</span> items without regard to the order, we calculate:</p>
+<p><span class="math display">\[
+\binom{9}{2} = \frac{9 \times 8}{2 \times 1} = 36
+\]</span></p>
+</section>
+<section id="ways-to-draw-2-green-marbles-from-2-available" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="ways-to-draw-2-green-marbles-from-2-available"><span class="header-section-number">13.2.4</span> Ways to Draw 2 Green Marbles from 2 Available</h3>
+<p>There are 2 green marbles and we need to draw both:</p>
+<p><span class="math display">\[
+\binom{2}{2} = \frac{2 \times 1}{2 \times 1} = 1
+\]</span></p>
+</section>
+<section id="probability-both-marbles-drawn-are-green" class="level3" data-number="13.2.5">
+<h3 data-number="13.2.5" class="anchored" data-anchor-id="probability-both-marbles-drawn-are-green"><span class="header-section-number">13.2.5</span> Probability Both Marbles Drawn Are Green</h3>
+<p>The probability is the ratio of the number of favorable outcomes (drawing 2 green marbles) to the total number of outcomes (drawing any 2 marbles):</p>
+<p><span class="math display">\[
+\text{Probability} = \frac{\text{Number of ways to draw 2 green marbles}}{\text{Total number of ways to draw 2 marbles}} = \frac{1}{36}
+\]</span></p>
+</section>
+</div>
+</section>
+<section id="exercise-3" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">13.3</span> Exercise #3</h2>
+<p>A bag contains 5 white and 7 black balls. Two balls are drawn successively without replacement. What is the probability that one is white, and one is black?</p>
+<div class="fragment">
+<section id="overview-1" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="overview-1"><span class="header-section-number">13.3.1</span> Overview</h3>
+<p>Given a bag containing 5 white and 7 black balls, we are asked to calculate the probability of drawing two balls successively without replacement where one ball is white and the other is black.</p>
+<section id="probability-of-drawing-a-white-ball-first-then-a-black-ball" class="level4" data-number="13.3.1.1">
+<h4 data-number="13.3.1.1" class="anchored" data-anchor-id="probability-of-drawing-a-white-ball-first-then-a-black-ball"><span class="header-section-number">13.3.1.1</span> 1. <strong>Probability of Drawing a White Ball First, then a Black Ball</strong></h4>
+<ul>
+<li><strong>Probability of First Ball Being White:</strong> Since there are 5 white balls out of 12 total balls, <span class="math display">\[ P(\text{White first}) = \frac{5}{12} \]</span></li>
+<li><strong>Probability of Second Ball Being Black (after one white is taken):</strong> Now, 7 black balls are among the remaining 11 balls, <span class="math display">\[ P(\text{Black second | White first}) = \frac{7}{11} \]</span></li>
+<li><strong>Combined Probability for this Sequence:</strong> <span class="math display">\[ P(\text{White first, Black second}) = \frac{5}{12} \times \frac{7}{11} = \frac{35}{132} \]</span></li>
+</ul>
+</section>
+<section id="probability-of-drawing-a-black-ball-first-then-a-white-ball" class="level4" data-number="13.3.1.2">
+<h4 data-number="13.3.1.2" class="anchored" data-anchor-id="probability-of-drawing-a-black-ball-first-then-a-white-ball"><span class="header-section-number">13.3.1.2</span> 2. <strong>Probability of Drawing a Black Ball First, then a White Ball</strong></h4>
+<ul>
+<li><strong>Probability of First Ball Being Black:</strong> There are 7 black balls out of 12 total balls, <span class="math display">\[ P(\text{Black first}) = \frac{7}{12} \]</span></li>
+<li><strong>Probability of Second Ball Being White (after one black is taken):</strong> Now, 5 white balls are among the remaining 11 balls, <span class="math display">\[ P(\text{White second | Black first}) = \frac{5}{11} \]</span></li>
+<li><strong>Combined Probability for this Sequence:</strong> <span class="math display">\[ P(\text{Black first, White second}) = \frac{7}{12} \times \frac{5}{11} = \frac{35}{132} \]</span></li>
+</ul>
+</section>
+<section id="total-probability" class="level4" data-number="13.3.1.3">
+<h4 data-number="13.3.1.3" class="anchored" data-anchor-id="total-probability"><span class="header-section-number">13.3.1.3</span> Total Probability</h4>
+<p>Adding these two mutually exclusive probabilities gives: <span class="math display">\[ P(\text{One white, one black}) = \frac{35}{132} + \frac{35}{132} = \frac{70}{132} \]</span></p>
+<p>This simplifies to: <span class="math display">\[ \frac{70}{132} = \frac{35}{66} \approx 0.5303 \]</span></p>
+</section>
+</section>
+</div>
+</section>
+</section>
+<section id="probability-simulation" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Probability Simulation</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/casino_royale.png" class="img-fluid figure-img"></p>
+<figcaption>Casino Royale</figcaption>
+</figure>
+</div>
+<section id="what-is-the-random-package" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="what-is-the-random-package"><span class="header-section-number">14.1</span> What is the <code>random</code> Package?</h2>
+<ul>
+<li>The <code>random</code> package is a built-in Python library used to generate random numbers and perform random operations.</li>
+<li>It supports generating:
+<ul>
+<li>Random numbers (integers, floats).</li>
+<li>Random selections from data structures (lists, strings, etc.).</li>
+<li>Values from various statistical distributions.</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-use-the-random-package" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="why-use-the-random-package"><span class="header-section-number">14.2</span> Why Use the <code>random</code> Package?</h2>
+<ul>
+<li>Simulations and modeling.</li>
+<li>Games and decision-making.</li>
+<li>Sampling and data shuffling.</li>
+<li>Cryptography and secure random number generation (use secrets for cryptographic applications).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.gettyimages.com/id/1317329445/photo/binary-code-background.jpg?s=1024x1024&amp;w=gi&amp;k=20&amp;c=3N_6vG3pVOsOLUN0UEZenrkjWGwqHN28L3RdECZvJPM=" class="img-fluid figure-img"></p>
+<figcaption>Ones and Zeros</figcaption>
+</figure>
+</div>
+</section>
+<section id="main-methods-of-the-random-package-in-python" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="main-methods-of-the-random-package-in-python"><span class="header-section-number">14.3</span> Main Methods of the <code>random</code> Package in Python</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 38%">
+<col style="width: 26%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Method</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Code Example</strong></th>
+<th><strong>Sample Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>random()</code></td>
+<td>Returns a random float in <code>[0.0, 1.0)</code>.</td>
+<td><code>random.random()</code></td>
+<td><code>0.764532</code></td>
+</tr>
+<tr class="even">
+<td><code>uniform(a, b)</code></td>
+<td>Random float in <code>[a, b]</code>.</td>
+<td><code>random.uniform(5, 10)</code></td>
+<td><code>7.8934</code></td>
+</tr>
+<tr class="odd">
+<td><code>randint(a, b)</code></td>
+<td>Random integer in <code>[a, b]</code> (inclusive).</td>
+<td><code>random.randint(1, 10)</code></td>
+<td><code>4</code></td>
+</tr>
+<tr class="even">
+<td><code>randrange(start, stop, step)</code></td>
+<td>Random number from range with step.</td>
+<td><code>random.randrange(0, 20, 5)</code></td>
+<td><code>10</code></td>
+</tr>
+<tr class="odd">
+<td><code>choice(seq)</code></td>
+<td>Random element from a sequence.</td>
+<td><code>random.choice(['apple', 'banana'])</code></td>
+<td><code>'banana'</code></td>
+</tr>
+<tr class="even">
+<td><code>choices(pop, weights, k)</code></td>
+<td><code>k</code> random elements with optional weights.</td>
+<td><code>random.choices(['a', 'b'], [10, 1], k=3)</code></td>
+<td><code>['a', 'a', 'b']</code></td>
+</tr>
+<tr class="odd">
+<td><code>sample(pop, k)</code></td>
+<td><code>k</code> unique random elements.</td>
+<td><code>random.sample(range(10), 3)</code></td>
+<td><code>[2, 6, 9]</code></td>
+</tr>
+<tr class="even">
+<td><code>shuffle(seq)</code></td>
+<td>Shuffles the elements of a list in place.</td>
+<td><code>lst = [1, 2]; random.shuffle(lst); lst</code></td>
+<td><code>[2, 1]</code></td>
+</tr>
+<tr class="odd">
+<td><code>seed(a)</code></td>
+<td>Sets the seed for reproducibility.</td>
+<td><code>random.seed(42); random.random()</code></td>
+<td><code>0.6394267984578837</code></td>
+</tr>
+<tr class="even">
+<td><code>gauss(mu, sigma)</code></td>
+<td>Random value from Gaussian distribution.</td>
+<td><code>random.gauss(0, 1)</code></td>
+<td><code>-0.143265</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="probability-using-python-exercises" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Probability using Python Exercises</h1>
+<p>For the following probability problems, solve them analytically first. Then, write a Python program to simulate the situations and find the approximate probabilities. Compare these results with your analytical findings.</p>
+<section id="exercise-1-tossing-coin" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="exercise-1-tossing-coin"><span class="header-section-number">15.1</span> Exercise #1: Tossing Coin</h2>
+<p>Calculate the probability of obtaining a head when tossing a fair coin once</p>
+<div class="fragment">
+<section id="analytical" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="analytical"><span class="header-section-number">15.1.1</span> Analytical</h3>
+<section id="overview-2" class="level4" data-number="15.1.1.1">
+<h4 data-number="15.1.1.1" class="anchored" data-anchor-id="overview-2"><span class="header-section-number">15.1.1.1</span> Overview</h4>
+<p>When you toss a fair coin, it can land either heads or tails. With the coin being fair, each outcome has an equal probability of occurring.</p>
+</section>
+<section id="calculation" class="level4" data-number="15.1.1.2">
+<h4 data-number="15.1.1.2" class="anchored" data-anchor-id="calculation"><span class="header-section-number">15.1.1.2</span> Calculation</h4>
+<p>The probability of obtaining a specific outcome (like a head) is determined by the ratio of the number of favorable outcomes to the total number of possible outcomes:</p>
+<ul>
+<li><strong>Number of favorable outcomes</strong> (obtaining a head): 1</li>
+<li><strong>Total number of possible outcomes</strong> (either head or tail): 2</li>
+</ul>
+</section>
+<section id="formula-for-probability" class="level4" data-number="15.1.1.3">
+<h4 data-number="15.1.1.3" class="anchored" data-anchor-id="formula-for-probability"><span class="header-section-number">15.1.1.3</span> Formula for Probability</h4>
+<p>The probability <span class="math inline">\(P\)</span> of getting a head is given by:</p>
+<p><span class="math display">\[
+P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}} = \frac{1}{2}
+\]</span></p>
+</section>
+<section id="conclusion" class="level4" data-number="15.1.1.4">
+<h4 data-number="15.1.1.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">15.1.1.4</span> Conclusion</h4>
+<p>This results in a probability of <span class="math inline">\(\frac{1}{2}\)</span>, or 0.5, which translates to a 50% chance of the coin landing heads up in a single toss. This demonstrates the equal likelihood of either outcome in a fair coin toss.</p>
+</section>
+</section>
+</div>
+<div class="fragment">
+<section id="simulation" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="simulation"><span class="header-section-number">15.1.2</span> Simulation</h3>
+<div id="ce8aa8f8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_coin_toss(trials):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    count_heads <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Initialize the count of heads</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Randomly generate 0 for tails or 1 for heads</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> random.randint(<span class="dv">0</span>, <span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            count_heads <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Increment if the result is heads</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count_heads <span class="op">/</span> trials  <span class="co"># Calculate the probability of heads</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of trials for the simulation</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>num_trials <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>simulate_coin_toss(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>0.49861</code></pre>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="exercise-2-rolling-dice" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="exercise-2-rolling-dice"><span class="header-section-number">15.2</span> Exercise #2: Rolling Dice</h2>
+<p>Calculate the probability of rolling a number greater than 4 at least once in two rolls.</p>
+<div class="fragment">
+<section id="analytical-1" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="analytical-1"><span class="header-section-number">15.2.1</span> Analytical</h3>
+<section id="overview-3" class="level4" data-number="15.2.1.1">
+<h4 data-number="15.2.1.1" class="anchored" data-anchor-id="overview-3"><span class="header-section-number">15.2.1.1</span> Overview</h4>
+<p>To calculate the probability of rolling a number greater than 4 at least once in two rolls of a fair six-sided die, you can follow these steps:</p>
+<ol type="1">
+<li><strong>Probability of rolling a number greater than 4 in one roll:</strong>
+<ul>
+<li>Only two numbers (5 and 6) out of six possible outcomes are greater than 4. Thus, the probability for one roll is: <span class="math display">\[
+\frac{2}{6} = \frac{1}{3}
+\]</span></li>
+</ul></li>
+<li><strong>Probability of not rolling a number greater than 4 in one roll:</strong>
+<ul>
+<li>The probability is the complement of rolling a number greater than 4, calculated as: <span class="math display">\[
+1 - \frac{1}{3} = \frac{2}{3}
+\]</span></li>
+</ul></li>
+<li><strong>Probability of not rolling a number greater than 4 in two rolls:</strong>
+<ul>
+<li>If each roll independently has a <span class="math display">\[ \frac{2}{3} \]</span> chance of not rolling a number greater than 4, then the probability of this happening in two consecutive rolls is: <span class="math display">\[
+(\frac{2}{3})^2 = \frac{4}{9}
+\]</span></li>
+</ul></li>
+<li><strong>Probability of rolling a number greater than 4 at least once in two rolls:</strong>
+<ul>
+<li>This is calculated by subtracting the probability of not rolling a number greater than 4 in two rolls from 1: <span class="math display">\[
+1 - \frac{4}{9} = \frac{5}{9}
+\]</span></li>
+</ul></li>
+</ol>
+<p>Therefore, the probability of rolling a number greater than 4 at least once in two rolls of a fair die is <span class="math display">\[ \frac{5}{9} \]</span>, or approximately 55.56%.</p>
+</section>
+</section>
+</div>
+<div class="fragment">
+<section id="simulation-1" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="simulation-1"><span class="header-section-number">15.2.2</span> Simulation</h3>
+<div id="b7f9181e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_dice_rolls(trials):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    count_success <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        roll1 <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        roll2 <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check if either of the rolls is greater than 4 (i.e., a 5 or 6)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> roll1 <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">or</span> roll2 <span class="op">&gt;</span> <span class="dv">4</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            count_success <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count_success <span class="op">/</span> trials</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of trials for the simulation</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>num_trials <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>simulate_dice_rolls(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>0.55472</code></pre>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="exercise-3-drawing-balls-from-a-bag" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="exercise-3-drawing-balls-from-a-bag"><span class="header-section-number">15.3</span> Exercise #3: Drawing Balls from a Bag</h2>
+<p>A bag contains 3 red balls and 2 blue balls. You randomly draw 2 balls without replacement. What is the probability that both balls are red?</p>
+<div class="fragment">
+<section id="analytical-2" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="analytical-2"><span class="header-section-number">15.3.1</span> Analytical</h3>
+<section id="overview-4" class="level4" data-number="15.3.1.1">
+<h4 data-number="15.3.1.1" class="anchored" data-anchor-id="overview-4"><span class="header-section-number">15.3.1.1</span> Overview</h4>
+<p>To calculate the probability of drawing 2 red balls without replacement from a bag of 5 balls (3 red and 2 blue), consider:</p>
+<ol type="1">
+<li><p><strong>Total possible outcomes:</strong><br>
+The total number of ways to draw 2 balls from 5 is given by the combination formula: <span class="math display">\[
+\binom{5}{2} = \frac{5!}{2!(5-2)!} = 10
+\]</span></p></li>
+<li><p><strong>Favorable outcomes:</strong><br>
+The number of ways to draw 2 red balls from the 3 available is: <span class="math display">\[
+\binom{3}{2} = \frac{3!}{2!(3-2)!} = 3
+\]</span></p></li>
+</ol>
+</section>
+<section id="probability-calculation" class="level4" data-number="15.3.1.2">
+<h4 data-number="15.3.1.2" class="anchored" data-anchor-id="probability-calculation"><span class="header-section-number">15.3.1.2</span> Probability Calculation</h4>
+<p>The probability is calculated as the ratio of favorable outcomes to total outcomes: <span class="math display">\[
+P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}} = \frac{3}{10} = 0.3
+\]</span></p>
+<p>So, the probability of drawing 2 red balls is 0.3, or 30%.</p>
+</section>
+</section>
+</div>
+<div class="fragment">
+<section id="simulation-2" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="simulation-2"><span class="header-section-number">15.3.2</span> Simulation</h3>
+<div id="cce145ac" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_ball_draw(trials):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    count_red_pairs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        bag <span class="op">=</span> [<span class="st">'R'</span>, <span class="st">'R'</span>, <span class="st">'R'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>]  <span class="co"># 3 red balls, 2 blue balls</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        draw <span class="op">=</span> random.sample(bag, <span class="dv">2</span>)  <span class="co"># Randomly draw 2 balls without replacement</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> draw.count(<span class="st">'R'</span>) <span class="op">==</span> <span class="dv">2</span>:  <span class="co"># Check if both balls are red</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            count_red_pairs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count_red_pairs <span class="op">/</span> trials  <span class="co"># Calculate the probability</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of trials for the simulation</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>num_trials <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>simulate_ball_draw(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>0.29992</code></pre>
+</div>
+</div>
+</section>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./python9_data_visualization.html" class="pagination-link" aria-label="Data Visualization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./python11_statistical_tests.html" class="pagination-link" aria-label="Statistical Tests using Python">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistical Tests using Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

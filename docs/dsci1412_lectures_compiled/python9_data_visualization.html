@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Data Visualization – AUC DSCI 1412 Fundamentals of Data Science II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./python10_probability.html" rel="next">
+<link href="./python8_packages.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head><body class="nav-sidebar floating">\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python9_data_visualization.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AUC DSCI 1412 Fundamentals of Data Science II</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python2_data_structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python Data Structures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python3_control_flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flow Control in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python4_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python5_functions_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Functions Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python6_tracing_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tracing Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python7_time_complexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Time Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python8_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python9_data_visualization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python10_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python11_statistical_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistical Tests using Python</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
+  <li><a href="#dataset-summary" id="toc-dataset-summary" class="nav-link" data-scroll-target="#dataset-summary"><span class="header-section-number">10.2</span> Dataset Summary</a></li>
+  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview"><span class="header-section-number">10.3</span> Dataset Overview</a></li>
+  <li><a href="#histogram-distribution-of-a-quantitative-variable" id="toc-histogram-distribution-of-a-quantitative-variable" class="nav-link" data-scroll-target="#histogram-distribution-of-a-quantitative-variable"><span class="header-section-number">10.4</span> Histogram: Distribution of a Quantitative Variable</a></li>
+  <li><a href="#bar-plot-categorical-data-comparison" id="toc-bar-plot-categorical-data-comparison" class="nav-link" data-scroll-target="#bar-plot-categorical-data-comparison"><span class="header-section-number">10.5</span> Bar Plot: Categorical Data Comparison</a></li>
+  <li><a href="#box-plot-spread-of-a-quantitative-variable-across-categories" id="toc-box-plot-spread-of-a-quantitative-variable-across-categories" class="nav-link" data-scroll-target="#box-plot-spread-of-a-quantitative-variable-across-categories"><span class="header-section-number">10.6</span> Box Plot: Spread of a Quantitative Variable Across Categories</a></li>
+  <li><a href="#violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories" id="toc-violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories" class="nav-link" data-scroll-target="#violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories"><span class="header-section-number">10.7</span> Violin Plot: Distribution and Density of a Quantitative Variable Across Categories</a></li>
+  <li><a href="#comparison-between-box-plot-and-violin-plot" id="toc-comparison-between-box-plot-and-violin-plot" class="nav-link" data-scroll-target="#comparison-between-box-plot-and-violin-plot"><span class="header-section-number">10.8</span> Comparison Between Box Plot and Violin Plot</a></li>
+  <li><a href="#scatter-plot-relationship-between-two-quantitative-variables" id="toc-scatter-plot-relationship-between-two-quantitative-variables" class="nav-link" data-scroll-target="#scatter-plot-relationship-between-two-quantitative-variables"><span class="header-section-number">10.9</span> Scatter Plot: Relationship Between Two Quantitative Variables</a></li>
+  <li><a href="#heatmap-correlation-matrix-visualization" id="toc-heatmap-correlation-matrix-visualization" class="nav-link" data-scroll-target="#heatmap-correlation-matrix-visualization"><span class="header-section-number">10.10</span> Heatmap: Correlation Matrix Visualization</a></li>
+  <li><a href="#pie-chart-proportional-representation-of-categories" id="toc-pie-chart-proportional-representation-of-categories" class="nav-link" data-scroll-target="#pie-chart-proportional-representation-of-categories"><span class="header-section-number">10.11</span> Pie Chart: Proportional Representation of Categories</a></li>
+  <li><a href="#line-plot-trends-over-time" id="toc-line-plot-trends-over-time" class="nav-link" data-scroll-target="#line-plot-trends-over-time"><span class="header-section-number">10.12</span> Line Plot: Trends Over Time</a></li>
+  <li><a href="#flowchart-of-plot-choices" id="toc-flowchart-of-plot-choices" class="nav-link" data-scroll-target="#flowchart-of-plot-choices"><span class="header-section-number">10.13</span> Flowchart of Plot Choices</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
+<p>This guide provides an overview of common data visualization types, when to use them, when not to use them, and how to implement each in Python. We cover histograms, bar plots, box plots, scatter plots, line plots, heatmaps, and pie charts, using the same dataset to illustrate each.</p>
+</section>
+<section id="dataset-summary" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="dataset-summary"><span class="header-section-number">10.2</span> Dataset Summary</h2>
+<ul>
+<li>The dataset, <code>people</code>, contains 1000 samples and includes the following columns:</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 56%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Values (Example Range)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Height</strong></td>
+<td>Quantitative</td>
+<td>Height in cm, with males having a higher average height than females.</td>
+<td>Males: ~168-182 cm, Females: ~159-171 cm</td>
+</tr>
+<tr class="even">
+<td><strong>Weight</strong></td>
+<td>Quantitative</td>
+<td>Weight in kg, with males having a higher average weight than females.</td>
+<td>Males: ~68-88 kg, Females: ~57-73 kg</td>
+</tr>
+<tr class="odd">
+<td><strong>Sex</strong></td>
+<td>Categorical</td>
+<td>Biological sex, represented by “Male” and “Female”.</td>
+<td>Male, Female</td>
+</tr>
+<tr class="even">
+<td><strong>Education</strong></td>
+<td>Ordinal (Ordered)</td>
+<td>Education level with ordered categories: High School &lt; Bachelor’s &lt; Master’s.</td>
+<td>High School, Bachelor’s, Master’s</td>
+</tr>
+<tr class="odd">
+<td><strong>Salary</strong></td>
+<td>Quantitative</td>
+<td>Monthly salary in USD, with increasing average salaries by education level for realism.</td>
+<td>High School: ~$2500-3500, Bachelor’s: ~$4200-5800, Master’s: ~$6000-8000</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dataset-overview" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="dataset-overview"><span class="header-section-number">10.3</span> Dataset Overview</h2>
+<div id="6e33b65e" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Height</th>
+<th data-quarto-table-cell-role="th">Weight</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Education</th>
+<th data-quarto-table-cell-role="th">Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>178.5</td>
+<td>78.4</td>
+<td>Male</td>
+<td>Bachelor's</td>
+<td>5860</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>174.0</td>
+<td>74.2</td>
+<td>Male</td>
+<td>High School</td>
+<td>1215</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>179.5</td>
+<td>72.1</td>
+<td>Male</td>
+<td>Bachelor's</td>
+<td>4461</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>185.7</td>
+<td>71.0</td>
+<td>Male</td>
+<td>High School</td>
+<td>3302</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>173.4</td>
+<td>72.8</td>
+<td>Male</td>
+<td>Master's</td>
+<td>6184</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="fa02ea5c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="histogram-distribution-of-a-quantitative-variable" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="histogram-distribution-of-a-quantitative-variable"><span class="header-section-number">10.4</span> Histogram: Distribution of a Quantitative Variable</h2>
+<ul>
+<li><strong>Condition</strong>: Use a histogram to observe the distribution of a single quantitative variable, such as heights in the dataset.</li>
+<li><strong>Purpose</strong>: Helps identify the shape of the data distribution, central tendencies, spread, and any outliers.</li>
+<li><strong>Example</strong>: Here, we use a histogram to show the distribution of heights.</li>
+</ul>
+<div id="31251d1a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Height'</span>, bins<span class="op">=</span><span class="dv">10</span>, kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Heights'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Height (cm)'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="519" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The histogram above shows the distribution of heights in the dataset. We observe a roughly normal distribution around the mean, which can help identify the typical range of heights, any skewness, and the presence of outliers.</p>
+</section>
+<section id="bar-plot-categorical-data-comparison" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="bar-plot-categorical-data-comparison"><span class="header-section-number">10.5</span> Bar Plot: Categorical Data Comparison</h2>
+<ul>
+<li><strong>Condition</strong>: Use a bar plot to compare counts or proportions within categorical data, such as gender or education levels.</li>
+<li><strong>Purpose</strong>: Bar plots make it easy to see differences between categories.</li>
+<li><strong>Example</strong>: The bar plot below compares the count of individuals by gender.</li>
+</ul>
+<div id="4110b124" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Sex'</span>, palette<span class="op">=</span><span class="st">'deep'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Bar Plot of Gender Distribution'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/1924678188.py:2: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-6-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="519" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The bar plot above shows the distribution of gender in the dataset, making it clear how many individuals identify as male or female. This visualization is ideal for comparing discrete categories and understanding the sample’s gender composition.</p>
+</section>
+<section id="box-plot-spread-of-a-quantitative-variable-across-categories" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="box-plot-spread-of-a-quantitative-variable-across-categories"><span class="header-section-number">10.6</span> Box Plot: Spread of a Quantitative Variable Across Categories</h2>
+<ul>
+<li><strong>Condition</strong>: Use a box plot to compare the spread of a quantitative variable across categories, such as income levels across different education levels.</li>
+<li><strong>Purpose</strong>: Box plots highlight medians, quartiles, and potential outliers, offering insights into variability within groups.</li>
+<li><strong>Example</strong>: The box plot below shows the spread of income across different education levels.</li>
+</ul>
+<div id="a6058ec1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> people, x<span class="op">=</span><span class="st">'Education'</span>, y<span class="op">=</span><span class="st">'Salary'</span>, palette<span class="op">=</span><span class="st">'muted'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Salary by Education Level'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Education Level'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Monthly Salary (USD)'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/2073472345.py:2: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-7-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="684" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The box plot above shows the distribution of salaries across different education levels. It reveals medians, quartiles, and any potential outliers, helping us understand income variability within each education group. For instance, we can see if higher education correlates with higher median income.</p>
+</section>
+<section id="violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories"><span class="header-section-number">10.7</span> Violin Plot: Distribution and Density of a Quantitative Variable Across Categories</h2>
+<ul>
+<li><strong>Condition</strong>: Use a violin plot to visualize the distribution and density of a quantitative variable across categories, such as test scores across different teaching methods.</li>
+<li><strong>Purpose</strong>: Violin plots combine features of box plots and density plots, revealing not only medians and quartiles but also the shape and symmetry of the data distribution within categories.</li>
+<li><strong>Example</strong>: The violin plot below illustrates the distribution of test scores across different teaching methods.</li>
+</ul>
+<div id="74d6794f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Weight'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>, inner<span class="op">=</span><span class="st">'quartile'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Violin Plot of Weight by Sex'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sex'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Weight (kg)'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/3578493989.py:2: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-8-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="659" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The violin plot above illustrates the weight distribution for males and females. It highlights the density of weights within each sex category, along with the median and interquartile range. For instance, we can observe whether one sex has a broader range of weights or whether the distribution is skewed differently for males versus females.</p>
+</section>
+<section id="comparison-between-box-plot-and-violin-plot" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="comparison-between-box-plot-and-violin-plot"><span class="header-section-number">10.8</span> Comparison Between Box Plot and Violin Plot</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Box Plot</th>
+<th>Violin Plot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>Summarizes data spread using quartiles, median, and outliers</td>
+<td>Shows both data density (distribution shape) and summary statistics</td>
+</tr>
+<tr class="even">
+<td><strong>Distribution Shape</strong></td>
+<td>Does not reveal the distribution shape</td>
+<td>Displays the distribution shape using density estimation</td>
+</tr>
+<tr class="odd">
+<td><strong>Data Insights</strong></td>
+<td>Emphasizes median, quartiles, and outliers</td>
+<td>Emphasizes distribution, skewness, modality, and median</td>
+</tr>
+<tr class="even">
+<td><strong>When to Use</strong></td>
+<td>For clear comparisons of summary statistics across categories, especially with small sample sizes</td>
+<td>For understanding the full distribution of data across categories, especially with larger sample sizes</td>
+</tr>
+</tbody>
+</table>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="23965ff2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Height'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Height by Sex'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sex'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/298820851.py:2: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-9-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="444" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The <strong>box plot</strong> provides a clear summary of medians and outliers for the height for each sex.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="f0e79ee9" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Height'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Violin Plot of Height by Sex'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sex'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/186337771.py:2: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-10-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="444" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The <strong>violin plot</strong> reveals the underlying distribution shape, such as bimodal or skewed patterns, which may not be apparent in a box plot alone.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="scatter-plot-relationship-between-two-quantitative-variables" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="scatter-plot-relationship-between-two-quantitative-variables"><span class="header-section-number">10.9</span> Scatter Plot: Relationship Between Two Quantitative Variables</h2>
+<ul>
+<li><strong>Condition</strong>: Use a scatter plot to examine the relationship between two quantitative variables, like age and income.</li>
+<li><strong>Purpose</strong>: Scatter plots help identify correlations or trends between variables.</li>
+<li><strong>Example</strong>: This scatter plot visualizes the relationship between height and weight.</li>
+</ul>
+<div id="7708a8b2" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Height'</span>, y <span class="op">=</span> <span class="st">'Weight'</span>, hue <span class="op">=</span> <span class="st">'Sex'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, marker <span class="op">=</span> <span class="st">'+'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-11-output-1.png" width="510" height="356" class="figure-img"></p>
+<figcaption>Scatter Plot of Weight vs.&nbsp;Height</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The scatter plot above shows the relationship between height and weight, allowing us to observe if there is a correlation between these variables. Scatter plots are useful for detecting patterns, clusters, or potential correlations, as seen here, where weight appears to be strongly correlated with height.</p>
+</section>
+<section id="heatmap-correlation-matrix-visualization" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="heatmap-correlation-matrix-visualization"><span class="header-section-number">10.10</span> Heatmap: Correlation Matrix Visualization</h2>
+<ul>
+<li><strong>Condition</strong>: Use a heatmap to visualize correlations between multiple quantitative variables or the frequency of two categorical variables.</li>
+<li><strong>Purpose</strong>: Heatmaps display relationships or frequencies, with colors representing the strength of correlations or counts.</li>
+<li><strong>Example</strong>: Correlation heatmap</li>
+</ul>
+<div id="394edbff" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> people[[<span class="st">'Height'</span>, <span class="st">'Weight'</span>, <span class="st">'Salary'</span>]].corr()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-12-output-1.png" width="470" height="416" class="figure-img"></p>
+<figcaption>Heatmap of Correlation Matrix</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The heatmap above shows the correlation matrix for height, weight, and salary, with color intensity representing the strength of each correlation. Heatmaps are effective for visualizing the relationships between multiple variables, where warm colors indicate positive correlations and cool colors indicate negative correlations.</p>
+</section>
+<section id="pie-chart-proportional-representation-of-categories" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="pie-chart-proportional-representation-of-categories"><span class="header-section-number">10.11</span> Pie Chart: Proportional Representation of Categories</h2>
+<ul>
+<li><strong>Condition</strong>: Use a pie chart to display the proportional representation of categories within a dataset, such as the percentage of people in various age groups.</li>
+<li><strong>Purpose</strong>: Pie charts are effective for showing relative sizes of categories as parts of a whole, especially when there are few categories and clear differences.</li>
+<li><strong>Example</strong>: The pie chart below illustrates the percentage distribution of eduction levels in the dataset.</li>
+</ul>
+<div id="6f1417eb" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>education_counts <span class="op">=</span> people[<span class="st">'Education'</span>].value_counts()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.pie(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    education_counts, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>education_counts.index, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    startangle<span class="op">=</span><span class="dv">90</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    wedgeprops<span class="op">=</span>{<span class="st">'edgecolor'</span>: <span class="st">'white'</span>, <span class="st">'linewidth'</span>: <span class="dv">2</span>}</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)  <span class="co"># Equal aspect ratio ensures the pie chart is circular.</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-13-output-1.png" width="614" height="389" class="figure-img"></p>
+<figcaption>Education Level Distribution</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The pie chart above illustrates the distribution of education levels within the dataset. Each slice represents the proportion of individuals in a specific education category. The borders between the slices are highlighted with white lines, making the divisions clear and visually distinct. The percentages displayed on each slice provide precise information about the relative sizes of each category, allowing for an easy comparison of the prevalence of different education levels.</p>
+</section>
+<section id="line-plot-trends-over-time" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="line-plot-trends-over-time"><span class="header-section-number">10.12</span> Line Plot: Trends Over Time</h2>
+<ul>
+<li><strong>Condition</strong>: Use a line plot to show trends over time or another ordered variable, such as monthly income.</li>
+<li><strong>Purpose</strong>: Line plots reveal patterns or fluctuations over time.</li>
+<li><strong>Example</strong>: Historical stock prices over the past years will be retrieved using the <a href="https://pypi.org/project/yfinance/"><code>yfinance</code></a> package.</li>
+</ul>
+<div id="806e363e" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch stock data</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>apple <span class="op">=</span> yf.download(<span class="st">"AAPL"</span>, start<span class="op">=</span><span class="st">"2000-01-01"</span>, end<span class="op">=</span><span class="st">"2024-01-01"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>amazon <span class="op">=</span> yf.download(<span class="st">"AMZN"</span>, start<span class="op">=</span><span class="st">"2000-01-01"</span>, end<span class="op">=</span><span class="st">"2024-01-01"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>google <span class="op">=</span> yf.download(<span class="st">"GOOG"</span>, start<span class="op">=</span><span class="st">"2000-01-01"</span>, end<span class="op">=</span><span class="st">"2024-01-01"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the Closing Price over Time</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>plt.plot(apple.index, apple[<span class="st">'Close'</span>], label<span class="op">=</span><span class="st">'Apple (AAPL)'</span>, color <span class="op">=</span> <span class="st">"#e41a1c"</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>plt.plot(amazon.index, amazon[<span class="st">'Close'</span>], label<span class="op">=</span><span class="st">'Amazon (AMZN)'</span>, color <span class="op">=</span> <span class="st">"#377eb8"</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>plt.plot(google.index, google[<span class="st">'Close'</span>], label<span class="op">=</span><span class="st">'Google (GOOG)'</span>, color <span class="op">=</span> <span class="st">"#4daf4a"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Price (USD)'</span>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="python9_data_visualization_files/figure-html/cell-14-output-2.png" width="965" height="503" class="figure-img"></p>
+<figcaption>Stock Price Over Time</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The above chart illustrates the closing stock prices of three major companies: Apple Inc.&nbsp;(<code>AAPL</code>), Amazon Inc.&nbsp;(<code>AMZN</code>), and Alphabet Inc.&nbsp;(<code>GOOG</code>), over a specific time range. The data was retrieved using the <code>yfinance</code> package and visualized to showcase the comparative trends in stock performance.</p>
+</section>
+<section id="flowchart-of-plot-choices" class="level2" data-number="10.13">
+<h2 data-number="10.13" class="anchored" data-anchor-id="flowchart-of-plot-choices"><span class="header-section-number">10.13</span> Flowchart of Plot Choices</h2>
+<p><img src="images/data_visualization_flowchart.png" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./python8_packages.html" class="pagination-link" aria-label="Python Packages">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./python10_probability.html" class="pagination-link" aria-label="Probability">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

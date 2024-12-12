@@ -13,3 +13,8 @@
 | Lecture 9 | Data Visualization Guidelines | [Slides](https://ahmedmoustafa.github.io/AUC-DSCI1412-Fall2024/lectures/python9_data_visualization.html) | [PDF](pdfs/python9_data_visualization.pdf) |  |
 | Lecture 10 | Probability | [Slides](https://ahmedmoustafa.github.io/AUC-DSCI1412-Fall2024/lectures/python10_probability.html) | [PDF](pdfs/python10_probability.pdf) | [2024-11-17](https://colab.research.google.com/drive/1jKW5H35R8Hdi-FYdRdByhrGkii3YVLc2?usp=sharing) |
 | Lecture 11 | Statistical Tests | [Slides](https://ahmedmoustafa.github.io/AUC-DSCI1412-Fall2024/lectures/python11_statistical_tests.html) | [PDF](pdfs/python11_statistical_tests.pdf) | [2024-12-04](https://colab.research.google.com/drive/1G-5QZhgnmGaDOTzzdSCDD3QR6b28mmGu?usp=sharing) |
+
+
+## Compiled Book
+- [HTML](dsci1412_lectures_compiled/)
+- [PDF](dsci1412_lectures_compiled.pdf)

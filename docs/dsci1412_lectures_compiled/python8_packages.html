@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Python Packages – AUC DSCI 1412 Fundamentals of Data Science II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./python9_data_visualization.html" rel="next">
+<link href="./python7_time_complexity.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head><body class="nav-sidebar floating">\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python8_packages.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AUC DSCI 1412 Fundamentals of Data Science II</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python2_data_structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python Data Structures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python3_control_flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flow Control in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python4_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python5_functions_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Functions Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python6_tracing_problemset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tracing Problem Set</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python7_time_complexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Time Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python8_packages.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python9_data_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python10_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python11_statistical_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistical Tests using Python</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#packages-for-data-analysis" id="toc-packages-for-data-analysis" class="nav-link active" data-scroll-target="#packages-for-data-analysis"><span class="header-section-number">10</span> Packages for Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#packages-in-python" id="toc-packages-in-python" class="nav-link" data-scroll-target="#packages-in-python"><span class="header-section-number">10.1</span> Packages in Python</a></li>
+  <li><a href="#importing-packages-with-aliases" id="toc-importing-packages-with-aliases" class="nav-link" data-scroll-target="#importing-packages-with-aliases"><span class="header-section-number">10.2</span> Importing Packages with Aliases</a></li>
+  <li><a href="#installing-a-package" id="toc-installing-a-package" class="nav-link" data-scroll-target="#installing-a-package"><span class="header-section-number">10.3</span> Installing a Package</a></li>
+  </ul></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">11</span> <code>Pandas</code></a>
+  <ul class="collapse">
+  <li><a href="#the-titanic-dataset" id="toc-the-titanic-dataset" class="nav-link" data-scroll-target="#the-titanic-dataset"><span class="header-section-number">11.1</span> The Titanic Dataset</a></li>
+  <li><a href="#loading-a-csv-file-with-pandas" id="toc-loading-a-csv-file-with-pandas" class="nav-link" data-scroll-target="#loading-a-csv-file-with-pandas"><span class="header-section-number">11.2</span> Loading a CSV file with Pandas</a></li>
+  <li><a href="#viewing-dataframe" id="toc-viewing-dataframe" class="nav-link" data-scroll-target="#viewing-dataframe"><span class="header-section-number">11.3</span> Viewing <code>DataFrame</code></a></li>
+  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics"><span class="header-section-number">11.4</span> Basic Statistics</a></li>
+  <li><a href="#indexing-and-selection-12" id="toc-indexing-and-selection-12" class="nav-link" data-scroll-target="#indexing-and-selection-12"><span class="header-section-number">11.5</span> Indexing and Selection 1/2</a></li>
+  <li><a href="#indexing-and-selection-22" id="toc-indexing-and-selection-22" class="nav-link" data-scroll-target="#indexing-and-selection-22"><span class="header-section-number">11.6</span> Indexing and Selection 2/2</a></li>
+  <li><a href="#comparison-of-.loc-and-.iloc-in-pandas-dataframe" id="toc-comparison-of-.loc-and-.iloc-in-pandas-dataframe" class="nav-link" data-scroll-target="#comparison-of-.loc-and-.iloc-in-pandas-dataframe"><span class="header-section-number">11.7</span> Comparison of <code>.loc</code> and <code>.iloc</code> in <code>pandas</code> <code>DataFrame</code></a></li>
+  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data"><span class="header-section-number">11.8</span> Filtering Data</a></li>
+  <li><a href="#grouping-and-aggregation" id="toc-grouping-and-aggregation" class="nav-link" data-scroll-target="#grouping-and-aggregation"><span class="header-section-number">11.9</span> Grouping and Aggregation</a>
+  <ul class="collapse">
+  <li><a href="#why-use-grouping-and-aggregation" id="toc-why-use-grouping-and-aggregation" class="nav-link" data-scroll-target="#why-use-grouping-and-aggregation"><span class="header-section-number">11.9.1</span> Why Use Grouping and Aggregation?</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#matplotlib" id="toc-matplotlib" class="nav-link" data-scroll-target="#matplotlib"><span class="header-section-number">12</span> <code>Matplotlib</code></a>
+  <ul class="collapse">
+  <li><a href="#plotting-a-simple-line-graph-with-matplotlib" id="toc-plotting-a-simple-line-graph-with-matplotlib" class="nav-link" data-scroll-target="#plotting-a-simple-line-graph-with-matplotlib"><span class="header-section-number">12.1</span> Plotting a Simple Line Graph with <code>Matplotlib</code></a></li>
+  <li><a href="#creating-a-bar-plot-with-matplotlib" id="toc-creating-a-bar-plot-with-matplotlib" class="nav-link" data-scroll-target="#creating-a-bar-plot-with-matplotlib"><span class="header-section-number">12.2</span> Creating a Bar Plot with <code>Matplotlib</code></a></li>
+  </ul></li>
+  <li><a href="#seaborn" id="toc-seaborn" class="nav-link" data-scroll-target="#seaborn"><span class="header-section-number">13</span> <code>Seaborn</code></a>
+  <ul class="collapse">
+  <li><a href="#titanic-survived-vs.-sex" id="toc-titanic-survived-vs.-sex" class="nav-link" data-scroll-target="#titanic-survived-vs.-sex"><span class="header-section-number">13.1</span> Titanic: Survived vs.&nbsp;Sex</a></li>
+  <li><a href="#titanic-age-vs.-class-vs.-age" id="toc-titanic-age-vs.-class-vs.-age" class="nav-link" data-scroll-target="#titanic-age-vs.-class-vs.-age"><span class="header-section-number">13.2</span> Titanic: Age vs.&nbsp;Class vs.&nbsp;Age</a></li>
+  <li><a href="#titanic-sex-ratio-vs.-class" id="toc-titanic-sex-ratio-vs.-class" class="nav-link" data-scroll-target="#titanic-sex-ratio-vs.-class"><span class="header-section-number">13.3</span> Titanic: Sex Ratio vs.&nbsp;Class</a></li>
+  </ul></li>
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy"><span class="header-section-number">14</span> <code>Numpy</code></a>
+  <ul class="collapse">
+  <li><a href="#creating-a-numpy-array" id="toc-creating-a-numpy-array" class="nav-link" data-scroll-target="#creating-a-numpy-array"><span class="header-section-number">14.1</span> Creating a <code>NumPy</code> Array</a></li>
+  <li><a href="#numpy-array-operations" id="toc-numpy-array-operations" class="nav-link" data-scroll-target="#numpy-array-operations"><span class="header-section-number">14.2</span> <code>NumPy</code> Array Operations</a></li>
+  <li><a href="#numpy-array-indexing-and-slicing" id="toc-numpy-array-indexing-and-slicing" class="nav-link" data-scroll-target="#numpy-array-indexing-and-slicing"><span class="header-section-number">14.3</span> <code>NumPy</code> Array Indexing and Slicing</a></li>
+  <li><a href="#numpy-broadcasting" id="toc-numpy-broadcasting" class="nav-link" data-scroll-target="#numpy-broadcasting"><span class="header-section-number">14.4</span> <code>NumPy</code> Broadcasting</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python Packages</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="packages-for-data-analysis" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Packages for Data Analysis</h1>
+<p>We will be discussing key Python packages that are commonly used for data analysis such as <strong>pandas</strong>, <strong>matplotlib</strong>, <strong>seaborn</strong>, and <strong>numpy</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/packages.png" class="img-fluid figure-img"></p>
+<figcaption>Python Packages</figcaption>
+</figure>
+</div>
+<section id="packages-in-python" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="packages-in-python"><span class="header-section-number">10.1</span> Packages in Python</h2>
+<ul>
+<li>In Python, a <em>package</em> is a collection of modules organized within a directory structure, allowing grouping related code components, such as functions, classes, and constants, into a single namespace.</li>
+<li>This structure enables modularity and reuse across projects, making code easier to maintain, import, and share with others.</li>
+<li>The most common way to import a package is using the <code>import</code> statement followed by the name of the package.</li>
+<li>For example, to import the <code>math</code> package:</li>
+</ul>
+<div id="8f0ceadf" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>math.sqrt(<span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5.0</code></pre>
+</div>
+</div>
+</section>
+<section id="importing-packages-with-aliases" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="importing-packages-with-aliases"><span class="header-section-number">10.2</span> Importing Packages with Aliases</h2>
+<ul>
+<li>We can also import a package with an <em>alias</em> using the <code>as</code> keyword.</li>
+<li>This can be useful when we want to use a shorter name for a package in our code.</li>
+<li>For example, to import the <code>math</code> package with the alias <code>m</code>, we would use the following statement:</li>
+</ul>
+<div id="c0a94666" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="im">as</span> m</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>m.sqrt(<span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>5.0</code></pre>
+</div>
+</div>
+</section>
+<section id="installing-a-package" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="installing-a-package"><span class="header-section-number">10.3</span> Installing a Package</h2>
+<ul>
+<li>If a package is <em>not</em> already installed, we can install within our notebook/environment using the following <strong>command line</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%pip</span> install package_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Example to install <strong><code>pandas</code></strong>:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/pip_install_pandas.png" class="img-fluid"> <strong>Notes:</strong></p>
+<ul>
+<li><code>pip</code> stands for ‘Pip Installs Packages,’ a recursive acronym.</li>
+<li><code>pip</code> is a command-line tool (not a Python statement) typically run in the shell on macOS or Linux or in PowerShell on Windows. However, it can also be run within Jupyter notebooks using <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">magic commands</a>, specifically by prefixing it with <code>%</code>.</li>
+</ul>
+</section>
+</section>
+<section id="pandas" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> <code>Pandas</code></h1>
+<ul>
+<li><code>Pandas</code> is a Python package that is used for data manipulation and analysis.</li>
+<li>It provides data structures for efficiently storing and manipulating large datasets.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pandas.png" class="img-fluid figure-img"></p>
+<figcaption>Pandas</figcaption>
+</figure>
+</div>
+<section id="the-titanic-dataset" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="the-titanic-dataset"><span class="header-section-number">11.1</span> The Titanic Dataset</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.gettyimages.com/id/188056589/photo/digitally-restored-vintage-maritime-history-photo-of-the-rms-titantic-departing-southampton-on.jpg?s=2048x2048&amp;w=gi&amp;k=20&amp;c=UUgRikYArk0uhrOMQbs994YaoRuCWU4TrcsjYGI8Tj0=" class="img-fluid figure-img"></p>
+<figcaption>Titantic departing Southampton on April 10, 1912</figcaption>
+</figure>
+</div>
+<ul>
+<li>The Titanic dataset contains data on the passengers of Titanic, including their survival status, age, gender, class, and other attributes.</li>
+</ul>
+</section>
+<section id="loading-a-csv-file-with-pandas" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="loading-a-csv-file-with-pandas"><span class="header-section-number">11.2</span> Loading a CSV file with Pandas</h2>
+<div id="4d32a148" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv'</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>titanic <span class="op">=</span> pd.read_csv(url) <span class="co"># Load Titanic dataset</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>titanic.shape <span class="co"># The dimension of the dataframe (the table)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>(887, 8)</code></pre>
+</div>
+</div>
+</section>
+<section id="viewing-dataframe" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="viewing-dataframe"><span class="header-section-number">11.3</span> Viewing <code>DataFrame</code></h2>
+<ul>
+<li><p>Once we have loaded data into a <code>DataFrame</code>, we can start exploring it using various Pandas functions.</p></li>
+<li><p>The <code>head()</code> and <code>tail</code> functions are useful functions for quickly viewing the first and last few rows of a <code>DataFrame</code>.</p>
+<ul>
+<li><code>head()</code> for the top records in the <code>DataFrame</code>:</li>
+</ul></li>
+</ul>
+<div id="daad8481" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>titanic.head() <span class="co"># Print the first few rows of the DataFrame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
+<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>3</td>
+<td>Mr. Owen Harris Braund</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>7.2500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>1</td>
+<td>Mrs. John Bradley (Florence Briggs Thayer) Cum...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>71.2833</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>3</td>
+<td>Miss. Laina Heikkinen</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.9250</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>1</td>
+<td>Mrs. Jacques Heath (Lily May Peel) Futrelle</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>53.1000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>3</td>
+<td>Mr. William Henry Allen</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>8.0500</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li><code>tail()</code> for the bottom records in the <code>DataFrame</code>:</li>
+</ul>
+<div id="7e287eb6" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>titanic.tail() <span class="co"># Print the last few rows of the DataFrame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
+<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">882</td>
+<td>0</td>
+<td>2</td>
+<td>Rev. Juozas Montvila</td>
+<td>male</td>
+<td>27.0</td>
+<td>0</td>
+<td>0</td>
+<td>13.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">883</td>
+<td>1</td>
+<td>1</td>
+<td>Miss. Margaret Edith Graham</td>
+<td>female</td>
+<td>19.0</td>
+<td>0</td>
+<td>0</td>
+<td>30.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">884</td>
+<td>0</td>
+<td>3</td>
+<td>Miss. Catherine Helen Johnston</td>
+<td>female</td>
+<td>7.0</td>
+<td>1</td>
+<td>2</td>
+<td>23.45</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">885</td>
+<td>1</td>
+<td>1</td>
+<td>Mr. Karl Howell Behr</td>
+<td>male</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>30.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">886</td>
+<td>0</td>
+<td>3</td>
+<td>Mr. Patrick Dooley</td>
+<td>male</td>
+<td>32.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.75</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="basic-statistics" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="basic-statistics"><span class="header-section-number">11.4</span> Basic Statistics</h2>
+<ul>
+<li><p>We can use <code>Pandas</code> to calculate basic statistics on our data, such as mean, median, and standard deviation.</p></li>
+<li><p>The <code>describe()</code> function provides a summary of the basic statistics of each column in the DataFrame.</p></li>
+</ul>
+<div id="9e505208" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>titanic.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
+<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>887.000000</td>
+<td>887.000000</td>
+<td>887.000000</td>
+<td>887.000000</td>
+<td>887.000000</td>
+<td>887.00000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>0.385569</td>
+<td>2.305524</td>
+<td>29.471443</td>
+<td>0.525366</td>
+<td>0.383315</td>
+<td>32.30542</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>0.487004</td>
+<td>0.836662</td>
+<td>14.121908</td>
+<td>1.104669</td>
+<td>0.807466</td>
+<td>49.78204</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.420000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.00000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>0.000000</td>
+<td>2.000000</td>
+<td>20.250000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>7.92500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>0.000000</td>
+<td>3.000000</td>
+<td>28.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>14.45420</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>1.000000</td>
+<td>3.000000</td>
+<td>38.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>31.13750</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>1.000000</td>
+<td>3.000000</td>
+<td>80.000000</td>
+<td>8.000000</td>
+<td>6.000000</td>
+<td>512.32920</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="indexing-and-selection-12" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="indexing-and-selection-12"><span class="header-section-number">11.5</span> Indexing and Selection 1/2</h2>
+<ul>
+<li>We can use indexing and selection to retrieve specific data from a <code>DataFrame</code>.</li>
+<li>The <code>iloc[]</code> function is used for integer-based indexing, where we can specify the row and column numbers.</li>
+</ul>
+<div id="1c1211ff" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>titanic.iloc[<span class="dv">2</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
+<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>3</td>
+<td>Miss. Laina Heikkinen</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.925</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>1</td>
+<td>Mrs. Jacques Heath (Lily May Peel) Futrelle</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>53.100</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>3</td>
+<td>Mr. William Henry Allen</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>8.050</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="indexing-and-selection-22" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="indexing-and-selection-22"><span class="header-section-number">11.6</span> Indexing and Selection 2/2</h2>
+<ul>
+<li>The <code>loc[]</code> function is used for label-based indexing, where we can specify the row and column labels.</li>
+</ul>
+<div id="50e02ce2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>titanic.loc[<span class="dv">2</span>:<span class="dv">5</span>, [<span class="st">'Survived'</span>, <span class="st">'Pclass'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="comparison-of-.loc-and-.iloc-in-pandas-dataframe" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="comparison-of-.loc-and-.iloc-in-pandas-dataframe"><span class="header-section-number">11.7</span> Comparison of <code>.loc</code> and <code>.iloc</code> in <code>pandas</code> <code>DataFrame</code></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 39%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th><code>.loc</code> (Label-based)</th>
+<th><code>.iloc</code> (Integer-based)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Primary Use</strong></td>
+<td>Access data by row and column labels (names)</td>
+<td>Access data by row and column integer positions</td>
+</tr>
+<tr class="even">
+<td><strong>Syntax</strong></td>
+<td><code>df.loc[row_label, column_label]</code></td>
+<td><code>df.iloc[row_position, column_position]</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Row/Column Identification</strong></td>
+<td>Uses label names for rows and columns</td>
+<td>Uses integer positions (like list indexing)</td>
+</tr>
+<tr class="even">
+<td><strong>Indexing Type</strong></td>
+<td><strong>Label</strong>-based (requires exact match for labels)</td>
+<td><strong>Integer</strong>-based (<code>0</code>-based index like Python lists)</td>
+</tr>
+<tr class="odd">
+<td><strong>Row Selection</strong></td>
+<td><code>df.loc['row_label']</code></td>
+<td><code>df.iloc[row_position]</code></td>
+</tr>
+<tr class="even">
+<td><strong>Column Selection</strong></td>
+<td><code>df.loc[:, 'column_label']</code></td>
+<td><code>df.iloc[:, column_position]</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Single Value Access</strong></td>
+<td><code>df.loc['row_label', 'column_label']</code></td>
+<td><code>df.iloc[row_position, column_position]</code></td>
+</tr>
+<tr class="even">
+<td><strong>Range Slicing</strong></td>
+<td>Inclusive of the endpoint (e.g., <code>df.loc['A':'C']</code> includes both <code>A</code> and <code>C</code>)</td>
+<td>Exclusive of the endpoint (e.g., <code>df.iloc[0:2]</code> includes only positions <code>0</code> and <code>1</code>)</td>
+</tr>
+<tr class="odd">
+<td><strong>Boolean Indexing</strong></td>
+<td>Works with Boolean masks for label-based filtering (e.g., <code>df.loc[df['Age'] &gt; 25]</code>)</td>
+<td>Not typically used with Boolean masks, though possible</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filtering-data" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="filtering-data"><span class="header-section-number">11.8</span> Filtering Data</h2>
+<ul>
+<li><p>We can use Boolean indexing to filter data in a DataFrame based on a certain condition.</p></li>
+<li><p>For example, we can filter the Titanic dataset to only show passengers who survived:</p></li>
+</ul>
+<div id="8605acaa" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter Titanic dataset to only show passengers who survived</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>survivors <span class="op">=</span> titanic[titanic[<span class="st">'Survived'</span>] <span class="op">==</span> <span class="dv">1</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>survivors.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
+<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>1</td>
+<td>Mrs. John Bradley (Florence Briggs Thayer) Cum...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>71.2833</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>3</td>
+<td>Miss. Laina Heikkinen</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.9250</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>1</td>
+<td>Mrs. Jacques Heath (Lily May Peel) Futrelle</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>53.1000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>1</td>
+<td>3</td>
+<td>Mrs. Oscar W (Elisabeth Vilhelmina Berg) Johnson</td>
+<td>female</td>
+<td>27.0</td>
+<td>0</td>
+<td>2</td>
+<td>11.1333</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>1</td>
+<td>2</td>
+<td>Mrs. Nicholas (Adele Achem) Nasser</td>
+<td>female</td>
+<td>14.0</td>
+<td>1</td>
+<td>0</td>
+<td>30.0708</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="grouping-and-aggregation" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="grouping-and-aggregation"><span class="header-section-number">11.9</span> Grouping and Aggregation</h2>
+<ul>
+<li>Grouping: Categorizes data based on one or more columns, creating distinct groups within the dataset.</li>
+<li>Aggregation: Summarizes each group using functions like <code>sum()</code>, <code>mean()</code>, or <code>count()</code>, revealing trends within categories.</li>
+</ul>
+<section id="why-use-grouping-and-aggregation" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="why-use-grouping-and-aggregation"><span class="header-section-number">11.9.1</span> Why Use Grouping and Aggregation?</h3>
+<ul>
+<li>Grouping and summarizing large datasets make it easier to compare and analyze patterns across different categories.</li>
+<li>Commonly used to calculate summary statistics, such as averages or totals, within groups.</li>
+<li><strong>Example:</strong> to see grouping and summarization in action, we will group the Titanic dataset by ticket class (<code>Pclass</code>) to calculate the average age of passengers in each class.</li>
+</ul>
+<div id="6d8f5912" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group Titanic dataset by ticket class and calculate the average age for each class</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>age_by_class <span class="op">=</span> titanic.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Age'</span>].mean()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>age_by_class</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>Pclass
+1    38.788981
+2    29.868641
+3    25.188747
+Name: Age, dtype: float64</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Here, <code>Pclass()</code> becomes the <strong>index</strong> in the resulting <code>DataFrame</code>. While this is useful for quick summaries, it can sometimes make further data manipulation less intuitive.</p></li>
+<li><p>Why Use <code>reset_index()</code>?</p>
+<ul>
+<li>Applying <code>reset_index()</code> converts the <strong>index</strong> back into a regular column.</li>
+<li>This makes the <code>DataFrame</code> easier to read and more convenient for additional operations (e.g., merging with other <code>DataFrame</code> or plotting).</li>
+</ul></li>
+<li><p>So, let us apply <code>reset_index()</code> to make <code>Pclass</code> a <em>standard</em> column:</p></li>
+</ul>
+<div id="659252f8" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping, aggregation, and reset index</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>age_by_class <span class="op">=</span> titanic.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Age'</span>].mean().reset_index()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>age_by_class</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>38.788981</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>29.868641</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>25.188747</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Final output:</strong> now, <code>Pclass</code> appears as a regular column, making it easier to interpret and manipulate.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="matplotlib" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> <code>Matplotlib</code></h1>
+<ul>
+<li><code>Matplotlib</code> is a Python package used for creating data visualizations.</li>
+<li>It provides a wide range of tools for creating line plots, bar plots, histograms, scatterplots</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/matplotlib.png" class="img-fluid figure-img"></p>
+<figcaption>Matplotlib</figcaption>
+</figure>
+</div>
+<section id="plotting-a-simple-line-graph-with-matplotlib" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="plotting-a-simple-line-graph-with-matplotlib"><span class="header-section-number">12.1</span> Plotting a Simple Line Graph with <code>Matplotlib</code></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.gettyimages.com/id/1445772340/photo/drone-point-view-of-power-station.jpg?s=2048x2048&amp;w=gi&amp;k=20&amp;c=qMVveLgAq5dCTOmPQ90ZSIAEJcQhuoOC9-jyRSBcFxM=" class="img-fluid figure-img"></p>
+<figcaption>Power Station</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>Let us start with an example of how to use Matplotlib to create a simple line graph for global CO<sub>2</sub> emissions from 1960 to 2014.</p></li>
+<li><p>Here is the code to load the dataset:</p></li>
+</ul>
+<div id="c1124712" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/datasets/co2-fossil-global/master/global.csv'</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>co2 <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>co2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Total</th>
+<th data-quarto-table-cell-role="th">Gas Fuel</th>
+<th data-quarto-table-cell-role="th">Liquid Fuel</th>
+<th data-quarto-table-cell-role="th">Solid Fuel</th>
+<th data-quarto-table-cell-role="th">Cement</th>
+<th data-quarto-table-cell-role="th">Gas Flaring</th>
+<th data-quarto-table-cell-role="th">Per Capita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1751</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1752</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1753</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1754</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1755</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Now, here is the code to create a line plot using <code>matplotlib</code>:</li>
+</ul>
+<div id="4752510d" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.plot(co2[<span class="st">'Year'</span>], co2[<span class="st">'Total'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-14-output-1.png" width="583" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Let us add annotations to the plot:</li>
+</ul>
+<div id="156b3178" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>plt.plot(co2[<span class="st">'Year'</span>], co2[<span class="st">'Total'</span>])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'CO2 Emissions (million metric tons)'</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Global CO2 Emissions from Fossil Fuels'</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-15-output-1.png" width="601" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-bar-plot-with-matplotlib" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="creating-a-bar-plot-with-matplotlib"><span class="header-section-number">12.2</span> Creating a Bar Plot with <code>Matplotlib</code></h2>
+<ul>
+<li>We can also use <code>Matplotlib</code> to create a bar plot.</li>
+<li>Here is the code to load the dataset and create a bar plot:</li>
+</ul>
+<div id="913fc1e0" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plt.bar(age_by_class[<span class="st">'Pclass'</span>], age_by_class[<span class="st">'Age'</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mean Age by Class'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Class'</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mean Age (Years)'</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-16-output-1.png" width="589" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="seaborn" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> <code>Seaborn</code></h1>
+<ul>
+<li><code>Seaborn</code> is a Python data visualization package based on <code>Matplotlib</code>.</li>
+<li>It provides a high-level interface for creating informative and attractive statistical graphics.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaborn.png" class="img-fluid figure-img"></p>
+<figcaption>Seaborn</figcaption>
+</figure>
+</div>
+<ul>
+<li><code>Seaborn</code> works well with pandas dataframes and provides tools for visualizing relationships between variables.</li>
+</ul>
+<section id="titanic-survived-vs.-sex" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="titanic-survived-vs.-sex"><span class="header-section-number">13.1</span> Titanic: Survived vs.&nbsp;Sex</h2>
+<div id="9e9862a2" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sns.countplot (data <span class="op">=</span> titanic, x <span class="op">=</span> <span class="st">'Survived'</span>, hue <span class="op">=</span> <span class="st">'Sex'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-17-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="titanic-age-vs.-class-vs.-age" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="titanic-age-vs.-class-vs.-age"><span class="header-section-number">13.2</span> Titanic: Age vs.&nbsp;Class vs.&nbsp;Age</h2>
+<div id="772fbe08" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot (data <span class="op">=</span> titanic, x <span class="op">=</span> <span class="st">'Pclass'</span>, y <span class="op">=</span> <span class="st">"Age"</span>, hue <span class="op">=</span> <span class="st">'Sex'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-18-output-1.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="titanic-sex-ratio-vs.-class" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="titanic-sex-ratio-vs.-class"><span class="header-section-number">13.3</span> Titanic: Sex Ratio vs.&nbsp;Class</h2>
+<div id="6a109906" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>normalized_counts <span class="op">=</span> titanic[[<span class="st">'Pclass'</span>, <span class="st">'Sex'</span>]].groupby([<span class="st">'Pclass'</span>]).value_counts(normalize<span class="op">=</span><span class="va">True</span>).reset_index()</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>normalized_counts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>male</td>
+<td>0.564815</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>female</td>
+<td>0.435185</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>male</td>
+<td>0.586957</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2</td>
+<td>female</td>
+<td>0.413043</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>3</td>
+<td>male</td>
+<td>0.704312</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="2dff8608" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.barplot (data <span class="op">=</span> normalized_counts, x <span class="op">=</span> <span class="st">'Pclass'</span>, y <span class="op">=</span> <span class="st">"proportion"</span>, hue <span class="op">=</span> <span class="st">'Sex'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python8_packages_files/figure-html/cell-20-output-1.png" width="589" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="numpy" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> <code>Numpy</code></h1>
+<ul>
+<li><code>NumPy</code> is a Python package used for numerical computing.</li>
+<li>It provides a wide range of tools for working with arrays and matrices.</li>
+<li><code>NumPy</code> is used in many scientific computing applications.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1024px-NumPy_logo_2020.svg.png" class="img-fluid figure-img"></p>
+<figcaption>NumPy</figcaption>
+</figure>
+</div>
+<section id="creating-a-numpy-array" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="creating-a-numpy-array"><span class="header-section-number">14.1</span> Creating a <code>NumPy</code> Array</h2>
+<ul>
+<li>To create a <code>NumPy</code> array, we can use the <code>numpy.array()</code> function.</li>
+<li>Here is the code to create a <code>NumPy</code> array:</li>
+</ul>
+<div id="50545143" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array(data)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>array([1, 2, 3, 4, 5])</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-array-operations" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="numpy-array-operations"><span class="header-section-number">14.2</span> <code>NumPy</code> Array Operations</h2>
+<ul>
+<li>We can perform various operations on <code>NumPy</code> arrays.</li>
+<li>For example, we can add, subtract, multiply, and divide arrays.</li>
+<li>Here is the code to add two arrays:</li>
+</ul>
+<div id="656ab2c1" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>arr3 <span class="op">=</span> arr1 <span class="op">+</span> arr2</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>arr3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>array([5, 7, 9])</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-array-indexing-and-slicing" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="numpy-array-indexing-and-slicing"><span class="header-section-number">14.3</span> <code>NumPy</code> Array Indexing and Slicing</h2>
+<ul>
+<li>We can also index and slice <code>NumPy</code> arrays.</li>
+<li>Here is the code to create a <code>NumPy</code> array and slice it:</li>
+</ul>
+<div id="5306df15" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>np.int64(3)</code></pre>
+</div>
+</div>
+<div id="ed3170f4" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>array([2, 3, 4])</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-broadcasting" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="numpy-broadcasting"><span class="header-section-number">14.4</span> <code>NumPy</code> Broadcasting</h2>
+<ul>
+<li><strong>Broadcasting</strong> is a powerful <code>NumPy</code> feature that allows us to perform operations on arrays of different shapes.</li>
+<li>Here is an example:</li>
+</ul>
+<div id="fc1c93b3" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2D array of shape (3, 4)</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                 [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                 [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1D array of shape (4,)</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the 1D array to each row of the 2D array using broadcasting</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> arr1 <span class="op">+</span> arr2</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 3  4  5  6]
+ [ 7  8  9 10]
+ [11 12 13 14]]</code></pre>
+</div>
+</div>
+<ul>
+<li><p>In this example, we have a 2D <code>NumPy</code> array <code>arr1</code> with shape <code>(3, 4)</code> and a 1D NumPy array <code>arr2</code> with shape <code>(4, )</code>. We want to add the values in <code>arr2</code> to each row of <code>arr1</code>.</p></li>
+<li><p>Normally, this operation would not be possible because the two arrays have different shapes.</p></li>
+<li><p>However, <code>NumPy</code> broadcasting allows us to perform this operation by “stretching” or “broadcasting” the 1D array to match the shape of the 2D array.</p></li>
+<li><p>In this case, <code>NumPy</code> broadcasts the 1D array <code>arr2</code> to a 2D array of shape <code>(3, 4)</code> by duplicating its values along the first dimension. This allows us to perform <em>element-wise</em> addition between the two arrays.</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./python7_time_complexity.html" class="pagination-link" aria-label="Time Complexity">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Time Complexity</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./python9_data_visualization.html" class="pagination-link" aria-label="Data Visualization">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

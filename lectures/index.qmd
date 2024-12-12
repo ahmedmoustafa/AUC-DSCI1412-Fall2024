@@ -1,0 +1,5 @@
+# About This Book
+
+This book is a compilation of materials for the **DSCI 1412 - Data Science II** course, taught at the **American University in Cairo (AUC)** during **Fall 2024**. It covers Python programming concepts and applications through practical examples and problem sets designed to enhance your skills in data science.
+
+Happy learning, and best of luck in your journey as a data scientist!

@@ -1,0 +1,1782 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AUC DSCI 1412 Fundamentals of Data Science II",
+    "section": "",
+    "text": "1 About This Book\nThis book is a compilation of materials for the DSCI 1412 - Data Science II course, taught at the American University in Cairo (AUC) during Fall 2024. It covers Python programming concepts and applications through practical examples and problem sets designed to enhance your skills in data science.\nHappy learning, and best of luck in your journey as a data scientist!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About This Book</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html",
+    "href": "python1_intro.html",
+    "title": "2  Introduction to Python",
+    "section": "",
+    "text": "2.1 What is Python?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#what-is-python",
+    "href": "python1_intro.html#what-is-python",
+    "title": "2  Introduction to Python",
+    "section": "",
+    "text": "Python is an interpreted, high-level, general-purpose programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming.\nIt was developed by Guido van Rossum and first released in 1991.\n\n\n\n\nPython",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#why-is-it-called-python",
+    "href": "python1_intro.html#why-is-it-called-python",
+    "title": "2  Introduction to Python",
+    "section": "2.2 Why is it called Python?",
+    "text": "2.2 Why is it called Python?\nWhen he began implementing Python, Guido van Rossum (left) was also reading the published scripts from Monty Python’s Flying Circus (right), a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python. [Source: General Python FAQ]\n\n\n\nGuido van Rossum & Monty Python’s Flying Circus",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#design-philosophy",
+    "href": "python1_intro.html#design-philosophy",
+    "title": "2  Introduction to Python",
+    "section": "2.3 Design Philosophy",
+    "text": "2.3 Design Philosophy\nPython is built on the philosophy of simplicity and elegance. The core philosophy, outlined in The Zen of Python by Tim Peters, highlights principles like “Readability counts” and “There should be one—and preferably only one—obvious way to do it.”\n\n\n\nThe Zen of Python",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#python-popularity",
+    "href": "python1_intro.html#python-popularity",
+    "title": "2  Introduction to Python",
+    "section": "2.4 Python Popularity",
+    "text": "2.4 Python Popularity\n\n\n\nThe Most Popular Programming Languages",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#why-python",
+    "href": "python1_intro.html#why-python",
+    "title": "2  Introduction to Python",
+    "section": "2.5 Why Python?",
+    "text": "2.5 Why Python?\n\n\n\nEasy to Learn and Use:\n\nSimple, readable syntax similar to English\nGentle learning curve ideal for beginners\n\nVersatile and Powerful:\n\nSupports multiple programming paradigms (functional, object-oriented)\nExtensive standard library and rich ecosystem of third-party packages\n\nWide Range of Applications:\n\nWeb development (Django, Flask)\nData science and machine learning (NumPy, Pandas, TensorFlow)\nAutomation, scripting, and more\n\nStrong Community Support:\n\nLarge, active community contributes to continuous improvement\nAbundant resources, tutorials, and documentation available\n\nHigh Demand in the Job Market: Widely used across industries",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#who-uses-python",
+    "href": "python1_intro.html#who-uses-python",
+    "title": "2  Introduction to Python",
+    "section": "2.6 Who Uses Python?",
+    "text": "2.6 Who Uses Python?\n\n\n\nTop Companies Use Python\n\n\n(Source: Top 10 Python Development Company to Hire)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#first-image-of-a-black-hole",
+    "href": "python1_intro.html#first-image-of-a-black-hole",
+    "title": "2  Introduction to Python",
+    "section": "2.7 First Image of a Black Hole",
+    "text": "2.7 First Image of a Black Hole\n\n\n\n\n\nKatie Bouman’s moment when the first black hole image was processed\n\n\n Source: Girl Geek X \n\n\n\n\nFirst Image of a Black Hole, Boston, April 2019\n\n\n Source: NASA. Credit: Event Horizon Telescope Collaboration",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#working-with-python-using-google-colab",
+    "href": "python1_intro.html#working-with-python-using-google-colab",
+    "title": "2  Introduction to Python",
+    "section": "2.8 Working with Python using Google Colab",
+    "text": "2.8 Working with Python using Google Colab\nHomepage: https://colab.research.google.com/ (runs online, cloud-computing like)\n\n\n\nGoogle Colab",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#working-with-python-using-jupyterlab-desktop",
+    "href": "python1_intro.html#working-with-python-using-jupyterlab-desktop",
+    "title": "2  Introduction to Python",
+    "section": "2.9 Working with Python using JupyterLab Desktop",
+    "text": "2.9 Working with Python using JupyterLab Desktop\nHomepage: https://github.com/jupyterlab/jupyterlab-desktop (runs offline, desktop)\n\n\n\nJupyterLab Desktop",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#working-with-python-using-visual-source-code",
+    "href": "python1_intro.html#working-with-python-using-visual-source-code",
+    "title": "2  Introduction to Python",
+    "section": "2.10 Working with Python using Visual Source Code",
+    "text": "2.10 Working with Python using Visual Source Code\nHomepage: https://code.visualstudio.com/ (runs offline, desktop)\n\n\n\nVS Code",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#first-things-first",
+    "href": "python1_intro.html#first-things-first",
+    "title": "2  Introduction to Python",
+    "section": "2.11 First Things First",
+    "text": "2.11 First Things First\nAs with any programming course, here is the Hello World! in Python.\n\nprint (\"Hello, World!\")\n\nHello, World!\n\n\n\n\n\nHello, World!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#variables-in-python",
+    "href": "python1_intro.html#variables-in-python",
+    "title": "2  Introduction to Python",
+    "section": "2.12 Variables in Python",
+    "text": "2.12 Variables in Python\nVariables are containers for storing data values. In Python, variables are created the moment you assign a value to it.\n\n2.12.1 Example\nx = 5\nname = \"Alice\"",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#naming-conventions",
+    "href": "python1_intro.html#naming-conventions",
+    "title": "2  Introduction to Python",
+    "section": "2.13 Naming Conventions",
+    "text": "2.13 Naming Conventions\n\nVariables names must start with a letter or an underscore.\nCan contain letters, numbers, and underscores.\nCase-sensitive (age, Age, and AGE are three different variables).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#dynamic-typing",
+    "href": "python1_intro.html#dynamic-typing",
+    "title": "2  Introduction to Python",
+    "section": "3.1 Dynamic Typing",
+    "text": "3.1 Dynamic Typing\nPython is dynamically typed, which means the type of a variable is determined at runtime.\nx = 4       # x is an integer\nx = \"Sally\" # x is now a string\n\nPros of Dynamic Typing:\n\nvery easy to work with\nfaster development time\n\nCons of Dynamic Typing:\n\nmay result in unexpected bugs!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#boolean-variables-and-logic-operations",
+    "href": "python1_intro.html#boolean-variables-and-logic-operations",
+    "title": "2  Introduction to Python",
+    "section": "3.2 Boolean Variables and Logic Operations",
+    "text": "3.2 Boolean Variables and Logic Operations\nBoolean variables in Python are defined by two constant objects True and False. Understanding how Boolean operations work is crucial for control flow in programming.\n\n3.2.1 Truth Table\n\nAND operation (True if both are true)\nOR operation (True if at least one is true)\nNOT operation (Inverts the Boolean value)\n\n (Modified from Intro To Programming)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#types-of-operators",
+    "href": "python1_intro.html#types-of-operators",
+    "title": "2  Introduction to Python",
+    "section": "3.3 Types of Operators",
+    "text": "3.3 Types of Operators\n\nArithmetic Operators: +, -, *, /, //, %, ** for basic math operations.\nComparison Operators: ==, !=, &lt;, &gt;, &lt;=, &gt;= for comparing values.\nLogical Operators: and, or, not for boolean logic.\nAssignment Operators: =, +=, -=, *=, /=, etc., to assign values to variables.\nMembership Operators: in, not in, to check membership in sequences.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#examples",
+    "href": "python1_intro.html#examples",
+    "title": "2  Introduction to Python",
+    "section": "3.4 Examples",
+    "text": "3.4 Examples\n\n5 + 3 results in 8 (Arithmetic)\n5 == 3 results in False (Comparison)\nTrue and False results in False (Logical)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#type-conversion",
+    "href": "python1_intro.html#type-conversion",
+    "title": "2  Introduction to Python",
+    "section": "3.5 Type Conversion",
+    "text": "3.5 Type Conversion\nYou can convert between different types using Python’s built-in functions like int(), float(), and str().\nint(5.4) # Converts to integer\nstr(20) # Converts to string\nfloat(\"3.14\") # Converts to float",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#working-with-strings",
+    "href": "python1_intro.html#working-with-strings",
+    "title": "2  Introduction to Python",
+    "section": "3.6 Working with Strings",
+    "text": "3.6 Working with Strings\nStrings in Python are used to handle textual data. They can be enclosed in either single quotes ('...') or double quotes (\"...\").",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#string-operations",
+    "href": "python1_intro.html#string-operations",
+    "title": "2  Introduction to Python",
+    "section": "3.7 String Operations",
+    "text": "3.7 String Operations\n\n3.7.1 Concatenation\n\n'Hello ' + 'World!'\n\n'Hello World!'\n\n\n\n\n3.7.2 Repetition\n\n'Ha' * 3\n\n'HaHaHa'\n\n\n\n\n3.7.3 Indexing\n\n'Hello'[1]\n\n'e'\n\n\n\n\n3.7.4 Slicing\n\n'Hello'[1:4]\n\n'ell'",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#useful-string-methods",
+    "href": "python1_intro.html#useful-string-methods",
+    "title": "2  Introduction to Python",
+    "section": "3.8 Useful String Methods",
+    "text": "3.8 Useful String Methods\n\n.upper(), .lower(), .strip(), .split(), .replace(), .find(), .join(), .count(), .startswith(), .endswith()\nAn even more comprehensive list of string methods in Python can be found:\n\nhere: Python String Functions at Digital Ocean, and\nhere: Python String Methods at Geeks for Geeks\nBTW, both are excellent resources for additional documentation and examples.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#creating-a-list",
+    "href": "python1_intro.html#creating-a-list",
+    "title": "2  Introduction to Python",
+    "section": "4.1 Creating a List",
+    "text": "4.1 Creating a List\n\nmy_list\n\n\nmy_list = [1, 2, 3]\nmy_list\n\n[1, 2, 3]\n\n\n\n\n\n\n\ngraph LR;\n    A[\"my_list[0] = 1\"] --&gt; B[\"my_list[1] = 2\"] --&gt; C[\"my_list[2] = 3\"];\n\n\n\n\n\n\n\nnames\n\n\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nnames\n\n['Alice', 'Bob', 'Charlie']\n\n\n\n\n\n\n\ngraph LR;\n    A[\"names[0] = Alice\"] --&gt; B[\"names[1] = Bob\"] --&gt; C[\"names[2] = Charlie\"];",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#accessing-elements",
+    "href": "python1_intro.html#accessing-elements",
+    "title": "2  Introduction to Python",
+    "section": "4.2 Accessing Elements",
+    "text": "4.2 Accessing Elements\n\nAccess by index:\n\n\nmy_list[0]\n\n1\n\n\n\nSlicing:\n\n\nnames[1:3]\n\n['Bob', 'Charlie']",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#list-operations",
+    "href": "python1_intro.html#list-operations",
+    "title": "2  Introduction to Python",
+    "section": "4.3 List Operations",
+    "text": "4.3 List Operations\n\nAppend: my_list.append(4)\nRemove: my_list.remove(1)\nSort: names.sort()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#variable-scope",
+    "href": "python1_intro.html#variable-scope",
+    "title": "2  Introduction to Python",
+    "section": "5.1 Variable Scope",
+    "text": "5.1 Variable Scope\n\nGlobal Scope: Variables defined at the top-level of a script or module are global.\nLocal Scope: Variables created within a function are local to that function.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#mutability",
+    "href": "python1_intro.html#mutability",
+    "title": "2  Introduction to Python",
+    "section": "5.2 Mutability",
+    "text": "5.2 Mutability\n\nImmutable types: int, float, bool, str. Changing the value creates a new object.\nMutable types: list, dict, set. They can be changed in place without creating a new object.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#sequences",
+    "href": "python1_intro.html#sequences",
+    "title": "2  Introduction to Python",
+    "section": "6.1 Sequences",
+    "text": "6.1 Sequences\n\nTuples: Immutable and ordered. my_tuple = (1, 2, 3)\nRanges: Immutable sequence of numbers. range(1, 10)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#dictionaries",
+    "href": "python1_intro.html#dictionaries",
+    "title": "2  Introduction to Python",
+    "section": "6.2 Dictionaries",
+    "text": "6.2 Dictionaries\n\n\n6.2.1 Definition\nA dictionary in Python is a collection of key-value pairs, where each key is unique, and it maps to a specific value.\n\n\n6.2.2 Key Features Dictionaries\n\nUnordered: The items in a dictionary are not stored in any particular order. However, in Python 3.7 and later, dictionaries maintain the insertion order.\nMutable: The values in a dictionary can be modified, added, or deleted.\nIndexed by Keys: Instead of using indices (like in lists), dictionaries use keys to access the corresponding values.\nUnique Keys: Each key must be unique within a dictionary. If a duplicate key is assigned a value, it will overwrite the previous value.\n\n\n\n6.2.3 Syntax\nmy_dict = {\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}\n\n\n6.2.4 Example of Dictionaries\n\n# Creating a dictionary\nmy_dict = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"New York\"\n}\n\n\n\n\n\n\ngraph TD;\n    A[\"my_dict\"] --&gt; B[\"name: Alice\"];\n    A --&gt; C[\"age: 30\"];\n    A --&gt; D[\"city: New York\"];\n\n\n\n\n\n\n\n6.2.4.1 Accessing a value by key\n\nmy_dict[\"name\"]\n\n'Alice'\n\n\n\n\n6.2.4.2 Adding a new key-value pair\n\nmy_dict[\"email\"] = \"alice@example.com\"\nmy_dict\n\n{'name': 'Alice', 'age': 30, 'city': 'New York', 'email': 'alice@example.com'}\n\n\n\n\n6.2.4.3 Modifying an existing value\n\nmy_dict[\"age\"] = 31\nmy_dict\n\n{'name': 'Alice', 'age': 31, 'city': 'New York', 'email': 'alice@example.com'}\n\n\n\n\n6.2.4.4 Deleting a key-value pair\n\ndel my_dict[\"city\"]\nmy_dict\n\n{'name': 'Alice', 'age': 31, 'email': 'alice@example.com'}",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#set-types",
+    "href": "python1_intro.html#set-types",
+    "title": "2  Introduction to Python",
+    "section": "6.3 Set Types",
+    "text": "6.3 Set Types\n\nSets: Unordered collection of unique elements. my_set = {1, 2, 3}\nFrozen Sets: Immutable version of a set. frozen_set = frozenset([1, 2, 3])",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#escape-characters",
+    "href": "python1_intro.html#escape-characters",
+    "title": "2  Introduction to Python",
+    "section": "6.4 Escape Characters",
+    "text": "6.4 Escape Characters\n\nUse \\ to insert special characters, e.g.,\nnew line:\n\n\nprint (\"Hello\\nWorld!\")\n\nHello\nWorld!\n\n\n\ntab:\n\n\nprint (\"Hello\\tWorld!\")\n\nHello   World!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python1_intro.html#summary",
+    "href": "python1_intro.html#summary",
+    "title": "2  Introduction to Python",
+    "section": "6.5 Summary",
+    "text": "6.5 Summary\n\nPython is awesome\nPython uses dynamic typing\nParentheses ( ) are for calling functions\nSquare brackets [ ] are are indexing lists\nStrings are immutable lists\nLists start indexing at zero\n\n\n\nprint (\"Thank you!\")\n\nThank you!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Python</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html",
+    "href": "python2_data_structures.html",
+    "title": "3  Python Data Structures",
+    "section": "",
+    "text": "4 Common Methods",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#list-methods",
+    "href": "python2_data_structures.html#list-methods",
+    "title": "3  Python Data Structures",
+    "section": "4.1 List Methods",
+    "text": "4.1 List Methods\nAssume initial lst is [1, 2, 3] before each method’s usage example.\n\n\n\n\n\n\n\n\n\nMethod\nDescription\nUsage Example\nOutput\n\n\n\n\nappend(x)\nAdds an item x to the end of the list.\nlst.append(9)\n[1, 2, 3, 9]\n\n\nextend(iterable)\nAdds all items in iterable to the list.\nlst.extend([10, 11])\n[1, 2, 3, 9, 10, 11]\n\n\ninsert(i, x)\nInserts an item x at a given position i.\nlst.insert(1, 'a')\n[1, 'a', 2, 3, 9, 10, 11]\n\n\nremove(x)\nRemoves the first item from the list whose value is x.\nlst.remove('a')\n[1, 2, 3, 9, 10, 11]\n\n\npop([i])\nRemoves the item at the given position in the list and returns it. If no index is specified, removes and returns the last item.\nlst.pop()\n11 (list becomes [1, 2, 3, 9, 10])\n\n\nclear()\nRemoves all items from the list.\nlst.clear()\n[]\n\n\nindex(x)\nReturns the index of the first item whose value is x.\nlst.index(9)\n3\n\n\ncount(x)\nReturns the number of times x appears in the list.\nlst.count(2)\n1\n\n\nsort(key=None, reverse=False)\nSorts the items of the list in place.\nlst.sort()\n[1, 2, 3, 9, 10] (if lst is reset before use)\n\n\nreverse()\nReverses the elements of the list in place.\nlst.reverse()\n[10, 9, 3, 2, 1] (if lst is reset before use)\n\n\ncopy()\nReturns a shallow copy of the list.\nlst2 = lst.copy()\n[1, 2, 3, 9, 10] (creates lst2)\n\n\n\n\n4.1.1 Shallow Copy\nIn Python, a shallow copy creates a new object, but the new object’s contents reference the same memory locations as the original object’s contents.\n\nNew object: A shallow copy creates a distinct object, meaning changes to the copy itself will not affect the original.\nShared references: The elements within the new object (if it is a container like a list or dictionary) point to the same underlying data as the elements in the original object.\nMutable elements: If any of the elements within the container are mutable (like lists or dictionaries), modifying them through the copy will also modify them in the original.\nCommon use cases: Shallow copies are suitable when you want a separate object but do not anticipate modifying the nested, mutable elements. They are also faster to create than deep copies.\n\n\noriginal_list = [[1, 2], 3, 4]\nshallow_copy = original_list.copy()\nprint(\"Original list:\", original_list)\nprint(\"Shallow copy:\", shallow_copy)\n\nOriginal list: [[1, 2], 3, 4]\nShallow copy: [[1, 2], 3, 4]\n\n\n\n# Modifying the copy itself\nshallow_copy.append(5)\nprint(\"Original list:\", original_list)\nprint(\"Shallow copy:\", shallow_copy)\n\nOriginal list: [[1, 2], 3, 4]\nShallow copy: [[1, 2], 3, 4, 5]\n\n\n\n# Modifying a mutable element within the copy\nshallow_copy[0].append(3)\nprint(\"Original list:\", original_list)\nprint(\"Shallow copy:\", shallow_copy)\n\nOriginal list: [[1, 2, 3], 3, 4]\nShallow copy: [[1, 2, 3], 3, 4, 5]\n\n\nNote: If you need to ensure that modifications to nested, mutable elements in the copy do not affect the original, you should use a deep copy instead.\nReference: copy in Python (Deep Copy and Shallow Copy)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#dictionary-methods",
+    "href": "python2_data_structures.html#dictionary-methods",
+    "title": "3  Python Data Structures",
+    "section": "4.2 Dictionary Methods",
+    "text": "4.2 Dictionary Methods\nAssume initial dct is {'apple': 2, 'banana': 3} before each method’s usage example.\n\n\n\n\n\n\n\n\n\nMethod\nDescription\nUsage Example\nOutput\n\n\n\n\nget(key)\nReturns the value for key if key is in the dictionary, else None.\ndct.get('apple')\n2\n\n\nkeys()\nReturns a view object displaying a list of all the keys.\ndct.keys()\ndict_keys(['apple', 'banana'])\n\n\nvalues()\nReturns a view object displaying a list of all the values.\ndct.values()\ndict_values([2, 3])\n\n\nitems()\nReturns a view object containing a tuple for each key-value pair.\ndct.items()\ndict_items([('apple', 2), ('banana', 3)])\n\n\nupdate([other])\nUpdates the dictionary with the key/value pairs from other, overwriting existing keys.\ndct.update({'cherry': 5})\n{... 'cherry': 5}\n\n\npop(key)\nRemoves the specified key and returns the corresponding value. If key is not found, d is returned if given, otherwise KeyError is raised.\ndct.pop('apple')\n2 (dict becomes {'banana': 3, 'cherry': 5})\n\n\npopitem()\nRemoves and returns a (key, value) pair as a 2-tuple. Pairs are returned in LIFO order.\ndct.popitem()\n('cherry', 5)\n\n\nclear()\nRemoves all items from the dictionary.\ndct.clear()\n{}\n\n\ncopy()\nReturns a shallow copy of the dictionary.\ndct2 = dct.copy()\n{'banana': 3} (creates dct2)\n\n\nsetdefault(key, default=None)\nIf key is in the dictionary, return its value. If not, insert key with a value of default and return default.\ndct.setdefault('banana', 5)\n3",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#tuple-methods",
+    "href": "python2_data_structures.html#tuple-methods",
+    "title": "3  Python Data Structures",
+    "section": "4.3 Tuple Methods",
+    "text": "4.3 Tuple Methods\nAssume tpl is (1, 2, 3) for the usage example.\n\n\n\n\n\n\n\n\n\nMethod\nDescription\nUsage Example\nOutput\n\n\n\n\ncount(x)\nReturns the number of times x appears in the tuple.\ntpl.count(1)\n1\n\n\nindex(x)\nFinds the first occurrence of x in the tuple and returns its index.\ntpl.index(3)\n2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-string-reversal",
+    "href": "python2_data_structures.html#exercise-string-reversal",
+    "title": "3  Python Data Structures",
+    "section": "5.1 Exercise: String Reversal",
+    "text": "5.1 Exercise: String Reversal\nReverse a given string without using loops or built-in functions.\n\nSample Input: 'hello'\nSample Output: 'olleh'.\n\n\n\n5.1.1 Solution:\n\ninput_string = 'hello'\ninput_string[::-1]\n\n'olleh'\n\n\n\n\n5.1.2 Explanation:\nString slicing allows you to reverse a string with [::-1], where : specifies the whole string and -1 dictates the step, reversing the order.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-palindrome-check",
+    "href": "python2_data_structures.html#exercise-palindrome-check",
+    "title": "3  Python Data Structures",
+    "section": "5.2 Exercise: Palindrome Check",
+    "text": "5.2 Exercise: Palindrome Check\nCheck if a given string is a palindrome without using loops.\n\nSample Input: 'radar'\nSample Output: True.\n\n\n\n5.2.1 Solution:\n\ninput_string = 'radar'\ninput_string == input_string[::-1]\n\nTrue\n\n\n\n\n5.2.2 Explanation:\nA palindrome reads the same backward as forward. Comparing the original string with its reversed version checks for this condition.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-list-sum",
+    "href": "python2_data_structures.html#exercise-list-sum",
+    "title": "3  Python Data Structures",
+    "section": "5.3 Exercise: List Sum",
+    "text": "5.3 Exercise: List Sum\nFind the sum of elements in a list without using loops.\n\nSample Input: [1, 2, 3, 4, 5]\nSample Output: 15.\n\n\n\n5.3.1 Solution:\n\nnumbers = [1, 2, 3, 4, 5]\nsum(numbers)\n\n15\n\n\n\n\n5.3.2 Explanation:\nThe sum function calculates the total of all numbers in the list directly.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-list-element-swap",
+    "href": "python2_data_structures.html#exercise-list-element-swap",
+    "title": "3  Python Data Structures",
+    "section": "5.4 Exercise: List Element Swap",
+    "text": "5.4 Exercise: List Element Swap\nSwap the second and last elements of a list without using additional variables.\n\nSample Input: [1, 2, 3, 4]\nSample Output: [1, 4, 3, 2]\n\n\n\n5.4.1 Solution:\n\nlst = [1, 2, 3, 4]\nlst[1], lst[-1] = lst[-1], lst[1]\nlst\n\n[1, 4, 3, 2]\n\n\n\n\n5.4.2 Explanation:\nThis solution uses tuple unpacking to swap the values of the second and last elements in the list, demonstrating an efficient way to rearrange elements.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-unique-elements",
+    "href": "python2_data_structures.html#exercise-unique-elements",
+    "title": "3  Python Data Structures",
+    "section": "5.5 Exercise: Unique Elements",
+    "text": "5.5 Exercise: Unique Elements\nCreate a list of unique elements from the given list without using loops.\n\nSample Input: [1, 2, 2, 3, 3, 3, 4]\nSample Output: [1, 2, 3, 4]\n\n\n\n5.5.1 Solution:\n\nlst = [1, 2, 2, 3, 3, 3, 4]\nunique_lst = list(set(lst))\nunique_lst\n\n[1, 2, 3, 4]\n\n\n\n\n5.5.2 Explanation:\nConverts the list to a set, using list elements as set entries, then converts the set keys back to a list.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-accessing-dictionary-elements",
+    "href": "python2_data_structures.html#exercise-accessing-dictionary-elements",
+    "title": "3  Python Data Structures",
+    "section": "5.6 Exercise: Accessing Dictionary Elements",
+    "text": "5.6 Exercise: Accessing Dictionary Elements\nAccess a specific element by key in a dictionary.\n\nSample Input: {'name': 'John', 'age': 30}, Key: 'age'\nSample Output: 30.\n\n\n\n5.6.1 Solution:\n\nperson = {'name': 'John', 'age': 30}\nperson.get('age')\n\n30\n\n\n\n\n5.6.2 Explanation:\nThe get method accesses the value for a given key.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-merge-two-dictionaries",
+    "href": "python2_data_structures.html#exercise-merge-two-dictionaries",
+    "title": "3  Python Data Structures",
+    "section": "5.7 Exercise: Merge Two Dictionaries",
+    "text": "5.7 Exercise: Merge Two Dictionaries\nMerge two dictionaries into one without using loops.\n\nSample Input: dict1 = {'a': 1, 'b': 2}, dict2 = {'c': 3, 'd': 4}\nSample Output: {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n\n\n\n5.7.1 Solution:\n\ndict1 = {'a': 1, 'b': 2}\ndict2 = {'c': 3, 'd': 4}\n{**dict1, **dict2}\n\n{'a': 1, 'b': 2, 'c': 3, 'd': 4}\n\n\n\n\n5.7.2 Explanation:\nThe ** operator unpacks the dictionaries, and combining them in {} creates a new dictionary containing all pairs.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-tuple-swap",
+    "href": "python2_data_structures.html#exercise-tuple-swap",
+    "title": "3  Python Data Structures",
+    "section": "5.8 Exercise: Tuple Swap",
+    "text": "5.8 Exercise: Tuple Swap\nSwap the first and last elements of a tuple.\n\nSample Input: (1, 2, 3, 4)\nSample Output: (4, 2, 3, 1)\n\n\n\n5.8.1 Solution:\n\noriginal_tuple = (1, 2, 3, 4)\noriginal_tuple[-1:] + original_tuple[1:-1] + original_tuple[:1]\noriginal_tuple\n\n(1, 2, 3, 4)\n\n\n\n\n5.8.2 Explanation:\nSlicing and concatenating tuples allows swapping the first and last elements without additional variables.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-nested-data-extraction",
+    "href": "python2_data_structures.html#exercise-nested-data-extraction",
+    "title": "3  Python Data Structures",
+    "section": "5.9 Exercise: Nested Data Extraction",
+    "text": "5.9 Exercise: Nested Data Extraction\nExtract a value from a nested dictionary using a list of keys.\n\nSample Input: data = {'a': {'b': {'c': 'd'}}}, keys = ['a', 'b', 'c']\nSample Output: 'd'\n\n\n\n5.9.1 Solution:\n\ndata = {'a': {'b': {'c': 'd'}}}\nkeys = ['a', 'b', 'c']\ndata[keys[0]][keys[1]][keys[2]]\n\n'd'\n\n\n\n\n5.9.2 Explanation:\nSequential access using keys from the list navigates through the nested dictionaries to the desired value.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-tracing-string-operations",
+    "href": "python2_data_structures.html#exercise-tracing-string-operations",
+    "title": "3  Python Data Structures",
+    "section": "5.10 Exercise: Tracing String Operations",
+    "text": "5.10 Exercise: Tracing String Operations\n\n5.10.1 Code\n\ns = 'Python'\noutput = s[1:4] + s[:2] + s[-2:]\n\n\n\n\n5.10.2 Solution\n\n\n'ythPyon'\n\n\n\n\n5.10.3 Explanation\nThe code concatenates slices of the string 'Python'. The slices are 'yth' (s[1:4]), 'Py' (s[:2]), and 'on' (s[-2:]), resulting in 'ythPyon'. Slicing allows you to extract parts of a string. This exercise demonstrates how slices can be combined to rearrange and create new strings.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-tracing-list-operations",
+    "href": "python2_data_structures.html#exercise-tracing-list-operations",
+    "title": "3  Python Data Structures",
+    "section": "5.11 Exercise: Tracing List Operations",
+    "text": "5.11 Exercise: Tracing List Operations\n\n5.11.1 Code\n\nlst = [1, 2, [3, 4], (5, 6, 7)]\noutput = lst[2][1] + lst[3][1]\n\n\n\n\n5.11.2 Solution\n\n\n10\n\n\n\n\n5.11.3 Explanation\nThe output is 10, as it adds the second element of the third item (list [3, 4]) and the second element of the fourth item (tuple (5, 6, 7)). This shows how to access nested data structures. The exercise highlights indexing within complex data types.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-tracing-dictionary-operations",
+    "href": "python2_data_structures.html#exercise-tracing-dictionary-operations",
+    "title": "3  Python Data Structures",
+    "section": "5.12 Exercise: Tracing Dictionary Operations",
+    "text": "5.12 Exercise: Tracing Dictionary Operations\n\n5.12.1 Code\n\nd = {'a': 1, 'b': 2, 'c': 3}\nkeys = list(d.keys())\noutput = d[keys[1]] + d.get('c', 0) + len(keys)\n\n\n\n\n5.12.2 Solution\n\n\n8\n\n\n\n\n5.12.3 Explanation\nThe output is 8, coming from adding the value of 'b' (2), 'c' (3), and the number of keys (3). The exercise illustrates dictionary key access, the use of the get method for safe value retrieval, and how to work with dictionary keys as a list.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python2_data_structures.html#exercise-tracing-tuple-and-string-operations",
+    "href": "python2_data_structures.html#exercise-tracing-tuple-and-string-operations",
+    "title": "3  Python Data Structures",
+    "section": "5.13 Exercise: Tracing Tuple and String Operations",
+    "text": "5.13 Exercise: Tracing Tuple and String Operations\n\n5.13.1 Code\n\nt = ('a', 'b', 'c', 'd', 'e')\noutput = t[1:-1] + tuple('x') + t[:1]\n\n\n\n\n5.13.2 Solution:\n\n\n('b', 'c', 'd', 'x', 'a')\n\n\n\n\n5.13.3 Explanation:\nThe output is ('b', 'c', 'd', 'x', 'a'), showcasing tuple slicing and concatenation to reorder and modify tuples. This exercise demonstrates slicing tuples to extract parts, adding elements by converting a string to a tuple, and appending tuples to each other.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Python Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html",
+    "href": "python3_control_flow.html",
+    "title": "4  Flow Control in Python",
+    "section": "",
+    "text": "4.1 Python vs. C",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#definition-of-control-flow",
+    "href": "python3_control_flow.html#definition-of-control-flow",
+    "title": "4  Flow Control in Python",
+    "section": "4.2 Definition of Control Flow",
+    "text": "4.2 Definition of Control Flow\n\nControl flow is the order in which statements and instructions are executed in a program\nControl flow can be affected by decision-making statements, loops, and function calls.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#indentation-in-python",
+    "href": "python3_control_flow.html#indentation-in-python",
+    "title": "4  Flow Control in Python",
+    "section": "4.3 Indentation in Python",
+    "text": "4.3 Indentation in Python\n\nCode blocks are a group of statements that are executed together.\nIn Python, indentation is used to define blocks of code.\nPython uses whitespaces (spaces or tabs) at the beginning of a line to determine the indentation level of the line.\nThe amount of indentation is flexible, but it must be consistent throughout that block.\nGenerally, four spaces are used for each level of indentation.\nExample:\n\nif True:\n    print(\"This is within the if block\")  # Indented with four spaces\n    if True:\n        print(\"This is within the nested if block\")  # Indented with eight spaces\nprint(\"This is outside the if block\")  # No indentation",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#conditional-flow-control",
+    "href": "python3_control_flow.html#conditional-flow-control",
+    "title": "4  Flow Control in Python",
+    "section": "4.4 Conditional Flow Control",
+    "text": "4.4 Conditional Flow Control\n\n\n\n\n\ngraph TD;\n    A{Condition 1?} --&gt;|Yes| B[Block 1: Action if Condition 1 is true]\n    A --&gt;|No| C{Condition 2?}\n    C --&gt;|Yes| D[Block 2: Action if Condition 2 is true]\n    C --&gt;|No| E[Block 3: Action if both are false]\n\n\n\n\n\n\n\nif-statement\n\nThe if statement is used for decision-making in Python programming. It tests a condition and executes a block of code only if that condition evaluates to True. If the condition is False, the block of code is skipped.\nif expression:\n    statement(s)\n\nif-else-statement\n\nThe if statement can be combined with elif and else clauses to control the flow of execution in the program, allowing for the implementation of more complex logical structures.\nif condition1:\n    # Code to execute if condition1 is True (Execute Block1)\nelif condition2:\n    # Code to execute if condition2 is True (Execute Block2)\nelse:\n    # Code to execute if no conditions are True (Execute Block3)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#example-age-category",
+    "href": "python3_control_flow.html#example-age-category",
+    "title": "4  Flow Control in Python",
+    "section": "4.5 Example : Age Category",
+    "text": "4.5 Example : Age Category\nObjective: Categorize life stages by age.\nage = 20\nif age &lt; 13:\n    print(\"Child\")\nelif age &lt; 20:\n    print(\"Teenager\")\nelse:\n    print(\"Adult\")\n\n\n\nAdult",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#loops-in-python",
+    "href": "python3_control_flow.html#loops-in-python",
+    "title": "4  Flow Control in Python",
+    "section": "4.6 Loops in Python",
+    "text": "4.6 Loops in Python\n\n\n\n\n\ngraph TB;\n    A[Start Loop&lt;br/&gt;for item in iterable:] --&gt; B[Execute Block]\n    B --&gt; A\n    A --&gt;|No More Items| C[End Loop]\n\n\n\n\n\n\nLoops in Python are used to execute a block of code repeatedly. Python provides two types of loops: for and while.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#for-loops",
+    "href": "python3_control_flow.html#for-loops",
+    "title": "4  Flow Control in Python",
+    "section": "4.7 for Loops",
+    "text": "4.7 for Loops\nA for loop is used to iterate over a sequence (e.g., a list, tuple, string, or range) and execute a block of code for each item in the sequence.\nfor element in sequence:\n    statement(s)\n\nExample 1\n\n\nfor chr in \"HELLO\":\n    print(chr)\n\nH\nE\nL\nL\nO\n\n\n\nExample 2\n\n\nfor fruit in [\"Apple\", \"Orange\", \"Banana\"]:\n    print(fruit)\n\nApple\nOrange\nBanana\n\n\n\nExample 3\n\n\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#while-loops",
+    "href": "python3_control_flow.html#while-loops",
+    "title": "4  Flow Control in Python",
+    "section": "4.8 while Loops",
+    "text": "4.8 while Loops\nA while loop, on the other hand, continues to execute a block of code as long as a given condition evaluates to True.\nwhile condition:\n    statement(s)\n\nExample\n\n\nindex = 0\nfruits = [\"Apple\", \"Orange\", \"Banana\"]\nwhile index &lt; 2:\n    print(index, fruits[index])\n    index += 1\n\n0 Apple\n1 Orange",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#controlling-loop-execution",
+    "href": "python3_control_flow.html#controlling-loop-execution",
+    "title": "4  Flow Control in Python",
+    "section": "4.9 Controlling Loop Execution",
+    "text": "4.9 Controlling Loop Execution\n\nbreak: Immediately exits a loop.\n\n\nfor i in range(10):\n  if i == 5:\n    break  # Exit the loop when i is 5.\n  print(i)\n\n0\n1\n2\n3\n4\n\n\n\ncontinue: Skips the remainder of the loop’s body and immediately proceeds with the next iteration.\n\n\nfor i in range(10):\n  if i % 2 == 0:\n    continue  # Skip even numbers.\n  print(i)\n\n1\n3\n5\n7\n9\n\n\n\npass: Acts as a placeholder, allowing for the definition of empty control structures.\n\n\nfor i in range(10):\n  pass  # Placeholder for future code.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#python-list-comprehensions",
+    "href": "python3_control_flow.html#python-list-comprehensions",
+    "title": "4  Flow Control in Python",
+    "section": "4.10 Python List Comprehensions",
+    "text": "4.10 Python List Comprehensions\nList Comprehensions in Python are a concise and efficient way to create lists. They allow for the construction of a new list by applying an expression to each item in an iterable, optionally filtering items to include only those that meet a condition.\n\n4.10.1 Syntax\nThe basic syntax of a list comprehension is:\n[expression for item in iterable if condition]\nwhere:\n\nexpression is the current item in the iteration, but it could also be any other valid expression that depends on it.\nitem is the variable that takes the value of the item inside the iterable in each iteration.\niterable is a sequence, collection, or an object that can be iterated over.\ncondition is an optional part. If specified, the expression will only be applied to items that meet the condition.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#list-comprehensions---example-1",
+    "href": "python3_control_flow.html#list-comprehensions---example-1",
+    "title": "4  Flow Control in Python",
+    "section": "4.11 List Comprehensions - Example 1",
+    "text": "4.11 List Comprehensions - Example 1\n\nsquares = [x**2 for x in range(10)]\nsquares\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#list-comprehensions---example-2",
+    "href": "python3_control_flow.html#list-comprehensions---example-2",
+    "title": "4  Flow Control in Python",
+    "section": "4.12 List Comprehensions - Example 2",
+    "text": "4.12 List Comprehensions - Example 2\n\nsquares_even = [x**2 for x in range(1, 11) if x % 2 == 0]\nsquares_even\n\n[4, 16, 36, 64, 100]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#error-handling-in-python",
+    "href": "python3_control_flow.html#error-handling-in-python",
+    "title": "4  Flow Control in Python",
+    "section": "4.13 Error Handling in Python",
+    "text": "4.13 Error Handling in Python\nError handling is a critical aspect of writing robust Python programs. Python provides the try and except blocks to catch and handle exceptions, preventing the program from terminating unexpectedly.\n\n4.13.1 Handling Division by Zero\nA common error in programming is division by zero, which occurs when a number is divided by zero. Python raises a ZeroDivisionError exception in such cases.\n\n\n4.13.2 Syntax\nThe basic syntax for handling exceptions in Python is:\n\nnumerator = 10\ndenominator = 0\ntry:\n    # Code block where exception can occur\n    result = numerator / denominator\nexcept ZeroDivisionError:\n    # Code to execute if there is a ZeroDivisionError\n    print(\"Cannot divide by zero!\")\n\nCannot divide by zero!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python3_control_flow.html#exercise-fibonacci-sequence",
+    "href": "python3_control_flow.html#exercise-fibonacci-sequence",
+    "title": "4  Flow Control in Python",
+    "section": "4.14 Exercise: Fibonacci Sequence",
+    "text": "4.14 Exercise: Fibonacci Sequence\n\nWrite a program that generates the first 20 numbers in the Fibonacci sequence.\nHints:\n\nThe Fibonacci sequence is a sequence of numbers where each number is the sum of the two preceding numbers.\nThe first two numbers in the sequence are 0 and 1.\nUse a for loop to generate the sequence.\n\nExample output: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181\n\nSolution\n\n# Initialize the first two numbers\na = 0\nb = 1\n\n# Print the first two numbers\nprint(a, end=\" \")\nprint(b, end=\" \")\n\n# Generate the next 18 numbers\nfor _ in range(18):\n    next_number = a + b\n    print(next_number, end=\" \")\n    a = b\n    b = next_number\n\n0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flow Control in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html",
+    "href": "python4_functions.html",
+    "title": "5  Functions in Python",
+    "section": "",
+    "text": "5.1 Functions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#functions",
+    "href": "python4_functions.html#functions",
+    "title": "5  Functions in Python",
+    "section": "",
+    "text": "Functions are reusable blocks of code that perform a specific task\nThey can take input parameters and return output values\nFunctions are essential in modular programming, as they help organize code and make it more readable",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#defining-a-function",
+    "href": "python4_functions.html#defining-a-function",
+    "title": "5  Functions in Python",
+    "section": "5.2 Defining a Function",
+    "text": "5.2 Defining a Function\n\nTo define a function in Python, use the keyword def followed by the function name and input parameters in parentheses\nThe function body is indented below the header line\nUse the keyword return to specify the output value(s) of the function\n\n\ndef add_numbers(x, y):\n    result = x + y\n    return result\n\ntype(add_numbers)\n\nfunction",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#calling-a-function",
+    "href": "python4_functions.html#calling-a-function",
+    "title": "5  Functions in Python",
+    "section": "5.3 Calling a Function",
+    "text": "5.3 Calling a Function\nTo call a function, use its name followed by input values in parentheses The function returns the output value(s), which can be stored in a variable or used directly\n\nsum = add_numbers(2, 3)\nprint(sum)\n\n5",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#default-parameter-values",
+    "href": "python4_functions.html#default-parameter-values",
+    "title": "5  Functions in Python",
+    "section": "5.4 Default Parameter Values",
+    "text": "5.4 Default Parameter Values\n\nFunctions can have default values for input parameters, which are used when no value is provided\nDefault values are specified in the function header\n\n\ndef greet(name, greeting = \"Hello\"):\n  print(greeting + \", \" + name)\ngreet(\"Alice\")\n\nHello, Alice\n\n\n\ngreet(\"Bob\", \"Hi\")\n\nHi, Bob",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#variable-length-arguments",
+    "href": "python4_functions.html#variable-length-arguments",
+    "title": "5  Functions in Python",
+    "section": "5.5 Variable-Length Arguments",
+    "text": "5.5 Variable-Length Arguments\n\nVariable-length arguments allow a function to accept any number of input arguments\nThey are useful when the number of input arguments is unknown or can vary\n\n\ndef add_numbers(*args):\n  result = 0\n  for num in args:\n    result += num\n  return result\n\nprint(add_numbers(1, 2))\nprint(add_numbers(1, 2, 3))\n\n3\n6",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#function-annotation",
+    "href": "python4_functions.html#function-annotation",
+    "title": "5  Functions in Python",
+    "section": "5.6 Function Annotation",
+    "text": "5.6 Function Annotation\n\ndef add_numbers(*args):\n    \n    \"\"\"\n    Computes the sum of n numbers\n    \n    Parameters:\n    args: A tuple of numbers\n    \n    Returns:\n    int: The sum\n    \"\"\"        \n    \n    result = 0\n    for num in args:\n        result += num\n    return result\n\nhelp(add_numbers)\n\nHelp on function add_numbers in module __main__:\n\nadd_numbers(*args)\n    Computes the sum of n numbers\n\n    Parameters:\n    args: A tuple of numbers\n\n    Returns:\n    int: The sum",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#lambda-lambda-functions",
+    "href": "python4_functions.html#lambda-lambda-functions",
+    "title": "5  Functions in Python",
+    "section": "5.7 Lambda (\\(\\lambda\\)) Functions",
+    "text": "5.7 Lambda (\\(\\lambda\\)) Functions\n\nLambda functions are anonymous functions that can be defined inline and used immediately\nThey are useful for simple tasks that do not require a named function\nLambda functions can only have one expression (i.e., no statements)\n\n\ndouble = lambda x: x * 2\nprint(double(3))\n\n6",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#recursion",
+    "href": "python4_functions.html#recursion",
+    "title": "5  Functions in Python",
+    "section": "5.8 Recursion",
+    "text": "5.8 Recursion\n\n\n\nRecursion is a technique where a function calls itself\nIt is useful for solving problems that can be broken down into smaller subproblems\nTermination Condition is essential for preventing infinite loops in recursion\nEach recursive call consumes stack memory; deep recursion can lead to stack overflow if not properly managed",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#understanding-recursion-with-factorial",
+    "href": "python4_functions.html#understanding-recursion-with-factorial",
+    "title": "5  Functions in Python",
+    "section": "5.9 Understanding Recursion with Factorial",
+    "text": "5.9 Understanding Recursion with Factorial\nA factorial of a non-negative integer \\(n\\) is the product of all positive integers less than or equal to \\(n\\). It is denoted by \\(n!\\). Factorials are widely used in permutations and combinations.\nThe factorial of a number \\(n\\) is defined as:\n\\[\nn! = n \\times (n - 1) \\times (n - 2) \\times ... \\times 1\n\\]\nFor example:\n\\[\n5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\n\\]\nOne of the elegant ways to compute factorials in programming is by using recursion.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#recursive-factorial-function-in-python",
+    "href": "python4_functions.html#recursive-factorial-function-in-python",
+    "title": "5  Functions in Python",
+    "section": "5.10 Recursive Factorial Function in Python",
+    "text": "5.10 Recursive Factorial Function in Python\n\ndef factorial(n):\n  \"\"\"\n  This function calculates the factorial of a non-negative integer.\n\n  Args:\n      n: The non-negative integer whose factorial is to be calculated.\n\n  Returns:\n      The factorial of n.\n  \"\"\"\n  if n == 0: # Base case\n    return 1\n  else:\n    return n * factorial(n-1) # Recursive case\n\n# Test the function\nfactorial(5)\n\n120",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#sequence-diagram",
+    "href": "python4_functions.html#sequence-diagram",
+    "title": "5  Functions in Python",
+    "section": "5.11 Sequence Diagram",
+    "text": "5.11 Sequence Diagram\n\n\n\n\n\nsequenceDiagram\n    participant Main\n    participant f5 as factorial(5)\n    participant f4 as factorial(4)\n    participant f3 as factorial(3)\n    participant f2 as factorial(2)\n    participant f1 as factorial(1)\n    participant f0 as factorial(0)\n    \n    Main-&gt;&gt;f5: Call factorial(5)\n    activate f5\n    f5-&gt;&gt;f4: Call factorial(4)\n    activate f4\n    f4-&gt;&gt;f3: Call factorial(3)\n    activate f3\n    f3-&gt;&gt;f2: Call factorial(2)\n    activate f2\n    f2-&gt;&gt;f1: Call factorial(1)\n    activate f1\n    f1-&gt;&gt;f0: Call factorial(0)\n    activate f0\n    f0--&gt;&gt;f1: Return 1\n    deactivate f0\n    f1--&gt;&gt;f2: Return 1\n    deactivate f1\n    f2--&gt;&gt;f3: Return 2 * 1 = 2\n    deactivate f2\n    f3--&gt;&gt;f4: Return 3 * 2 = 6\n    deactivate f3\n    f4--&gt;&gt;f5: Return 4 * 6 = 24\n    deactivate f4\n    f5--&gt;&gt;Main: Return 5 * 24 = 120\n    deactivate f5\n\n\n\n\n\n\n\n5.11.1 Explanation\n\nMain Function Calls factorial(5):\n\n\nThe main program starts by calling factorial(5).\n\n\nRecursive Calls:\n\n\nfactorial(5) checks if n == 1. Since it is not, it calls factorial(4).\nfactorial(4) calls factorial(3), and this pattern continues until factorial(1) is called.\n\n\nBase Case:\n\n\nfactorial(0) reaches the base case where n == 0 and returns 1.\n\n\nUnwinding the Call Stack:\n\nEach function now returns to its caller:\n\nfactorial(1) receives 1 and returns 1 * 1 = 1.\nfactorial(2) receives 1 and returns 2 * 1 = 2.\nfactorial(3) receives 2 and returns 3 * 2 = 6.\nfactorial(4) receives 6 and returns 4 * 6 = 24.\nfactorial(5) receives 24 and returns 5 * 24 = 120.\n\n\nFinal Result: The main function receives 120 from factorial(5).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#advantages-and-disadvantages-of-recursion",
+    "href": "python4_functions.html#advantages-and-disadvantages-of-recursion",
+    "title": "5  Functions in Python",
+    "section": "5.12 Advantages and Disadvantages of Recursion",
+    "text": "5.12 Advantages and Disadvantages of Recursion\n\n5.12.1 Advantages\n\nSimplicity: Recursive solutions can be more readable and easier to understand.\nNatural Fit: Some problems, like tree traversals, are naturally recursive.\n\n\n\n5.12.2 Disadvantages\n\nPerformance: Recursive calls can be slower due to overhead.\nMemory Usage: Each recursive call consumes stack memory; deep recursion can lead to stack overflow.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#global-vs-local-variables",
+    "href": "python4_functions.html#global-vs-local-variables",
+    "title": "5  Functions in Python",
+    "section": "5.13 Global vs Local Variables",
+    "text": "5.13 Global vs Local Variables\n\nGlobal variables are defined outside of any function and can be accessed from anywhere in the program\nLocal variables are defined inside a function and can only be accessed within that function\n\n\nglobal_var = 10\n\ndef my_func():\n    local_var = 20\n    print(global_var)\n    print(local_var)\n\nmy_func()\n\n10\n20\n\n\n\nprint(global_var)\n\n10\n\n\n\n# print(local_var)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#exercise-1",
+    "href": "python4_functions.html#exercise-1",
+    "title": "5  Functions in Python",
+    "section": "6.1 Exercise 1",
+    "text": "6.1 Exercise 1\nWrite a Python function that takes a list of numbers and returns their product.\nSample:\n\nmultiply_numbers([2, 3, 4])\n\n24\n\n\n\nAnswer:\n\ndef multiply_numbers(numbers):\n  product = 1\n  for num in numbers:\n    product *= num\n  return product\n\nmultiply_numbers([2, 3, 4])\n\n24",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#exercise-2",
+    "href": "python4_functions.html#exercise-2",
+    "title": "5  Functions in Python",
+    "section": "6.2 Exercise 2",
+    "text": "6.2 Exercise 2\nWrite a Python function that finds the maximum and minimum numbers in a list.\nSample:\n\nfind_min_max ([2, 3, 4])\n\n(2, 4)\n\n\n\nAnswer:\n\ndef find_min_max(numbers):\n  min_num = numbers[0] # Set the min to the first number in the list\n  max_num = numbers[0] # Set the max to the first number in the list\n  for num in numbers:\n    if num &gt; max_num:\n      max_num = num\n    elif num &lt; min_num:\n      min_num = num\n  return (min_num, max_num)\n\nfind_min_max ([2, 3, 4])\n\n(2, 4)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python4_functions.html#exercise-3",
+    "href": "python4_functions.html#exercise-3",
+    "title": "5  Functions in Python",
+    "section": "6.3 Exercise 3",
+    "text": "6.3 Exercise 3\nWrite a Python function that takes a list of strings and returns the longest string.\nSample:\n\nfind_longest_string([\"Vicky\", \"Cristina\", \"Barcelona\"])\n\n'Barcelona'\n\n\n\nAnswer:\n\ndef find_longest_string(strings):\n  # Set the longest string to first string in the list\n  longest_string = strings[0]\n  for string in strings:\n    # Compare the length of the current string to the longest string so far\n    if len(string) &gt; len(longest_string):\n      longest_string = string\n  return longest_string\n\nfind_longest_string([\"Vicky\", \"Cristina\", \"Barcelona\"])\n\n'Barcelona'",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions in Python</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html",
+    "href": "python5_functions_problemset.html",
+    "title": "6  Functions Problem Set",
+    "section": "",
+    "text": "6.1 Problem 1: Even numbers\nWrite a Python function filter_even_numbers that takes a list of numbers and returns a new list containing only the even numbers.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-1-even-numbers",
+    "href": "python5_functions_problemset.html#problem-1-even-numbers",
+    "title": "6  Functions Problem Set",
+    "section": "",
+    "text": "Example Input: [1, 2, 3, 4]\nExample Output: [2, 4]\n\n\n\nSolution\n\n\ndef filter_even_numbers(numbers):\n  even_numbers = [] # create an empty list for the even numbers\n  for num in numbers:\n    if num % 2 == 0: # if the number is divisable by 2 then it is even\n      even_numbers.append (num) # if so, add it to the list of even numbers\n  return even_numbers\n\nfilter_even_numbers([1, 2, 3, 4])\n\n[2, 4]\n\n\n\n\n\nSolution #2\n\n\ndef filter_even_numbers_v2(numbers):\n  return [num for num in numbers if num % 2 == 0]\n\nfilter_even_numbers_v2([1, 2, 3, 4])\n\n[2, 4]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-2-fizz-buzz",
+    "href": "python5_functions_problemset.html#problem-2-fizz-buzz",
+    "title": "6  Functions Problem Set",
+    "section": "6.2 Problem 2: Fizz Buzz",
+    "text": "6.2 Problem 2: Fizz Buzz\nWrite a Python function fizzbuzz that takes a number and returns \"Fizz\" if the number is divisible by 3, \"Buzz\" if the number is divisible by 5, and \"FizzBuzz\" if the number is divisible by both 3 and 5. Otherwise, returns the number.\n\n\nSolution\n\n\ndef fizzbuzz(number):\n  if number % 3 == 0 and number % 5 == 0:\n    return \"FizzBuzz\"\n  elif number % 3 == 0:\n    return \"Fizz\"\n  elif number % 5 == 0:\n    return \"Buzz\"\n  else:\n    return number\n\n\n\n\nfizzbuzz(15)\n\n'FizzBuzz'\n\n\n\n\n\nfizzbuzz(5)\n\n'Buzz'\n\n\n\n\n\nfizzbuzz(3)\n\n'Fizz'\n\n\n\n\n\nfizzbuzz(1)\n\n1",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-3-second-largest",
+    "href": "python5_functions_problemset.html#problem-3-second-largest",
+    "title": "6  Functions Problem Set",
+    "section": "6.3 Problem 3: Second largest",
+    "text": "6.3 Problem 3: Second largest\nWrite a Python function find_second_largest that takes a list of positive numbers and returns the second largest number in the list without sorting the list.\n\nExample Input: [2, 5, 7, 1, 8, 3, 9]\nExample Output: 8\n\n\n\nSolution\n\n\ndef find_second_largest(numbers):\n  largest = -1\n  second_largest = -1\n  for num in numbers:\n    if num &gt; largest:\n      second_largest = largest\n      largest = num\n    elif num &gt; second_largest:\n      second_largest = num\n  return second_largest\n\nfind_second_largest([2, 5, 7, 1, 8, 3, 9])\n\n8",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-4-most-common-letter",
+    "href": "python5_functions_problemset.html#problem-4-most-common-letter",
+    "title": "6  Functions Problem Set",
+    "section": "6.4 Problem 4: Most common letter",
+    "text": "6.4 Problem 4: Most common letter\nWrite a Python function find_most_common_letter that takes a string and returns the most common letter in the string.\n\nExample Input: \"Hello, World!\"\nExample Output: 'L'\n\n\n\nSolution\n\n\ndef find_most_common_letter(string):\n  letter_counts = {} # empty dictionary of the characters and their counts\n  for letter in string.upper(): # for each character in the string (upper case)\n    if letter in letter_counts: # if the char in the dictionary\n      letter_counts[letter] += 1 # increase the count by 1\n    else:\n      letter_counts[letter] = 1 # otherwise, set the count to 1\n  \n  # Now let's find the largest count\n  max_count = -1 # set the max count to -1\n  max_letter = '' # set the letter with the max count to ''\n  for letter in letter_counts:\n    if letter_counts[letter] &gt; max_count:\n      max_count = letter_counts[letter]\n      max_letter = letter\n  \n  return (max_letter)\n  \nfind_most_common_letter(\"Hello, World!\")\n\n'L'",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-5-recursive-sum",
+    "href": "python5_functions_problemset.html#problem-5-recursive-sum",
+    "title": "6  Functions Problem Set",
+    "section": "6.5 Problem 5: Recursive sum",
+    "text": "6.5 Problem 5: Recursive sum\nWrite a recursive Python function recursive_sum that takes a list of integers and returns the sum of all the numbers in the list.\n\nExample Input: [1, 2, 3, 4, 5]\nExample Output: 15\n\n\n\nSolution\n\n\ndef recursive_sum(numbers):\n  if not numbers: # if the list of numbers is empty\n    return 0 # return zero\n  else: # otherwise\n    # return sum the first num in the list and \n    # the sum of the remaining items in the list\n    return numbers[0] + recursive_sum(numbers[1:])\nrecursive_sum([1, 2, 3, 4, 5])\n\n15",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-6-sum-of-squares",
+    "href": "python5_functions_problemset.html#problem-6-sum-of-squares",
+    "title": "6  Functions Problem Set",
+    "section": "6.6 Problem 6: Sum of Squares",
+    "text": "6.6 Problem 6: Sum of Squares\nWrite a Python function sum_of_squares that takes a list of numbers and returns the sum of their squares.\n\nExample Input: [1, 2, 3]\nExample Output: 14\n\n\n\nSolution\n\n\ndef sum_of_squares(numbers):\n    return sum([num**2 for num in numbers])\n\nsum_of_squares([1, 2, 3])\n\n14",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-7-unique-words",
+    "href": "python5_functions_problemset.html#problem-7-unique-words",
+    "title": "6  Functions Problem Set",
+    "section": "6.7 Problem 7: Unique words",
+    "text": "6.7 Problem 7: Unique words\nWrite a Python function count_unique_words that takes a list of strings and returns the number of unique words in the list.\n\nExample Input: ['apple', 'banana', 'apple', 'cherry', 'banana', 'date']\nExample Output: 4\n\n\n\nSolution\n\n\ndef count_unique_words(words):\n  unique_words = [] # create an empty list to store the unique words\n  for word in words: # for each word in the original list of words\n    if word not in unique_words: # if the word is not the unique list\n      unique_words.append(word) # add that word to the unique list\n  return len(unique_words) # return the length of the list of the unique words\n\ncount_unique_words(['apple', 'banana', 'apple', 'cherry', 'banana', 'date'])\n\n4\n\n\n\n\n\nSolution #2\n\n\ndef count_unique_words_v2(words):\n  return len(set(words)) # return the length of the set version of the list words\n\ncount_unique_words_v2(['apple', 'banana', 'apple', 'cherry', 'banana', 'date'])\n\n4",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-8-higher-order-functions",
+    "href": "python5_functions_problemset.html#problem-8-higher-order-functions",
+    "title": "6  Functions Problem Set",
+    "section": "6.8 Problem 8: Higher-Order Functions",
+    "text": "6.8 Problem 8: Higher-Order Functions\nWrite a function named apply_operation that takes a list of numbers, a function that performs an operation on a single number (e.g., square, cube), and applies that operation to each number in the list, returning a new list.\n\nExample Input: apply_operation([1, 2, 3, 4], lambda x: x**2)\nExample Output: [1, 4, 9, 16]\n\n\n\nSolution\n\n\ndef apply_operation(numbers, operation):\n    return [operation(number) for number in numbers]\n\n\napply_operation([1, 2, 3, 4], lambda x: x**2)\n\n[1, 4, 9, 16]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-9-flatten-a-nested-list",
+    "href": "python5_functions_problemset.html#problem-9-flatten-a-nested-list",
+    "title": "6  Functions Problem Set",
+    "section": "6.9 Problem 9: Flatten a Nested List",
+    "text": "6.9 Problem 9: Flatten a Nested List\nWrite a recursive Python function flatten that takes a nested list (a list containing other lists) and returns a flat list containing all the elements in the nested list, in the same order.\n\nExample Input: flatten([1, [2, 3], [4, [5, 6]], 7])\nExample Output: [1, 2, 3, 4, 5, 6, 7]\n\n\n\nSolution\n\n\ndef flatten(nested_list):\n    flat_list = []\n    for item in nested_list:\n        if type(item) == list:\n            flat_list.extend(flatten(item))\n        else:\n            flat_list.append(item)\n    return flat_list\n\n\nflatten([1, [2, 3], [4, [5, 6]], 7])\n\n[1, 2, 3, 4, 5, 6, 7]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-10-reverse-a-list",
+    "href": "python5_functions_problemset.html#problem-10-reverse-a-list",
+    "title": "6  Functions Problem Set",
+    "section": "6.10 Problem 10: Reverse a List",
+    "text": "6.10 Problem 10: Reverse a List\nWrite a recursive function named reverse_list that takes a list and returns a new list with the elements in reverse order.\n\nExample Input: [1, 2, 3, 4, 5]\nExample Output: [5, 4, 3, 2, 1]\n\n\n\nSolution\n\n\ndef reverse_list(lst):\n    if len(lst) == 0:\n        return []\n    else:\n        return [lst[-1]] + reverse_list(lst[:-1])\n\nreverse_list([1, 2, 3, 4, 5])\n\n[5, 4, 3, 2, 1]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python5_functions_problemset.html#problem-11-find-missing-numbers",
+    "href": "python5_functions_problemset.html#problem-11-find-missing-numbers",
+    "title": "6  Functions Problem Set",
+    "section": "6.11 Problem 11: Find Missing Numbers",
+    "text": "6.11 Problem 11: Find Missing Numbers\nGiven a list of unique integers sorted in increasing order, write a Python function named find_missing that returns a list of any missing integers in the sequence from the minimum to the maximum value.\n\nExample Input: [1, 2, 4, 6, 7]\nExample Output: [3, 5]\n\n\n\nSolution\n\n\ndef find_missing(numbers):\n    full_set = set(range(min(numbers), max(numbers) + 1))\n    missing = full_set - set(numbers)\n    return sorted(list(missing))\n\nfind_missing([1, 2, 4, 6, 7])\n\n[3, 5]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html",
+    "href": "python6_tracing_problemset.html",
+    "title": "7  Tracing Problem Set",
+    "section": "",
+    "text": "7.1 Problem 1\nWhat is the output of the following code?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html#problem-1",
+    "href": "python6_tracing_problemset.html#problem-1",
+    "title": "7  Tracing Problem Set",
+    "section": "",
+    "text": "x = 10\ny = 5\nwhile x &gt; 5:\n    x = x - y\nprint(x)\n\n\n7.1.1 Solution\n\n\n5\n\n\n\n\n7.1.2 Explanation\nThe loop runs once and reduces x to 5, ending the loop.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html#problem-2",
+    "href": "python6_tracing_problemset.html#problem-2",
+    "title": "7  Tracing Problem Set",
+    "section": "7.2 Problem 2",
+    "text": "7.2 Problem 2\nWhat is the output of the following code?\nlst = [10, 20, 30, 40, 50]\nfor i in range(len(lst)):\n    if lst[i] % 20 == 0:\n        lst[i] = lst[i] + 1\nprint(lst)\n\n\n7.2.1 Solution\n\n\n[10, 21, 30, 41, 50]\n\n\n\n\n7.2.2 Explanation\nOnly elements divisible by 20 are modified:\n\n20 \\(\\to\\) 21\n40 \\(\\to\\) 41",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html#problem-3",
+    "href": "python6_tracing_problemset.html#problem-3",
+    "title": "7  Tracing Problem Set",
+    "section": "7.3 Problem 3",
+    "text": "7.3 Problem 3\nWhat is the output of the following code?\nscores = {\"Alice\": 85, \"Bob\": 90, \"Charlie\": 75}\ntotal = 0\nfor key in scores:\n    total += scores[key]\nprint(total)\n\n\n7.3.1 Solution\n\n\n250",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html#problem-4",
+    "href": "python6_tracing_problemset.html#problem-4",
+    "title": "7  Tracing Problem Set",
+    "section": "7.4 Problem 4",
+    "text": "7.4 Problem 4\nWhat is the output of the following code?\ngrades = {\"John\": [80, 85], \"Alice\": [90, 95], \"Bob\": [70, 75]}\nfor student in grades:\n    grades[student].append(sum(grades[student]) / len(grades[student]))\nprint(grades)\n\n7.4.1 Solution\n\n\n{'John': [80, 85, 82.5], 'Alice': [90, 95, 92.5], 'Bob': [70, 75, 72.5]}",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python6_tracing_problemset.html#problem-5",
+    "href": "python6_tracing_problemset.html#problem-5",
+    "title": "7  Tracing Problem Set",
+    "section": "7.5 Problem 5",
+    "text": "7.5 Problem 5\nWhat is the output of the following code?\ndef mystery(n):\n    if n &lt;= 0:\n        return 0\n    else:\n        return n + mystery(n - 2)\n\nprint(mystery(5))\n\n\n7.5.1 Solution\n\n\n9\n\n\n\n\n7.5.2 Explanation\nThe recursion adds values 5, 3, and 1, resulting in 9.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tracing Problem Set</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html",
+    "href": "python7_time_complexity.html",
+    "title": "8  Time Complexity",
+    "section": "",
+    "text": "9 Big-O notation",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#time-complexity",
+    "href": "python7_time_complexity.html#time-complexity",
+    "title": "8  Time Complexity",
+    "section": "9.1 Time Complexity",
+    "text": "9.1 Time Complexity\n\nThe Big-\\(O\\) Notation describes how an algorithm’s runtime grows as the input size increases.\nUnderstanding time complexity helps in selecting the right algorithm for a specific task.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#time-complexities-comparison-table",
+    "href": "python7_time_complexity.html#time-complexities-comparison-table",
+    "title": "8  Time Complexity",
+    "section": "9.2 Time Complexities Comparison Table",
+    "text": "9.2 Time Complexities Comparison Table\n\n\n\n\n\n\n\n\n\n\nComplexity\nClass Name\nDescription\nReal-World Example\nGraph\n\n\n\n\n\\(O(1)\\)\nConstant Time\nAlways takes the same time regardless of input size\nAccessing an element in an array\nFlat Line\n\n\n\\(O(\\log n)\\)\nLogarithmic Time\nRuntime grows slowly with input size\nBinary search in a phone book\nSlowly Increasing Curve\n\n\n\\(O(n)\\)\nLinear Time\nRuntime grows directly proportional to input size\nReading through a list of names in a document\nStraight Line\n\n\n\\(O(n \\log n)\\)\nLinearithmic Time\nEfficient sorting, slower than linear\nEfficient sorting algorithms like Merge Sort\nRising Curve\n\n\n\\(O(n^2)\\)\nQuadratic Time\nRuntime grows exponentially with input size\nBubble Sort on a long list of elements\nSteep Curve\n\n\n\\(O(2^n)\\)\nExponential Time\nRuntime doubles with each additional element\nRecursive solutions to combinatorial problems\nExponential Curve\n\n\n\\(O(n!)\\)\nFactorial Time\nRuntime grows factorially with input size\nGenerating all permutations of a list\nExtremely Steep Curve",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#visualization-of-time-complexities",
+    "href": "python7_time_complexity.html#visualization-of-time-complexities",
+    "title": "8  Time Complexity",
+    "section": "9.3 Visualization of Time Complexities",
+    "text": "9.3 Visualization of Time Complexities\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Define input sizes\nn = np.linspace(1, 20, 100)\n\n# Define various time complexities\nO_1 = np.ones_like(n)\nO_log_n = np.log(n)\nO_n = n\nO_n_log_n = n * np.log(n)\nO_n2 = n**2\nO_2n = 2**n\n\n# Plot the complexities\nplt.figure(figsize=(10, 6))\n\nplt.plot(n, O_1, label=\"O(1) - Constant Time\")\nplt.plot(n, O_log_n, label=\"O(log n) - Logarithmic Time\")\nplt.plot(n, O_n, label=\"O(n) - Linear Time\")\nplt.plot(n, O_n_log_n, label=\"O(n log n) - Linearithmic Time\")\nplt.plot(n, O_n2, label=\"O(n²) - Quadratic Time\")\nplt.plot(n, O_2n, label=\"O(2^n) - Exponential Time\")\n\n# Add labels and title\nplt.ylim(0, 500)  # Limit the y-axis for better comparison\nplt.xlabel(\"Input Size (n)\")\nplt.ylabel(\"Operations\")\nplt.title(\"Comparative Visualization of Time Complexities\")\nplt.legend(loc=\"upper left\")\n\nplt.grid(True)\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#introduction-to-bubble-sort",
+    "href": "python7_time_complexity.html#introduction-to-bubble-sort",
+    "title": "8  Time Complexity",
+    "section": "10.1 Introduction to Bubble Sort",
+    "text": "10.1 Introduction to Bubble Sort\n\nBubble Sort is a simple, comparison-based sorting algorithm. It repeatedly steps through a list, compares adjacent elements, and swaps them if they are in the wrong order.\nThe smaller elements “bubble” to the top, while larger elements “sink” to the bottom. This process repeats until the list is sorted.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#how-bubble-sort-works",
+    "href": "python7_time_complexity.html#how-bubble-sort-works",
+    "title": "8  Time Complexity",
+    "section": "10.2 How Bubble Sort Works",
+    "text": "10.2 How Bubble Sort Works\n\n\n\nStart at the beginning of the list.\nCompare each pair of adjacent elements.\nIf they are in the wrong order, swap them.\nRepeat this process until no more swaps are needed.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#bubble-sort-flowchart",
+    "href": "python7_time_complexity.html#bubble-sort-flowchart",
+    "title": "8  Time Complexity",
+    "section": "10.3 Bubble Sort Flowchart",
+    "text": "10.3 Bubble Sort Flowchart\n\n\n\nBubble Sort Flowchart",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#bubble-sort-activity",
+    "href": "python7_time_complexity.html#bubble-sort-activity",
+    "title": "8  Time Complexity",
+    "section": "10.4 Bubble Sort Activity",
+    "text": "10.4 Bubble Sort Activity\n\nWe need 7-10 student volunteers of different heights to stand in a row.\nUse the Bubble Sort algorithm to sort the volunteers by height from shortest to tallest.\nCompare adjacent volunteers, swap if necessary, and repeat until sorted.\n\n\n\n\nCelebrity Heights",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#visualizing-bubble-sort-swaps",
+    "href": "python7_time_complexity.html#visualizing-bubble-sort-swaps",
+    "title": "8  Time Complexity",
+    "section": "10.5 Visualizing Bubble Sort Swaps",
+    "text": "10.5 Visualizing Bubble Sort Swaps\n\nLet’s sort the list [5, 3, 8, 6, 7, 2] step-by-step:\n\n\nFirst Pass:\n\nCompare 5 and 3 → Swap → [3, 5, 8, 6, 7, 2]\nCompare 5 and 8 → No swap.\nCompare 8 and 6 → Swap → [3, 5, 6, 8, 7, 2]\nCompare 8 and 7 → Swap → [3, 5, 6, 7, 8, 2]\nCompare 8 and 2 → Swap → [3, 5, 6, 7, 2, 8]\nList after first pass: [3, 5, 6, 7, 2, 8]\n\nSecond Pass:\n\nCompare 3 and 5 → No swap.\nCompare 5 and 6 → No swap.\nCompare 6 and 7 → No swap.\nCompare 7 and 2 → Swap → [3, 5, 6, 2, 7, 8]\nList after second pass: [3, 5, 6, 2, 7, 8]\n\nThird Pass:\n\nCompare 3 and 5 → No swap.\nCompare 5 and 6 → No swap.\nCompare 6 and 2 → Swap → [3, 5, 2, 6, 7, 8]\nList after third pass: [3, 5, 2, 6, 7, 8]\n\nFinal Pass:\n\nThe final pass will continue comparing adjacent elements until no more swaps are needed.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#bubble-sort-in-python",
+    "href": "python7_time_complexity.html#bubble-sort-in-python",
+    "title": "8  Time Complexity",
+    "section": "10.6 Bubble Sort in Python",
+    "text": "10.6 Bubble Sort in Python\nWrite a Python program to perform a bubble sort\n\nInput: [5, 3, 8, 6, 7, 2]\nExpected Output: [2, 3, 5, 6, 7, 8]\n\n\n\n# Initialize a list of unsorted items\nitems = [5, 3, 8, 6, 7, 2]\n\n# Determine the number of items in the list\nn = len(items)\n\n# Initialize a boolean variable to track swaps\nswap = True\n\n# Continue looping while swaps occur\nwhile swap:\n    swap = False  # Reset swap flag\n    for i in range(1, n):\n        if items[i-1] &gt; items[i]:  # Compare adjacent items\n            items[i-1], items[i] = items[i], items[i-1]  # Swap if needed\n            swap = True  # Set swap flag to True\n\n# Print the sorted list\nprint(items)\n\n[2, 3, 5, 6, 7, 8]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#time-complexity-of-bubble-sort",
+    "href": "python7_time_complexity.html#time-complexity-of-bubble-sort",
+    "title": "8  Time Complexity",
+    "section": "10.7 Time Complexity of Bubble Sort",
+    "text": "10.7 Time Complexity of Bubble Sort\n\nBest Case: \\(O(n)\\) – This occurs when the list is already sorted. In this case, Bubble Sort makes only one pass.\nWorst Case: \\(O(n^2)\\) – This occurs when the list is in reverse order. Every element needs to be compared and swapped.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#introduction-to-matrix-multiplication",
+    "href": "python7_time_complexity.html#introduction-to-matrix-multiplication",
+    "title": "8  Time Complexity",
+    "section": "11.1 Introduction to Matrix Multiplication",
+    "text": "11.1 Introduction to Matrix Multiplication\n\nMatrix Multiplication is an operation that combines two matrices to produce a third matrix.\nMatrices represent data in rows and columns, and multiplying them allows us to transform or process data in powerful ways.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#how-matrix-multiplication-works",
+    "href": "python7_time_complexity.html#how-matrix-multiplication-works",
+    "title": "8  Time Complexity",
+    "section": "11.2 How Matrix Multiplication Works",
+    "text": "11.2 How Matrix Multiplication Works\n\n11.2.1 Example:\nGiven two matrices \\(A\\) and \\(B\\):\n\\[\nA = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\quad \\text{and} \\quad B = \\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}\n\\]\nTheir product \\(C = A    \\times B\\) is:\n\\[\nC = \\begin{bmatrix} (1  \\times 5 + 2    \\times 7) & (1  \\times 6 + 2    \\times 8) \\\\ (3 \\times 5 + 4    \\times 7) & (3  \\times 6 + 4    \\times 8) \\end{bmatrix} = \\begin{bmatrix} 19 & 22 \\\\ 43 & 50 \\end{bmatrix}\n\\]\n\n\n11.2.2 Formula:\nFor each element \\(C_{i,j}\\) in the resulting matrix: \\[\nC_{i,j} = \\sum_{k=1}^{n} A_{i,k}    \\times B_{k,j}\n\\]\nWhere \\(A\\) is an \\(m  \\times n\\) matrix, and \\(B\\) is an \\(n \\times p\\) matrix.\n\n\n11.2.3 Notes:\n\nThe product of \\(A \\times B\\) will be of dimension \\(𝑚 \\times p\\).\nThe number of columns in matrix \\(A\\) (i.e., \\(n\\)) must match the number of rows in matrix \\(B\\) for the multiplication to be possible.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#matrix-multiplication-in-python",
+    "href": "python7_time_complexity.html#matrix-multiplication-in-python",
+    "title": "8  Time Complexity",
+    "section": "11.3 Matrix Multiplication in Python",
+    "text": "11.3 Matrix Multiplication in Python\nWrite a Python function matrix_multiply that takes to input matrices, A and B and returns the product of their matrix multiplication\n\nExample:\n\n\nA = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]\nmatrix_multiply(A, B)\n\n[[19, 22], [43, 50]]\n\n\n\n\nAnswer:\n\n\ndef matrix_multiply(A, B):\n  # Initialize an empty list to store the result of the matrix multiplication\n  result = []\n  \n  # Create a matrix with the same number of rows as A and columns as B, filled with zeros\n  for i in range(len(A)):\n    row = []  # Initialize a new row\n    for j in range(len(B[0])):  # Iterate over columns of B\n      row.append(0)  # Append 0 to represent the initial state\n    result.append(row)  # Append the row to the result matrix\n    \n  # Perform matrix multiplication\n  for i in range(len(A)):  # Loop over rows of A\n    for j in range(len(B[0])):  # Loop over columns of B\n      for k in range(len(B)):  # Loop over rows of B (and columns of A)\n        # Multiply corresponding elements and add to the current cell in result\n        result[i][j] += A[i][k] * B[k][j]\n  \n  return result  # Return the result matrix\n\n# Example matrices to test the function\nA = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]\nmatrix_multiply(A, B)  # Expected output: [[19, 22], [43, 50]]\n\n[[19, 22], [43, 50]]\n\n\n\nExplanation:\n\n\nMatrix Setup: The first loop constructs a result matrix with the appropriate dimensions (rows of \\(A\\) \\(\\times\\) columns of \\(B\\)), initialized to zeros.\nMatrix Multiplication: The nested loops calculate the dot product for each element in the result matrix by summing the products of corresponding elements in each row of \\(A\\) and column of \\(B\\).\nReturn Statement: Finally, the function returns the resulting matrix after the multiplication.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#key-points",
+    "href": "python7_time_complexity.html#key-points",
+    "title": "8  Time Complexity",
+    "section": "11.4 Key Points:",
+    "text": "11.4 Key Points:\n\nThe outer loops traverse the rows and columns.\nThe inner loop calculates the dot product between rows of \\(A\\) and columns of \\(B\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#time-complexity-of-matrix-multiplication",
+    "href": "python7_time_complexity.html#time-complexity-of-matrix-multiplication",
+    "title": "8  Time Complexity",
+    "section": "11.5 Time Complexity of Matrix Multiplication",
+    "text": "11.5 Time Complexity of Matrix Multiplication\n\nFor two matrices, \\(A\\) of size \\(m \\times n\\) and \\(B\\) of size \\(n \\times p\\), the time complexity of standard (naive) matrix multiplication is: \\(O(m \\times n \\times p)\\)\nIf the matrices are square (i.e., \\(m = n = p\\)), the time complexity simplifies to \\(O(n^3)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#applications-of-matrix-multiplication",
+    "href": "python7_time_complexity.html#applications-of-matrix-multiplication",
+    "title": "8  Time Complexity",
+    "section": "11.6 Applications of Matrix Multiplication",
+    "text": "11.6 Applications of Matrix Multiplication\n\nTransformation: In computer graphics, matrix multiplication is used to rotate, scale, or translate objects.\nData Representation: In machine learning, data is often represented as matrices, such as weights in neural networks.\nSolving Systems of Equations: In linear algebra, matrix multiplication helps solve systems of equations.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#recursive-fibonacci-sequence",
+    "href": "python7_time_complexity.html#recursive-fibonacci-sequence",
+    "title": "8  Time Complexity",
+    "section": "12.1 Recursive Fibonacci Sequence",
+    "text": "12.1 Recursive Fibonacci Sequence\n\nWrite a recursive function that calculates the Fibonacci number for a given \\(n\\).\nTest it with small values like \\(n = 5\\) and \\(n = 6\\).\n\n\n\ndef fibonacci(n):\n    if n &lt;= 1:\n        return n\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\nprint(fibonacci(5))  # Output: 5\nprint(fibonacci(6))  # Output: 8\n\n5\n8",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#recursive-tree-visualization",
+    "href": "python7_time_complexity.html#recursive-tree-visualization",
+    "title": "8  Time Complexity",
+    "section": "12.2 Recursive Tree Visualization",
+    "text": "12.2 Recursive Tree Visualization\n\nDraw the recursion tree to visualize the recursive calls \\(n = 5\\):\n\n\nfibonacci(5)\n   |\n   +-- fibonacci(4)\n   |      |\n   |      +-- fibonacci(3)\n   |      |      |\n   |      |      +-- fibonacci(2)\n   |      |      |      +-- fibonacci(1)\n   |      |      |      +-- fibonacci(0)\n   |      |      +-- fibonacci(1)\n   |      +-- fibonacci(2)\n   |             +-- fibonacci(1)\n   |             +-- fibonacci(0)\n   +-- fibonacci(3)\n          |\n          +-- fibonacci(2)\n          |      +-- fibonacci(1)\n          |      +-- fibonacci(0)\n          +-- fibonacci(1)\n\nNotice how the same values are recomputed multiple times.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#counting-the-number-of-recursive-calls",
+    "href": "python7_time_complexity.html#counting-the-number-of-recursive-calls",
+    "title": "8  Time Complexity",
+    "section": "12.3 Counting the Number of Recursive Calls",
+    "text": "12.3 Counting the Number of Recursive Calls\n\nModify the fibonacci function to count the number of recursive calls.\n\n\n\ndef fibonacci(n):\n    global call_count\n    call_count += 1\n    if n &lt;= 1:\n        return n\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\n\n\n\nNumber of calls for fibonacci(5)\n\n\nn = 5\ncall_count = 0\nfibonacci(n)\nprint(\"Number of recursive calls for n = \", 5, \": \" , call_count)\n\nNumber of recursive calls for n =  5 :  15\n\n\n\n\n\nNumber of calls for fibonacci(6)\n\n\nn = 6\ncall_count = 0\nfibonacci(n)\nprint(\"Number of recursive calls for n = \", 6, \": \" , call_count)\n\nNumber of recursive calls for n =  6 :  25",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#visualizing-the-number-of-recursive-calls",
+    "href": "python7_time_complexity.html#visualizing-the-number-of-recursive-calls",
+    "title": "8  Time Complexity",
+    "section": "12.4 Visualizing the Number of Recursive Calls",
+    "text": "12.4 Visualizing the Number of Recursive Calls\n\nCount the recursive calls for multiple values of \\(n\\) and plot the results.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python7_time_complexity.html#time-complexity-of-fibonacci",
+    "href": "python7_time_complexity.html#time-complexity-of-fibonacci",
+    "title": "8  Time Complexity",
+    "section": "12.5 Time Complexity of Fibonacci",
+    "text": "12.5 Time Complexity of Fibonacci\n\nEvery call to fibonacci(n) splits into two subproblems: fibonacci(n-1) and fibonacci(n-2).\nThe total number of nodes in the tree is approximately \\(2^n\\), leading to the time complexity of \\(O(2^n)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Time Complexity</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html",
+    "href": "python8_packages.html",
+    "title": "9  Python Packages",
+    "section": "",
+    "text": "10 Packages for Data Analysis\nWe will be discussing key Python packages that are commonly used for data analysis such as pandas, matplotlib, seaborn, and numpy.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#packages-in-python",
+    "href": "python8_packages.html#packages-in-python",
+    "title": "9  Python Packages",
+    "section": "10.1 Packages in Python",
+    "text": "10.1 Packages in Python\n\nIn Python, a package is a collection of modules organized within a directory structure, allowing grouping related code components, such as functions, classes, and constants, into a single namespace.\nThis structure enables modularity and reuse across projects, making code easier to maintain, import, and share with others.\nThe most common way to import a package is using the import statement followed by the name of the package.\nFor example, to import the math package:\n\n\nimport math\n\nmath.sqrt(25)\n\n5.0",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#importing-packages-with-aliases",
+    "href": "python8_packages.html#importing-packages-with-aliases",
+    "title": "9  Python Packages",
+    "section": "10.2 Importing Packages with Aliases",
+    "text": "10.2 Importing Packages with Aliases\n\nWe can also import a package with an alias using the as keyword.\nThis can be useful when we want to use a shorter name for a package in our code.\nFor example, to import the math package with the alias m, we would use the following statement:\n\n\nimport math as m\n\nm.sqrt(25)\n\n5.0",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#installing-a-package",
+    "href": "python8_packages.html#installing-a-package",
+    "title": "9  Python Packages",
+    "section": "10.3 Installing a Package",
+    "text": "10.3 Installing a Package\n\nIf a package is not already installed, we can install within our notebook/environment using the following command line:\n\n%pip install package_name\n\nExample to install pandas:\n\n%pip install pandas\n Notes:\n\npip stands for ‘Pip Installs Packages,’ a recursive acronym.\npip is a command-line tool (not a Python statement) typically run in the shell on macOS or Linux or in PowerShell on Windows. However, it can also be run within Jupyter notebooks using magic commands, specifically by prefixing it with %.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#the-titanic-dataset",
+    "href": "python8_packages.html#the-titanic-dataset",
+    "title": "9  Python Packages",
+    "section": "11.1 The Titanic Dataset",
+    "text": "11.1 The Titanic Dataset\n\n\n\nTitantic departing Southampton on April 10, 1912\n\n\n\nThe Titanic dataset contains data on the passengers of Titanic, including their survival status, age, gender, class, and other attributes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#loading-a-csv-file-with-pandas",
+    "href": "python8_packages.html#loading-a-csv-file-with-pandas",
+    "title": "9  Python Packages",
+    "section": "11.2 Loading a CSV file with Pandas",
+    "text": "11.2 Loading a CSV file with Pandas\n\nimport pandas as pd\n\nurl = 'https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv'\ntitanic = pd.read_csv(url) # Load Titanic dataset\n\ntitanic.shape # The dimension of the dataframe (the table)\n\n(887, 8)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#viewing-dataframe",
+    "href": "python8_packages.html#viewing-dataframe",
+    "title": "9  Python Packages",
+    "section": "11.3 Viewing DataFrame",
+    "text": "11.3 Viewing DataFrame\n\nOnce we have loaded data into a DataFrame, we can start exploring it using various Pandas functions.\nThe head() and tail functions are useful functions for quickly viewing the first and last few rows of a DataFrame.\n\nhead() for the top records in the DataFrame:\n\n\n\ntitanic.head() # Print the first few rows of the DataFrame\n\n\n\n\n\n\n\n\nSurvived\nPclass\nName\nSex\nAge\nSiblings/Spouses Aboard\nParents/Children Aboard\nFare\n\n\n\n\n0\n0\n3\nMr. Owen Harris Braund\nmale\n22.0\n1\n0\n7.2500\n\n\n1\n1\n1\nMrs. John Bradley (Florence Briggs Thayer) Cum...\nfemale\n38.0\n1\n0\n71.2833\n\n\n2\n1\n3\nMiss. Laina Heikkinen\nfemale\n26.0\n0\n0\n7.9250\n\n\n3\n1\n1\nMrs. Jacques Heath (Lily May Peel) Futrelle\nfemale\n35.0\n1\n0\n53.1000\n\n\n4\n0\n3\nMr. William Henry Allen\nmale\n35.0\n0\n0\n8.0500\n\n\n\n\n\n\n\n\ntail() for the bottom records in the DataFrame:\n\n\ntitanic.tail() # Print the last few rows of the DataFrame\n\n\n\n\n\n\n\n\nSurvived\nPclass\nName\nSex\nAge\nSiblings/Spouses Aboard\nParents/Children Aboard\nFare\n\n\n\n\n882\n0\n2\nRev. Juozas Montvila\nmale\n27.0\n0\n0\n13.00\n\n\n883\n1\n1\nMiss. Margaret Edith Graham\nfemale\n19.0\n0\n0\n30.00\n\n\n884\n0\n3\nMiss. Catherine Helen Johnston\nfemale\n7.0\n1\n2\n23.45\n\n\n885\n1\n1\nMr. Karl Howell Behr\nmale\n26.0\n0\n0\n30.00\n\n\n886\n0\n3\nMr. Patrick Dooley\nmale\n32.0\n0\n0\n7.75",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#basic-statistics",
+    "href": "python8_packages.html#basic-statistics",
+    "title": "9  Python Packages",
+    "section": "11.4 Basic Statistics",
+    "text": "11.4 Basic Statistics\n\nWe can use Pandas to calculate basic statistics on our data, such as mean, median, and standard deviation.\nThe describe() function provides a summary of the basic statistics of each column in the DataFrame.\n\n\ntitanic.describe()\n\n\n\n\n\n\n\n\nSurvived\nPclass\nAge\nSiblings/Spouses Aboard\nParents/Children Aboard\nFare\n\n\n\n\ncount\n887.000000\n887.000000\n887.000000\n887.000000\n887.000000\n887.00000\n\n\nmean\n0.385569\n2.305524\n29.471443\n0.525366\n0.383315\n32.30542\n\n\nstd\n0.487004\n0.836662\n14.121908\n1.104669\n0.807466\n49.78204\n\n\nmin\n0.000000\n1.000000\n0.420000\n0.000000\n0.000000\n0.00000\n\n\n25%\n0.000000\n2.000000\n20.250000\n0.000000\n0.000000\n7.92500\n\n\n50%\n0.000000\n3.000000\n28.000000\n0.000000\n0.000000\n14.45420\n\n\n75%\n1.000000\n3.000000\n38.000000\n1.000000\n0.000000\n31.13750\n\n\nmax\n1.000000\n3.000000\n80.000000\n8.000000\n6.000000\n512.32920",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#indexing-and-selection-12",
+    "href": "python8_packages.html#indexing-and-selection-12",
+    "title": "9  Python Packages",
+    "section": "11.5 Indexing and Selection 1/2",
+    "text": "11.5 Indexing and Selection 1/2\n\nWe can use indexing and selection to retrieve specific data from a DataFrame.\nThe iloc[] function is used for integer-based indexing, where we can specify the row and column numbers.\n\n\ntitanic.iloc[2:5]\n\n\n\n\n\n\n\n\nSurvived\nPclass\nName\nSex\nAge\nSiblings/Spouses Aboard\nParents/Children Aboard\nFare\n\n\n\n\n2\n1\n3\nMiss. Laina Heikkinen\nfemale\n26.0\n0\n0\n7.925\n\n\n3\n1\n1\nMrs. Jacques Heath (Lily May Peel) Futrelle\nfemale\n35.0\n1\n0\n53.100\n\n\n4\n0\n3\nMr. William Henry Allen\nmale\n35.0\n0\n0\n8.050",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#indexing-and-selection-22",
+    "href": "python8_packages.html#indexing-and-selection-22",
+    "title": "9  Python Packages",
+    "section": "11.6 Indexing and Selection 2/2",
+    "text": "11.6 Indexing and Selection 2/2\n\nThe loc[] function is used for label-based indexing, where we can specify the row and column labels.\n\n\ntitanic.loc[2:5, ['Survived', 'Pclass']]\n\n\n\n\n\n\n\n\nSurvived\nPclass\n\n\n\n\n2\n1\n3\n\n\n3\n1\n1\n\n\n4\n0\n3\n\n\n5\n0\n3",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#comparison-of-.loc-and-.iloc-in-pandas-dataframe",
+    "href": "python8_packages.html#comparison-of-.loc-and-.iloc-in-pandas-dataframe",
+    "title": "9  Python Packages",
+    "section": "11.7 Comparison of .loc and .iloc in pandas DataFrame",
+    "text": "11.7 Comparison of .loc and .iloc in pandas DataFrame\n\n\n\n\n\n\n\n\nFeature\n.loc (Label-based)\n.iloc (Integer-based)\n\n\n\n\nPrimary Use\nAccess data by row and column labels (names)\nAccess data by row and column integer positions\n\n\nSyntax\ndf.loc[row_label, column_label]\ndf.iloc[row_position, column_position]\n\n\nRow/Column Identification\nUses label names for rows and columns\nUses integer positions (like list indexing)\n\n\nIndexing Type\nLabel-based (requires exact match for labels)\nInteger-based (0-based index like Python lists)\n\n\nRow Selection\ndf.loc['row_label']\ndf.iloc[row_position]\n\n\nColumn Selection\ndf.loc[:, 'column_label']\ndf.iloc[:, column_position]\n\n\nSingle Value Access\ndf.loc['row_label', 'column_label']\ndf.iloc[row_position, column_position]\n\n\nRange Slicing\nInclusive of the endpoint (e.g., df.loc['A':'C'] includes both A and C)\nExclusive of the endpoint (e.g., df.iloc[0:2] includes only positions 0 and 1)\n\n\nBoolean Indexing\nWorks with Boolean masks for label-based filtering (e.g., df.loc[df['Age'] &gt; 25])\nNot typically used with Boolean masks, though possible",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#filtering-data",
+    "href": "python8_packages.html#filtering-data",
+    "title": "9  Python Packages",
+    "section": "11.8 Filtering Data",
+    "text": "11.8 Filtering Data\n\nWe can use Boolean indexing to filter data in a DataFrame based on a certain condition.\nFor example, we can filter the Titanic dataset to only show passengers who survived:\n\n\n# Filter Titanic dataset to only show passengers who survived\nsurvivors = titanic[titanic['Survived'] == 1]\nsurvivors.head()\n\n\n\n\n\n\n\n\nSurvived\nPclass\nName\nSex\nAge\nSiblings/Spouses Aboard\nParents/Children Aboard\nFare\n\n\n\n\n1\n1\n1\nMrs. John Bradley (Florence Briggs Thayer) Cum...\nfemale\n38.0\n1\n0\n71.2833\n\n\n2\n1\n3\nMiss. Laina Heikkinen\nfemale\n26.0\n0\n0\n7.9250\n\n\n3\n1\n1\nMrs. Jacques Heath (Lily May Peel) Futrelle\nfemale\n35.0\n1\n0\n53.1000\n\n\n8\n1\n3\nMrs. Oscar W (Elisabeth Vilhelmina Berg) Johnson\nfemale\n27.0\n0\n2\n11.1333\n\n\n9\n1\n2\nMrs. Nicholas (Adele Achem) Nasser\nfemale\n14.0\n1\n0\n30.0708",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#grouping-and-aggregation",
+    "href": "python8_packages.html#grouping-and-aggregation",
+    "title": "9  Python Packages",
+    "section": "11.9 Grouping and Aggregation",
+    "text": "11.9 Grouping and Aggregation\n\nGrouping: Categorizes data based on one or more columns, creating distinct groups within the dataset.\nAggregation: Summarizes each group using functions like sum(), mean(), or count(), revealing trends within categories.\n\n\n11.9.1 Why Use Grouping and Aggregation?\n\nGrouping and summarizing large datasets make it easier to compare and analyze patterns across different categories.\nCommonly used to calculate summary statistics, such as averages or totals, within groups.\nExample: to see grouping and summarization in action, we will group the Titanic dataset by ticket class (Pclass) to calculate the average age of passengers in each class.\n\n\n# Group Titanic dataset by ticket class and calculate the average age for each class\nage_by_class = titanic.groupby('Pclass')['Age'].mean()\nage_by_class\n\nPclass\n1    38.788981\n2    29.868641\n3    25.188747\nName: Age, dtype: float64\n\n\n\nHere, Pclass() becomes the index in the resulting DataFrame. While this is useful for quick summaries, it can sometimes make further data manipulation less intuitive.\nWhy Use reset_index()?\n\nApplying reset_index() converts the index back into a regular column.\nThis makes the DataFrame easier to read and more convenient for additional operations (e.g., merging with other DataFrame or plotting).\n\nSo, let us apply reset_index() to make Pclass a standard column:\n\n\n# Grouping, aggregation, and reset index\nage_by_class = titanic.groupby('Pclass')['Age'].mean().reset_index()\nage_by_class\n\n\n\n\n\n\n\n\nPclass\nAge\n\n\n\n\n0\n1\n38.788981\n\n\n1\n2\n29.868641\n\n\n2\n3\n25.188747\n\n\n\n\n\n\n\n\nFinal output: now, Pclass appears as a regular column, making it easier to interpret and manipulate.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#plotting-a-simple-line-graph-with-matplotlib",
+    "href": "python8_packages.html#plotting-a-simple-line-graph-with-matplotlib",
+    "title": "9  Python Packages",
+    "section": "12.1 Plotting a Simple Line Graph with Matplotlib",
+    "text": "12.1 Plotting a Simple Line Graph with Matplotlib\n\n\n\nPower Station\n\n\n\nLet us start with an example of how to use Matplotlib to create a simple line graph for global CO2 emissions from 1960 to 2014.\nHere is the code to load the dataset:\n\n\nimport pandas as pd\n\nurl = 'https://raw.githubusercontent.com/datasets/co2-fossil-global/master/global.csv'\nco2 = pd.read_csv(url)\n\nco2.head()\n\n\n\n\n\n\n\n\nYear\nTotal\nGas Fuel\nLiquid Fuel\nSolid Fuel\nCement\nGas Flaring\nPer Capita\n\n\n\n\n0\n1751\n3\n0\n0\n3\n0\n0\nNaN\n\n\n1\n1752\n3\n0\n0\n3\n0\n0\nNaN\n\n\n2\n1753\n3\n0\n0\n3\n0\n0\nNaN\n\n\n3\n1754\n3\n0\n0\n3\n0\n0\nNaN\n\n\n4\n1755\n3\n0\n0\n3\n0\n0\nNaN\n\n\n\n\n\n\n\n\n\nNow, here is the code to create a line plot using matplotlib:\n\n\nimport matplotlib.pyplot as plt\nplt.plot(co2['Year'], co2['Total'])\n\n\n\n\n\n\n\n\n\n\n\nLet us add annotations to the plot:\n\n\nimport matplotlib.pyplot as plt\nplt.plot(co2['Year'], co2['Total'])\nplt.xlabel('Year')\nplt.ylabel('CO2 Emissions (million metric tons)')\nplt.title('Global CO2 Emissions from Fossil Fuels')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#creating-a-bar-plot-with-matplotlib",
+    "href": "python8_packages.html#creating-a-bar-plot-with-matplotlib",
+    "title": "9  Python Packages",
+    "section": "12.2 Creating a Bar Plot with Matplotlib",
+    "text": "12.2 Creating a Bar Plot with Matplotlib\n\nWe can also use Matplotlib to create a bar plot.\nHere is the code to load the dataset and create a bar plot:\n\n\nplt.bar(age_by_class['Pclass'], age_by_class['Age'])\n\nplt.title('Mean Age by Class')\nplt.xlabel('Class')\nplt.ylabel('Mean Age (Years)')\n\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#titanic-survived-vs.-sex",
+    "href": "python8_packages.html#titanic-survived-vs.-sex",
+    "title": "9  Python Packages",
+    "section": "13.1 Titanic: Survived vs. Sex",
+    "text": "13.1 Titanic: Survived vs. Sex\n\nimport seaborn as sns\nsns.countplot (data = titanic, x = 'Survived', hue = 'Sex')",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#titanic-age-vs.-class-vs.-age",
+    "href": "python8_packages.html#titanic-age-vs.-class-vs.-age",
+    "title": "9  Python Packages",
+    "section": "13.2 Titanic: Age vs. Class vs. Age",
+    "text": "13.2 Titanic: Age vs. Class vs. Age\n\nsns.boxplot (data = titanic, x = 'Pclass', y = \"Age\", hue = 'Sex')",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#titanic-sex-ratio-vs.-class",
+    "href": "python8_packages.html#titanic-sex-ratio-vs.-class",
+    "title": "9  Python Packages",
+    "section": "13.3 Titanic: Sex Ratio vs. Class",
+    "text": "13.3 Titanic: Sex Ratio vs. Class\n\nnormalized_counts = titanic[['Pclass', 'Sex']].groupby(['Pclass']).value_counts(normalize=True).reset_index()\nnormalized_counts.head()\n\n\n\n\n\n\n\n\nPclass\nSex\nproportion\n\n\n\n\n0\n1\nmale\n0.564815\n\n\n1\n1\nfemale\n0.435185\n\n\n2\n2\nmale\n0.586957\n\n\n3\n2\nfemale\n0.413043\n\n\n4\n3\nmale\n0.704312\n\n\n\n\n\n\n\n\nsns.barplot (data = normalized_counts, x = 'Pclass', y = \"proportion\", hue = 'Sex')",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#creating-a-numpy-array",
+    "href": "python8_packages.html#creating-a-numpy-array",
+    "title": "9  Python Packages",
+    "section": "14.1 Creating a NumPy Array",
+    "text": "14.1 Creating a NumPy Array\n\nTo create a NumPy array, we can use the numpy.array() function.\nHere is the code to create a NumPy array:\n\n\nimport numpy as np\n\ndata = [1, 2, 3, 4, 5]\narr = np.array(data)\narr\n\narray([1, 2, 3, 4, 5])",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#numpy-array-operations",
+    "href": "python8_packages.html#numpy-array-operations",
+    "title": "9  Python Packages",
+    "section": "14.2 NumPy Array Operations",
+    "text": "14.2 NumPy Array Operations\n\nWe can perform various operations on NumPy arrays.\nFor example, we can add, subtract, multiply, and divide arrays.\nHere is the code to add two arrays:\n\n\nimport numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\narr3 = arr1 + arr2\narr3\n\narray([5, 7, 9])",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#numpy-array-indexing-and-slicing",
+    "href": "python8_packages.html#numpy-array-indexing-and-slicing",
+    "title": "9  Python Packages",
+    "section": "14.3 NumPy Array Indexing and Slicing",
+    "text": "14.3 NumPy Array Indexing and Slicing\n\nWe can also index and slice NumPy arrays.\nHere is the code to create a NumPy array and slice it:\n\n\nimport numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\narr[2]\n\nnp.int64(3)\n\n\n\narr[1:4]\n\narray([2, 3, 4])",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python8_packages.html#numpy-broadcasting",
+    "href": "python8_packages.html#numpy-broadcasting",
+    "title": "9  Python Packages",
+    "section": "14.4 NumPy Broadcasting",
+    "text": "14.4 NumPy Broadcasting\n\nBroadcasting is a powerful NumPy feature that allows us to perform operations on arrays of different shapes.\nHere is an example:\n\n\nimport numpy as np\n\n# Create a 2D array of shape (3, 4)\narr1 = np.array([[1, 2, 3, 4],\n                 [5, 6, 7, 8],\n                 [9, 10, 11, 12]])\n\n# Create a 1D array of shape (4,)\narr2 = np.array([2, 2, 2, 2])\n\n# Add the 1D array to each row of the 2D array using broadcasting\nresult = arr1 + arr2\n\nprint(result)\n\n[[ 3  4  5  6]\n [ 7  8  9 10]\n [11 12 13 14]]\n\n\n\nIn this example, we have a 2D NumPy array arr1 with shape (3, 4) and a 1D NumPy array arr2 with shape (4, ). We want to add the values in arr2 to each row of arr1.\nNormally, this operation would not be possible because the two arrays have different shapes.\nHowever, NumPy broadcasting allows us to perform this operation by “stretching” or “broadcasting” the 1D array to match the shape of the 2D array.\nIn this case, NumPy broadcasts the 1D array arr2 to a 2D array of shape (3, 4) by duplicating its values along the first dimension. This allows us to perform element-wise addition between the two arrays.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Python Packages</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html",
+    "href": "python9_data_visualization.html",
+    "title": "10  Data Visualization",
+    "section": "",
+    "text": "10.1 Introduction\nThis guide provides an overview of common data visualization types, when to use them, when not to use them, and how to implement each in Python. We cover histograms, bar plots, box plots, scatter plots, line plots, heatmaps, and pie charts, using the same dataset to illustrate each.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#dataset-summary",
+    "href": "python9_data_visualization.html#dataset-summary",
+    "title": "10  Data Visualization",
+    "section": "10.2 Dataset Summary",
+    "text": "10.2 Dataset Summary\n\nThe dataset, people, contains 1000 samples and includes the following columns:\n\n\n\n\n\n\n\n\n\n\nColumn\nData Type\nDescription\nValues (Example Range)\n\n\n\n\nHeight\nQuantitative\nHeight in cm, with males having a higher average height than females.\nMales: ~168-182 cm, Females: ~159-171 cm\n\n\nWeight\nQuantitative\nWeight in kg, with males having a higher average weight than females.\nMales: ~68-88 kg, Females: ~57-73 kg\n\n\nSex\nCategorical\nBiological sex, represented by “Male” and “Female”.\nMale, Female\n\n\nEducation\nOrdinal (Ordered)\nEducation level with ordered categories: High School &lt; Bachelor’s &lt; Master’s.\nHigh School, Bachelor’s, Master’s\n\n\nSalary\nQuantitative\nMonthly salary in USD, with increasing average salaries by education level for realism.\nHigh School: ~$2500-3500, Bachelor’s: ~$4200-5800, Master’s: ~$6000-8000",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#dataset-overview",
+    "href": "python9_data_visualization.html#dataset-overview",
+    "title": "10  Data Visualization",
+    "section": "10.3 Dataset Overview",
+    "text": "10.3 Dataset Overview\n\n\n\n\n\n\n\n\n\nHeight\nWeight\nSex\nEducation\nSalary\n\n\n\n\n0\n178.5\n78.4\nMale\nBachelor's\n5860\n\n\n1\n174.0\n74.2\nMale\nHigh School\n1215\n\n\n2\n179.5\n72.1\nMale\nBachelor's\n4461\n\n\n3\n185.7\n71.0\nMale\nHigh School\n3302\n\n\n4\n173.4\n72.8\nMale\nMaster's\n6184\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#histogram-distribution-of-a-quantitative-variable",
+    "href": "python9_data_visualization.html#histogram-distribution-of-a-quantitative-variable",
+    "title": "10  Data Visualization",
+    "section": "10.4 Histogram: Distribution of a Quantitative Variable",
+    "text": "10.4 Histogram: Distribution of a Quantitative Variable\n\nCondition: Use a histogram to observe the distribution of a single quantitative variable, such as heights in the dataset.\nPurpose: Helps identify the shape of the data distribution, central tendencies, spread, and any outliers.\nExample: Here, we use a histogram to show the distribution of heights.\n\n\nplt.figure(figsize=(6, 4))\nsns.histplot(data = people, x = 'Height', bins=10, kde=True)\nplt.title('Histogram of Heights')\nplt.xlabel('Height (cm)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\n\n\n\n\n\nThe histogram above shows the distribution of heights in the dataset. We observe a roughly normal distribution around the mean, which can help identify the typical range of heights, any skewness, and the presence of outliers.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#bar-plot-categorical-data-comparison",
+    "href": "python9_data_visualization.html#bar-plot-categorical-data-comparison",
+    "title": "10  Data Visualization",
+    "section": "10.5 Bar Plot: Categorical Data Comparison",
+    "text": "10.5 Bar Plot: Categorical Data Comparison\n\nCondition: Use a bar plot to compare counts or proportions within categorical data, such as gender or education levels.\nPurpose: Bar plots make it easy to see differences between categories.\nExample: The bar plot below compares the count of individuals by gender.\n\n\nplt.figure(figsize=(6, 4))\nsns.countplot(data = people, x = 'Sex', palette='deep')\nplt.title('Bar Plot of Gender Distribution')\nplt.xlabel('Gender')\nplt.ylabel('Count')\nplt.show()\n\n/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/1924678188.py:2: FutureWarning:\n\n\n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n\n\n\n\n\n\n\n\n\n\nThe bar plot above shows the distribution of gender in the dataset, making it clear how many individuals identify as male or female. This visualization is ideal for comparing discrete categories and understanding the sample’s gender composition.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#box-plot-spread-of-a-quantitative-variable-across-categories",
+    "href": "python9_data_visualization.html#box-plot-spread-of-a-quantitative-variable-across-categories",
+    "title": "10  Data Visualization",
+    "section": "10.6 Box Plot: Spread of a Quantitative Variable Across Categories",
+    "text": "10.6 Box Plot: Spread of a Quantitative Variable Across Categories\n\nCondition: Use a box plot to compare the spread of a quantitative variable across categories, such as income levels across different education levels.\nPurpose: Box plots highlight medians, quartiles, and potential outliers, offering insights into variability within groups.\nExample: The box plot below shows the spread of income across different education levels.\n\n\nplt.figure(figsize=(8, 5))\nsns.boxplot(data = people, x='Education', y='Salary', palette='muted')\nplt.title('Box Plot of Salary by Education Level')\nplt.xlabel('Education Level')\nplt.ylabel('Monthly Salary (USD)')\nplt.show()\n\n/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/2073472345.py:2: FutureWarning:\n\n\n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n\n\n\n\n\n\n\n\n\n\nThe box plot above shows the distribution of salaries across different education levels. It reveals medians, quartiles, and any potential outliers, helping us understand income variability within each education group. For instance, we can see if higher education correlates with higher median income.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories",
+    "href": "python9_data_visualization.html#violin-plot-distribution-and-density-of-a-quantitative-variable-across-categories",
+    "title": "10  Data Visualization",
+    "section": "10.7 Violin Plot: Distribution and Density of a Quantitative Variable Across Categories",
+    "text": "10.7 Violin Plot: Distribution and Density of a Quantitative Variable Across Categories\n\nCondition: Use a violin plot to visualize the distribution and density of a quantitative variable across categories, such as test scores across different teaching methods.\nPurpose: Violin plots combine features of box plots and density plots, revealing not only medians and quartiles but also the shape and symmetry of the data distribution within categories.\nExample: The violin plot below illustrates the distribution of test scores across different teaching methods.\n\n\nplt.figure(figsize=(8, 5))\nsns.violinplot(data=people, x='Sex', y='Weight', palette='pastel', inner='quartile')\nplt.title('Violin Plot of Weight by Sex')\nplt.xlabel('Sex')\nplt.ylabel('Weight (kg)')\nplt.show()\n\n/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/3578493989.py:2: FutureWarning:\n\n\n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n\n\n\n\n\n\n\n\n\n\nThe violin plot above illustrates the weight distribution for males and females. It highlights the density of weights within each sex category, along with the median and interquartile range. For instance, we can observe whether one sex has a broader range of weights or whether the distribution is skewed differently for males versus females.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#comparison-between-box-plot-and-violin-plot",
+    "href": "python9_data_visualization.html#comparison-between-box-plot-and-violin-plot",
+    "title": "10  Data Visualization",
+    "section": "10.8 Comparison Between Box Plot and Violin Plot",
+    "text": "10.8 Comparison Between Box Plot and Violin Plot\n\n\n\n\n\n\n\n\nFeature\nBox Plot\nViolin Plot\n\n\n\n\nPurpose\nSummarizes data spread using quartiles, median, and outliers\nShows both data density (distribution shape) and summary statistics\n\n\nDistribution Shape\nDoes not reveal the distribution shape\nDisplays the distribution shape using density estimation\n\n\nData Insights\nEmphasizes median, quartiles, and outliers\nEmphasizes distribution, skewness, modality, and median\n\n\nWhen to Use\nFor clear comparisons of summary statistics across categories, especially with small sample sizes\nFor understanding the full distribution of data across categories, especially with larger sample sizes\n\n\n\n\n\n\nplt.figure(figsize=(5, 4))\nsns.boxplot(data=people, x='Sex', y='Height', palette='pastel')\nplt.title('Box Plot of Height by Sex')\nplt.xlabel('Sex')\nplt.ylabel('Height (cm)')\nplt.show()\n\n/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/298820851.py:2: FutureWarning:\n\n\n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n\n\n\n\n\n\n\n\n\n\n\nThe box plot provides a clear summary of medians and outliers for the height for each sex.\n\n\n\nplt.figure(figsize=(5, 4))\nsns.violinplot(data=people, x='Sex', y='Height', palette='pastel')\nplt.title('Violin Plot of Height by Sex')\nplt.xlabel('Sex')\nplt.ylabel('Height (cm)')\nplt.show()\n\n/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/186337771.py:2: FutureWarning:\n\n\n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n\n\n\n\n\n\n\n\n\n\n\nThe violin plot reveals the underlying distribution shape, such as bimodal or skewed patterns, which may not be apparent in a box plot alone.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#scatter-plot-relationship-between-two-quantitative-variables",
+    "href": "python9_data_visualization.html#scatter-plot-relationship-between-two-quantitative-variables",
+    "title": "10  Data Visualization",
+    "section": "10.9 Scatter Plot: Relationship Between Two Quantitative Variables",
+    "text": "10.9 Scatter Plot: Relationship Between Two Quantitative Variables\n\nCondition: Use a scatter plot to examine the relationship between two quantitative variables, like age and income.\nPurpose: Scatter plots help identify correlations or trends between variables.\nExample: This scatter plot visualizes the relationship between height and weight.\n\n\nplt.figure(figsize=(6, 4))\nsns.scatterplot(data = people, x = 'Height', y = 'Weight', hue = 'Sex', alpha=0.7, marker = '+')\nplt.show()\n\n\n\n\nScatter Plot of Weight vs. Height\n\n\n\n\nThe scatter plot above shows the relationship between height and weight, allowing us to observe if there is a correlation between these variables. Scatter plots are useful for detecting patterns, clusters, or potential correlations, as seen here, where weight appears to be strongly correlated with height.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#heatmap-correlation-matrix-visualization",
+    "href": "python9_data_visualization.html#heatmap-correlation-matrix-visualization",
+    "title": "10  Data Visualization",
+    "section": "10.10 Heatmap: Correlation Matrix Visualization",
+    "text": "10.10 Heatmap: Correlation Matrix Visualization\n\nCondition: Use a heatmap to visualize correlations between multiple quantitative variables or the frequency of two categorical variables.\nPurpose: Heatmaps display relationships or frequencies, with colors representing the strength of correlations or counts.\nExample: Correlation heatmap\n\n\nplt.figure(figsize=(6, 5))\ncorrelation_matrix = people[['Height', 'Weight', 'Salary']].corr()\nsns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')\nplt.show()\n\n\n\n\nHeatmap of Correlation Matrix\n\n\n\n\nThe heatmap above shows the correlation matrix for height, weight, and salary, with color intensity representing the strength of each correlation. Heatmaps are effective for visualizing the relationships between multiple variables, where warm colors indicate positive correlations and cool colors indicate negative correlations.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#pie-chart-proportional-representation-of-categories",
+    "href": "python9_data_visualization.html#pie-chart-proportional-representation-of-categories",
+    "title": "10  Data Visualization",
+    "section": "10.11 Pie Chart: Proportional Representation of Categories",
+    "text": "10.11 Pie Chart: Proportional Representation of Categories\n\nCondition: Use a pie chart to display the proportional representation of categories within a dataset, such as the percentage of people in various age groups.\nPurpose: Pie charts are effective for showing relative sizes of categories as parts of a whole, especially when there are few categories and clear differences.\nExample: The pie chart below illustrates the percentage distribution of eduction levels in the dataset.\n\n\nplt.figure(figsize=(8, 5))\neducation_counts = people['Education'].value_counts()\nplt.pie(\n    education_counts, \n    labels=education_counts.index, \n    autopct='%1.1f%%', \n    startangle=90,\n    wedgeprops={'edgecolor': 'white', 'linewidth': 2}\n)\nplt.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.\nplt.show()\n\n\n\n\nEducation Level Distribution\n\n\n\n\nThe pie chart above illustrates the distribution of education levels within the dataset. Each slice represents the proportion of individuals in a specific education category. The borders between the slices are highlighted with white lines, making the divisions clear and visually distinct. The percentages displayed on each slice provide precise information about the relative sizes of each category, allowing for an easy comparison of the prevalence of different education levels.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#line-plot-trends-over-time",
+    "href": "python9_data_visualization.html#line-plot-trends-over-time",
+    "title": "10  Data Visualization",
+    "section": "10.12 Line Plot: Trends Over Time",
+    "text": "10.12 Line Plot: Trends Over Time\n\nCondition: Use a line plot to show trends over time or another ordered variable, such as monthly income.\nPurpose: Line plots reveal patterns or fluctuations over time.\nExample: Historical stock prices over the past years will be retrieved using the yfinance package.\n\n\nimport yfinance as yf\nimport matplotlib.pyplot as plt\n\n# Fetch stock data\napple = yf.download(\"AAPL\", start=\"2000-01-01\", end=\"2024-01-01\")\namazon = yf.download(\"AMZN\", start=\"2000-01-01\", end=\"2024-01-01\")\ngoogle = yf.download(\"GOOG\", start=\"2000-01-01\", end=\"2024-01-01\")\n\n# Plot the Closing Price over Time\nplt.figure(figsize=(12, 6))\nplt.plot(apple.index, apple['Close'], label='Apple (AAPL)', color = \"#e41a1c\")\nplt.plot(amazon.index, amazon['Close'], label='Amazon (AMZN)', color = \"#377eb8\")\nplt.plot(google.index, google['Close'], label='Google (GOOG)', color = \"#4daf4a\")\n\nplt.xlabel('Date')\nplt.ylabel('Price (USD)')\nplt.legend()\nplt.grid()\nplt.show()\n\n[*********************100%***********************]  1 of 1 completed\n[*********************100%***********************]  1 of 1 completed\n[*********************100%***********************]  1 of 1 completed\n\n\n\n\n\nStock Price Over Time\n\n\n\n\nThe above chart illustrates the closing stock prices of three major companies: Apple Inc. (AAPL), Amazon Inc. (AMZN), and Alphabet Inc. (GOOG), over a specific time range. The data was retrieved using the yfinance package and visualized to showcase the comparative trends in stock performance.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python9_data_visualization.html#flowchart-of-plot-choices",
+    "href": "python9_data_visualization.html#flowchart-of-plot-choices",
+    "title": "10  Data Visualization",
+    "section": "10.13 Flowchart of Plot Choices",
+    "text": "10.13 Flowchart of Plot Choices",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html",
+    "href": "python10_probability.html",
+    "title": "11  Probability",
+    "section": "",
+    "text": "12 Probability Refresher",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#basic-definitions",
+    "href": "python10_probability.html#basic-definitions",
+    "title": "11  Probability",
+    "section": "12.1 Basic Definitions",
+    "text": "12.1 Basic Definitions\n\nProbability: A measure of the likelihood of an event happening.\nExperiment: An action with a measurable outcome (e.g., rolling a die).\nOutcome: The result of a single trial of an experiment.\nSample Space (S or \\(\\Omega\\) ) : All possible outcomes of an experiment.\nEvent: A subset of the sample space.\nExample: Tossing a coin:\n\nExperiment: Tossing the coin.\nSample Space: {Heads, Tails}.\nEvent: Getting Heads.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#examples-of-sample-space",
+    "href": "python10_probability.html#examples-of-sample-space",
+    "title": "11  Probability",
+    "section": "12.2 Examples of Sample Space",
+    "text": "12.2 Examples of Sample Space\n\n\nThrowing a dice:\n\n\\(\\Omega\\) = {1, 2, 3, 4, 5, 6}\n\nTossing a coin three times:\n\n\\(\\Omega\\) = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}\n\nTossing a coin three times and observe the number of H’s:\n\n\\(\\Omega\\) = {0, 1, 2, 3}\n\nTossing a coin until we obtain a Head:\n\n\\(\\Omega\\) = {H, TH, TTH, TTTH, …}; (infinite)",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#sets-and-set-operations",
+    "href": "python10_probability.html#sets-and-set-operations",
+    "title": "11  Probability",
+    "section": "12.3 Sets and Set Operations",
+    "text": "12.3 Sets and Set Operations\nIntroduction to sets using Venn diagrams.\n\nUnion (A ∪ B): Elements in either set A, set B, or both.\nIntersection (A ∩ B): Elements common to both sets.\nComplement (A’): Elements not in set A.\n\nExample: Given a set of numbers from 1 to 10, find the union, intersection, and complement for subsets A = {odd numbers} and B = {numbers less than 5}.\n\n\nUnion (A ∪ B): {1, 2, 3, 4, 5, 7, 9}\nIntersection (A ∩ B): {1, 3}\nComplement of A (A’): {2, 4, 6, 8, 10}\nComplement of B (B’): {5, 6, 7, 8, 9, 10}",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#probability-rules",
+    "href": "python10_probability.html#probability-rules",
+    "title": "11  Probability",
+    "section": "12.4 Probability Rules",
+    "text": "12.4 Probability Rules\n\nAddition Rule: \\(P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\)\nMultiplication Rule: \\(P(A ∩ B) = P(A) \\times P(B | A)\\)\nComplementary Rule: \\(P(A') = 1 - P(A)\\)\n\nExample: A box contains 2 red balls, 3 blue balls, and 5 green balls. What is the probability of drawing a red or a blue ball?\n\n\nTotal balls = 10\nRed balls (A) = 2, Blue balls (B) = 3\nP(A) = 2/10, P(B) = 3/10\nP(A ∪ B) = P(A) + P(B) = 2/10 + 3/10 = 5/10 = 1/2",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#conditional-probability",
+    "href": "python10_probability.html#conditional-probability",
+    "title": "11  Probability",
+    "section": "12.5 Conditional Probability",
+    "text": "12.5 Conditional Probability\nConditional Probability is the probability of an event occurring given that another event has already occurred.\n\nFormula: \\(P(A | B) = \\frac{P(A ∩ B)}{P(B)}\\)\nExample: Probability of drawing an ace after a king from a deck of cards.\n\nExample: What is the probability of drawing 2 aces in a row from a deck of 52 cards?\n\n\nP(Ace on first draw) = \\(\\frac{4}{52}\\)\nP(Ace on second draw given first was Ace) = \\(\\frac{3}{51}\\)\nP(Two Aces in a row) = \\(P(\\text{First Ace}) \\times P(\\text{Second Ace} ∣ \\text{First Ace})\\)\nP(Two Aces in a row) = \\(\\frac{4}{52} \\times \\frac{3}{51} ≈ 0.0045\\)\nExplanation: The probability of each event is conditioned on the preceding draw reducing the total number of cards and aces.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-1",
+    "href": "python10_probability.html#exercise-1",
+    "title": "11  Probability",
+    "section": "13.1 Exercise #1",
+    "text": "13.1 Exercise #1\nIf a woman takes an early pregnancy test, she will either test positive, meaning that the test says she is pregnant, or test negative, meaning that the test says she is not pregnant. Suppose that if a woman really is pregnant, there is a 98% chance that she will test positive. Also suppose that if a woman really is not pregnant, there is a 99% chance that she will test negative.\n\nSuppose that 1,000 woman take early pregnancy tests and that 100 of them truly pregnant. What is the probability that a randomly chosen woman from this group will test positive?\nSuppose a woman tests positive. What is the probability that she really is pregnant?\n\n\n\n13.1.1 Overview\nThis analysis uses a sample of 1,000 women undergoing early pregnancy tests, with the following assumptions: - If a woman is truly pregnant, the test is positive 98% of the time. - If a woman is not pregnant, the test is negative 99% of the time.\n\n\n13.1.2 Total Population:\n\n1,000 women, with 100 truly pregnant (10%) and 900 not pregnant (90%).\n\n\n\n13.1.3 Probability Calculations:\n\nProbability of a Positive Test (Overall)\n\n\\[ P(\\text{Test Positive}) = P(\\text{Test Positive | Pregnant}) \\times P(\\text{Pregnant}) + P(\\text{Test Positive | Not Pregnant}) \\times P(\\text{Not Pregnant}) \\]\n\\[ = 0.98 \\times 0.1 + 0.01 \\times 0.9 = 0.107 \\]\nResult: 10.7% chance of testing positive across all 1,000 women.\n\nProbability of Being Pregnant Given a Positive Test\n\n\\[ P(\\text{Pregnant | Test Positive}) = \\frac{P(\\text{Test Positive | Pregnant}) \\times P(\\text{Pregnant})}{P(\\text{Test Positive})} \\]\n\\[ = \\frac{0.98 \\times 0.1}{0.107} \\approx 0.916 \\]\nResult: 91.6% chance of being pregnant if tested positive.\n\n\n\n\n13.1.4 Tree Diagram for Probability Calculation\nThis diagram illustrates the probability pathways based on pregnancy status and test outcomes:\n\n\n\n\n\ngraph TD;\n    A[Start: 1,000 Women] --&gt;|10% Pregnant| B[Pregnant]\n    A --&gt;|90% Not Pregnant| C[Not Pregnant]\n    B --&gt;|98% Test Positive| D[Test Positive]\n    B --&gt;|2% Test Negative| E[Test Negative]\n    C --&gt;|1% Test Positive| F[Test Positive]\n    C --&gt;|99% Test Negative| G[Test Negative]\n\n    style D fill:#f9f,stroke:#333,stroke-width:4px\n    style F fill:#f9f,stroke:#333,stroke-width:4px",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-2",
+    "href": "python10_probability.html#exercise-2",
+    "title": "11  Probability",
+    "section": "13.2 Exercise #2",
+    "text": "13.2 Exercise #2\nA box contains 3 blue, 2 green, and 4 red marbles. If you draw 2 marbles at random without replacement, what is the probability both are green?\n\n\n13.2.1 Probability Calculation: Drawing Two Green Marbles\nGiven a box with 3 blue, 2 green, and 4 red marbles, we are asked to find the probability of drawing two green marbles when drawing two marbles at random without replacement. Here’s the step-by-step calculation:\n\n\n13.2.2 Total Number of Marbles\n\nBlue Marbles: 3\nGreen Marbles: 2\nRed Marbles: 4\nTotal: 3 + 2 + 4 = 9 marbles\n\n\n\n13.2.3 Total Ways to Draw 2 Marbles from 9\nUsing the combination formula \\(\\binom{n}{k}\\) which represents the number of ways to choose \\(k\\) items from \\(n\\) items without regard to the order, we calculate:\n\\[\n\\binom{9}{2} = \\frac{9 \\times 8}{2 \\times 1} = 36\n\\]\n\n\n13.2.4 Ways to Draw 2 Green Marbles from 2 Available\nThere are 2 green marbles and we need to draw both:\n\\[\n\\binom{2}{2} = \\frac{2 \\times 1}{2 \\times 1} = 1\n\\]\n\n\n13.2.5 Probability Both Marbles Drawn Are Green\nThe probability is the ratio of the number of favorable outcomes (drawing 2 green marbles) to the total number of outcomes (drawing any 2 marbles):\n\\[\n\\text{Probability} = \\frac{\\text{Number of ways to draw 2 green marbles}}{\\text{Total number of ways to draw 2 marbles}} = \\frac{1}{36}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-3",
+    "href": "python10_probability.html#exercise-3",
+    "title": "11  Probability",
+    "section": "13.3 Exercise #3",
+    "text": "13.3 Exercise #3\nA bag contains 5 white and 7 black balls. Two balls are drawn successively without replacement. What is the probability that one is white, and one is black?\n\n\n13.3.1 Overview\nGiven a bag containing 5 white and 7 black balls, we are asked to calculate the probability of drawing two balls successively without replacement where one ball is white and the other is black.\n\n13.3.1.1 1. Probability of Drawing a White Ball First, then a Black Ball\n\nProbability of First Ball Being White: Since there are 5 white balls out of 12 total balls, \\[ P(\\text{White first}) = \\frac{5}{12} \\]\nProbability of Second Ball Being Black (after one white is taken): Now, 7 black balls are among the remaining 11 balls, \\[ P(\\text{Black second | White first}) = \\frac{7}{11} \\]\nCombined Probability for this Sequence: \\[ P(\\text{White first, Black second}) = \\frac{5}{12} \\times \\frac{7}{11} = \\frac{35}{132} \\]\n\n\n\n13.3.1.2 2. Probability of Drawing a Black Ball First, then a White Ball\n\nProbability of First Ball Being Black: There are 7 black balls out of 12 total balls, \\[ P(\\text{Black first}) = \\frac{7}{12} \\]\nProbability of Second Ball Being White (after one black is taken): Now, 5 white balls are among the remaining 11 balls, \\[ P(\\text{White second | Black first}) = \\frac{5}{11} \\]\nCombined Probability for this Sequence: \\[ P(\\text{Black first, White second}) = \\frac{7}{12} \\times \\frac{5}{11} = \\frac{35}{132} \\]\n\n\n\n13.3.1.3 Total Probability\nAdding these two mutually exclusive probabilities gives: \\[ P(\\text{One white, one black}) = \\frac{35}{132} + \\frac{35}{132} = \\frac{70}{132} \\]\nThis simplifies to: \\[ \\frac{70}{132} = \\frac{35}{66} \\approx 0.5303 \\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#what-is-the-random-package",
+    "href": "python10_probability.html#what-is-the-random-package",
+    "title": "11  Probability",
+    "section": "14.1 What is the random Package?",
+    "text": "14.1 What is the random Package?\n\nThe random package is a built-in Python library used to generate random numbers and perform random operations.\nIt supports generating:\n\nRandom numbers (integers, floats).\nRandom selections from data structures (lists, strings, etc.).\nValues from various statistical distributions.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#why-use-the-random-package",
+    "href": "python10_probability.html#why-use-the-random-package",
+    "title": "11  Probability",
+    "section": "14.2 Why Use the random Package?",
+    "text": "14.2 Why Use the random Package?\n\nSimulations and modeling.\nGames and decision-making.\nSampling and data shuffling.\nCryptography and secure random number generation (use secrets for cryptographic applications).\n\n\n\n\nOnes and Zeros",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#main-methods-of-the-random-package-in-python",
+    "href": "python10_probability.html#main-methods-of-the-random-package-in-python",
+    "title": "11  Probability",
+    "section": "14.3 Main Methods of the random Package in Python",
+    "text": "14.3 Main Methods of the random Package in Python\n\n\n\n\n\n\n\n\n\nMethod\nDescription\nCode Example\nSample Output\n\n\n\n\nrandom()\nReturns a random float in [0.0, 1.0).\nrandom.random()\n0.764532\n\n\nuniform(a, b)\nRandom float in [a, b].\nrandom.uniform(5, 10)\n7.8934\n\n\nrandint(a, b)\nRandom integer in [a, b] (inclusive).\nrandom.randint(1, 10)\n4\n\n\nrandrange(start, stop, step)\nRandom number from range with step.\nrandom.randrange(0, 20, 5)\n10\n\n\nchoice(seq)\nRandom element from a sequence.\nrandom.choice(['apple', 'banana'])\n'banana'\n\n\nchoices(pop, weights, k)\nk random elements with optional weights.\nrandom.choices(['a', 'b'], [10, 1], k=3)\n['a', 'a', 'b']\n\n\nsample(pop, k)\nk unique random elements.\nrandom.sample(range(10), 3)\n[2, 6, 9]\n\n\nshuffle(seq)\nShuffles the elements of a list in place.\nlst = [1, 2]; random.shuffle(lst); lst\n[2, 1]\n\n\nseed(a)\nSets the seed for reproducibility.\nrandom.seed(42); random.random()\n0.6394267984578837\n\n\ngauss(mu, sigma)\nRandom value from Gaussian distribution.\nrandom.gauss(0, 1)\n-0.143265",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-1-tossing-coin",
+    "href": "python10_probability.html#exercise-1-tossing-coin",
+    "title": "11  Probability",
+    "section": "15.1 Exercise #1: Tossing Coin",
+    "text": "15.1 Exercise #1: Tossing Coin\nCalculate the probability of obtaining a head when tossing a fair coin once\n\n\n15.1.1 Analytical\n\n15.1.1.1 Overview\nWhen you toss a fair coin, it can land either heads or tails. With the coin being fair, each outcome has an equal probability of occurring.\n\n\n15.1.1.2 Calculation\nThe probability of obtaining a specific outcome (like a head) is determined by the ratio of the number of favorable outcomes to the total number of possible outcomes:\n\nNumber of favorable outcomes (obtaining a head): 1\nTotal number of possible outcomes (either head or tail): 2\n\n\n\n15.1.1.3 Formula for Probability\nThe probability \\(P\\) of getting a head is given by:\n\\[\nP(\\text{Head}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}} = \\frac{1}{2}\n\\]\n\n\n15.1.1.4 Conclusion\nThis results in a probability of \\(\\frac{1}{2}\\), or 0.5, which translates to a 50% chance of the coin landing heads up in a single toss. This demonstrates the equal likelihood of either outcome in a fair coin toss.\n\n\n\n\n\n15.1.2 Simulation\n\nimport random\n\ndef simulate_coin_toss(trials):\n    count_heads = 0  # Initialize the count of heads\n    for _ in range(trials):\n        # Randomly generate 0 for tails or 1 for heads\n        if random.randint(0, 1) == 1:\n            count_heads += 1  # Increment if the result is heads\n    return count_heads / trials  # Calculate the probability of heads\n\n# Number of trials for the simulation\nnum_trials = 100000\n\n# Perform the simulation\nsimulate_coin_toss(num_trials)\n\n0.49861",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-2-rolling-dice",
+    "href": "python10_probability.html#exercise-2-rolling-dice",
+    "title": "11  Probability",
+    "section": "15.2 Exercise #2: Rolling Dice",
+    "text": "15.2 Exercise #2: Rolling Dice\nCalculate the probability of rolling a number greater than 4 at least once in two rolls.\n\n\n15.2.1 Analytical\n\n15.2.1.1 Overview\nTo calculate the probability of rolling a number greater than 4 at least once in two rolls of a fair six-sided die, you can follow these steps:\n\nProbability of rolling a number greater than 4 in one roll:\n\nOnly two numbers (5 and 6) out of six possible outcomes are greater than 4. Thus, the probability for one roll is: \\[\n\\frac{2}{6} = \\frac{1}{3}\n\\]\n\nProbability of not rolling a number greater than 4 in one roll:\n\nThe probability is the complement of rolling a number greater than 4, calculated as: \\[\n1 - \\frac{1}{3} = \\frac{2}{3}\n\\]\n\nProbability of not rolling a number greater than 4 in two rolls:\n\nIf each roll independently has a \\[ \\frac{2}{3} \\] chance of not rolling a number greater than 4, then the probability of this happening in two consecutive rolls is: \\[\n(\\frac{2}{3})^2 = \\frac{4}{9}\n\\]\n\nProbability of rolling a number greater than 4 at least once in two rolls:\n\nThis is calculated by subtracting the probability of not rolling a number greater than 4 in two rolls from 1: \\[\n1 - \\frac{4}{9} = \\frac{5}{9}\n\\]\n\n\nTherefore, the probability of rolling a number greater than 4 at least once in two rolls of a fair die is \\[ \\frac{5}{9} \\], or approximately 55.56%.\n\n\n\n\n\n15.2.2 Simulation\n\nimport random\n\ndef simulate_dice_rolls(trials):\n    count_success = 0\n    for _ in range(trials):\n        roll1 = random.randint(1, 6)\n        roll2 = random.randint(1, 6)\n        # Check if either of the rolls is greater than 4 (i.e., a 5 or 6)\n        if roll1 &gt; 4 or roll2 &gt; 4:\n            count_success += 1\n    return count_success / trials\n\n# Number of trials for the simulation\nnum_trials = 100000\n\n# Perform the simulation\nsimulate_dice_rolls(num_trials)\n\n0.55472",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python10_probability.html#exercise-3-drawing-balls-from-a-bag",
+    "href": "python10_probability.html#exercise-3-drawing-balls-from-a-bag",
+    "title": "11  Probability",
+    "section": "15.3 Exercise #3: Drawing Balls from a Bag",
+    "text": "15.3 Exercise #3: Drawing Balls from a Bag\nA bag contains 3 red balls and 2 blue balls. You randomly draw 2 balls without replacement. What is the probability that both balls are red?\n\n\n15.3.1 Analytical\n\n15.3.1.1 Overview\nTo calculate the probability of drawing 2 red balls without replacement from a bag of 5 balls (3 red and 2 blue), consider:\n\nTotal possible outcomes:\nThe total number of ways to draw 2 balls from 5 is given by the combination formula: \\[\n\\binom{5}{2} = \\frac{5!}{2!(5-2)!} = 10\n\\]\nFavorable outcomes:\nThe number of ways to draw 2 red balls from the 3 available is: \\[\n\\binom{3}{2} = \\frac{3!}{2!(3-2)!} = 3\n\\]\n\n\n\n15.3.1.2 Probability Calculation\nThe probability is calculated as the ratio of favorable outcomes to total outcomes: \\[\nP(\\text{Both balls red}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total outcomes}} = \\frac{3}{10} = 0.3\n\\]\nSo, the probability of drawing 2 red balls is 0.3, or 30%.\n\n\n\n\n\n15.3.2 Simulation\n\nimport random\n\ndef simulate_ball_draw(trials):\n    count_red_pairs = 0\n    for _ in range(trials):\n        bag = ['R', 'R', 'R', 'B', 'B']  # 3 red balls, 2 blue balls\n        draw = random.sample(bag, 2)  # Randomly draw 2 balls without replacement\n        if draw.count('R') == 2:  # Check if both balls are red\n            count_red_pairs += 1\n    return count_red_pairs / trials  # Calculate the probability\n\n# Number of trials for the simulation\nnum_trials = 100000\n\n# Perform the simulation\nsimulate_ball_draw(num_trials)\n\n0.29992",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html",
+    "href": "python11_statistical_tests.html",
+    "title": "12  Statistical Tests using Python",
+    "section": "",
+    "text": "12.1 z-Test\nThe Test\nA z-test determines whether there is a significant difference between a sample mean and a known population mean when the population standard deviation is known.\nUsage\nFormula\n\\[\nz = \\frac{{\\bar{{x}} - \\mu}}{{\\frac{{\\sigma}}{{\\sqrt{{n}}}}}}\n\\]\nwhere:\n- \\(\\bar{{x}}\\): sample mean\n- \\(\\mu\\): population mean\n- \\(\\sigma\\): population standard deviation\n- \\(n\\): sample size\nPython Function\nExample\nPython Code\nimport numpy as np\nfrom statsmodels.stats.weightstats import ztest\n\n# Data\nrecovery_times = [11, 9, 10, 10, 12, 11, 9, 10, 12, 10, 11, 10, 9, 12, 11, 10, 9, 12, 10, 11, 9, 12, 10, 10, 11, 12, 10, 9, 11, 10]\npopulation_mean = 10\n\n# Perform z-test\nz_stat, p_value = ztest(recovery_times, value=population_mean)\nprint(f\"Z-statistic: {z_stat}, P-value: {p_value}\")\n\n# Conclusion\nif p_value &lt; 0.05:\n    print(\"Reject H0: Recovery time significantly differs from 10 days.\")\nelse:\n    print(\"Fail to reject H0: No significant difference in recovery time.\")\n\nZ-statistic: 2.282167621845001, P-value: 0.022479445885689838\nReject H0: Recovery time significantly differs from 10 days.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#z-test",
+    "href": "python11_statistical_tests.html#z-test",
+    "title": "12  Statistical Tests using Python",
+    "section": "",
+    "text": "Comparing a sample mean to a population mean.\nLarge sample size (\\(n &gt; 30\\)) or normally distributed population.\n\n\n\nfrom statsmodels.stats.weightstats import ztest\n\n\nScenario: A hospital claims the average recovery time from a specific surgery is 10 days. A sample of 30 patients has recovery times:\n[11, 9, 10, 10, 12, ..., 10] (30 data points).\n\nPopulation standard deviation = 2 days.\nTest at a 5% significance level.\nNull Hypothesis (\\(H_0\\)): Mean recovery time = 10 days (\\(\\mu = 10\\)).\n\nAlternative Hypothesis (\\(H_1\\)): Mean recovery time ≠ 10 days (\\(\\mu \\neq 10\\)).",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#t-test-independent-samples",
+    "href": "python11_statistical_tests.html#t-test-independent-samples",
+    "title": "12  Statistical Tests using Python",
+    "section": "12.2 t-Test (Independent Samples)",
+    "text": "12.2 t-Test (Independent Samples)\nThe Test\nA t-test compares the means of two independent samples to determine if they are significantly different.\nUsage\n- Comparing two groups (e.g., treatment vs. control).\n- Used when the population standard deviation is unknown.\nFormula\n\\[\nt = \\frac{{\\bar{{x}}_1 - \\bar{{x}}_2}}{{\\sqrt{{\\frac{{s_1^2}}{{n_1}} + \\frac{{s_2^2}}{{n_2}}}}}}\n\\]\nwhere:\n- \\(\\bar{{x}}_1, \\bar{{x}}_2\\): sample means\n- \\(s_1, s_2\\): sample standard deviations\n- \\(n_1, n_2\\): sample sizes\nPython Function\nfrom scipy.stats import ttest_ind\nExample\n- Scenario: Compare weight loss (kg) after 8 weeks for two diets:\n- Diet A: [5, 6, 7, 5, 6]\n- Diet B: [4, 5, 6, 4, 5]\n\nNull Hypothesis (\\(H_O\\)): Mean weight loss is the same for both diets (\\(\\mu_1 = \\mu_2\\)).\n\nAlternative Hypothesis (\\(H_1\\)): Mean weight loss differs (\\(\\mu_1 \\neq \\mu_2\\)).\n\nPython Code\n\nfrom scipy.stats import ttest_ind\nimport matplotlib.pyplot as plt\n\n# Data\ndiet_a = [5, 6, 7, 5, 6]\ndiet_b = [4, 5, 6, 4, 5]\n\n# Perform t-test\nt_stat, p_value = ttest_ind(diet_a, diet_b, equal_var=True)\nprint(f\"T-statistic: {t_stat}, P-value: {p_value}\")\n\n# Boxplot\ndata = [diet_a, diet_b]\nlabels = ['Diet A', 'Diet B']\nplt.boxplot(data, tick_labels=labels)\nplt.title('Boxplot of Weight Loss by Diet')\nplt.ylabel('Weight Loss (kg)')\nplt.show()\n\n# Conclusion\nif p_value &lt; 0.05:\n    print(\"Reject H0: Significant difference in weight loss between diets.\")\nelse:\n    print(\"Fail to reject H0: No significant difference between diets.\")\n\nT-statistic: 1.8898223650461363, P-value: 0.09545200899274052\n\n\n\n\n\n\n\n\n\nFail to reject H0: No significant difference between diets.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#anova-analysis-of-variance",
+    "href": "python11_statistical_tests.html#anova-analysis-of-variance",
+    "title": "12  Statistical Tests using Python",
+    "section": "12.3 ANOVA (Analysis of Variance)",
+    "text": "12.3 ANOVA (Analysis of Variance)\nThe Test\nANOVA tests whether the means of three or more groups are significantly different.\nUsage\n- Comparing means across multiple groups (e.g., test scores of students taught by different teaching methods).\nAssumptions\n1. The dependent variable is continuous.\n2. Groups are independent.\n3. The data in each group is normally distributed.\n4. Homogeneity of variances across groups.\nFormula\n\\[\nF = \\frac{{\\text{{Between-group variability}}}}{{\\text{{Within-group variability}}}}\n\\]\nPython Function\nfrom scipy.stats import f_oneway\nExample\n- Scenario: Compare test scores for three teaching methods:\n- Traditional Teaching: [85, 88, 90, 87, 86]\n- Online Teaching: [78, 75, 80, 77, 79]\n- Hybrid Teaching: [92, 94, 89, 91, 93]\n\nNull Hypothesis (\\(H_0\\)): All teaching methods have the same mean test score (\\(\\mu_{Traditional} = \\mu_{Online} = \\mu_{Hybrid}\\)).\n\nAlternative Hypothesis (\\(H_1\\)): At least one teaching method has a different mean score.\n\nPython Code\n\nfrom scipy.stats import f_oneway\nimport matplotlib.pyplot as plt\n\n# Data\ntraditional = [85, 88, 90, 87, 86]\nonline = [78, 75, 80, 77, 79]\nhybrid = [92, 94, 89, 91, 93]\n\n# Perform ANOVA\nf_stat, p_value = f_oneway(traditional, online, hybrid)\nprint(f\"F-statistic: {f_stat}, P-value: {p_value}\")\n\n# Boxplot\ndata = [traditional, online, hybrid]\nlabels = ['Traditional', 'Online', 'Hybrid']\nplt.boxplot(data, tick_labels=labels)\nplt.title('Boxplot of Test Scores by Teaching Method')\nplt.ylabel('Test Scores')\nplt.show()\n\n# Conclusion\nif p_value &lt; 0.05:\n    print(\"Reject H0: At least one teaching method has a different mean score.\")\nelse:\n    print(\"Fail to reject H0: No significant difference in mean scores.\")\n\nF-statistic: 68.81081081081048, P-value: 2.6614685096802244e-07\n\n\n\n\n\n\n\n\n\nReject H0: At least one teaching method has a different mean score.\n\n\n\n12.3.1 Tukey’s HSD Post-Hoc Test\nAfter performing an ANOVA test, if you find a significant result (e.g., a p-value less than your chosen \\(\\alpha\\) level), you typically need to perform post-hoc tests to determine which specific groups differ from each other. A commonly used post-hoc test is the Tukey’s Honest Significant Difference (HSD) Test:\n\nfrom scipy.stats import f_oneway\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom statsmodels.stats.multicomp import pairwise_tukeyhsd\n\n # Combine data into a DataFrame for Tukey's HSD\nall_data = traditional + online + hybrid\ngroups = ['Traditional'] * len(traditional) + ['Online'] * len(online) + ['Hybrid'] * len(hybrid)\ndf = pd.DataFrame({'Score': all_data, 'Group': groups})\n    \n# Perform Tukey's HSD\ntukey = pairwise_tukeyhsd(endog=df['Score'], groups=df['Group'], alpha=0.05)\nprint(tukey)\n    \n# Plot Tukey's results\ntukey.plot_simultaneous()\nplt.title('Tukey HSD Test Results')\nplt.show()\n\n    Multiple Comparison of Means - Tukey HSD, FWER=0.05    \n===========================================================\ngroup1    group2   meandiff p-adj   lower    upper   reject\n-----------------------------------------------------------\nHybrid      Online    -14.0    0.0 -17.2456 -10.7544   True\nHybrid Traditional     -4.6 0.0068  -7.8456  -1.3544   True\nOnline Traditional      9.4    0.0   6.1544  12.6456   True\n-----------------------------------------------------------",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#chi-square-test",
+    "href": "python11_statistical_tests.html#chi-square-test",
+    "title": "12  Statistical Tests using Python",
+    "section": "12.4 Chi-Square Test",
+    "text": "12.4 Chi-Square Test\nThe Test\nThe Chi-Square test assesses whether there is a significant association between two categorical variables.\nUsage\n\nTesting independence between two variables (e.g., gender and product preference).\nGoodness-of-fit testing (e.g., observed vs. expected distribution).\n\nFormula\n\\[\n\\chi^2 = \\sum \\frac{{(O - E)^2}}{{E}}\n\\]\nwhere:\n- \\(O\\): Observed frequency\n- \\(E\\): Expected frequency\nPython Function\nfrom scipy.stats import chi2_contingency\nExample\n- Scenario: A company surveys customers to determine if gender influences product preference. The contingency table is:\n\n\n\n\nPrefer\nDo Not Prefer\nTotal\n\n\n\n\nMale\n30\n10\n40\n\n\nFemale\n25\n35\n60\n\n\nTotal\n55\n45\n100\n\n\n\n\nNull Hypothesis (\\(H_0\\)): Gender and product preference are independent.\n\nAlternative Hypothesis (\\(H_1\\)): Gender and product preference are not independent.\n\nPython Code\n\nimport numpy as np\nfrom scipy.stats import chi2_contingency\n\n# Data\ncontingency_table = np.array([[30, 10], [25, 35]])\n\n# Perform chi-square test\nchi2, p_value, dof, expected = chi2_contingency(contingency_table)\nprint(f\"Chi-square: {chi2}, P-value: {p_value}\")\n\n# Conclusion\nif p_value &lt; 0.05:\n    print(\"Reject H0: Gender and product preference are not independent.\")\nelse:\n    print(\"Fail to reject H0: Gender and product preference are independent.\")\n\nChi-square: 9.46969696969697, P-value: 0.0020889387721520535\nReject H0: Gender and product preference are not independent.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#pearsons-correlation-test",
+    "href": "python11_statistical_tests.html#pearsons-correlation-test",
+    "title": "12  Statistical Tests using Python",
+    "section": "12.5 Pearson’s Correlation Test",
+    "text": "12.5 Pearson’s Correlation Test\nThe Test\nPearson’s correlation measures the strength and direction of the linear relationship between two continuous variables.\nUsage\n- Evaluate the linear relationship between two variables.\n- Assumes normally distributed variables with no significant outliers.\nAssumptions\n1. Both variables are continuous.\n2. The relationship is linear.\n3. Variables are normally distributed.\n4. No significant outliers.\nFormula\n\\[\nr = \\frac{{\\sum (x_i - \\bar{{x}})(y_i - \\bar{{y}})}}{{\\sqrt{{\\sum (x_i - \\bar{{x}})^2 \\cdot \\sum (y_i - \\bar{{y}})^2}}}}\n\\]\n\n12.5.1 How to calculate the p-value:\n\nCompute the test statistic (\\(t\\)): \\[\nt = \\frac{r \\sqrt{n - 2}}{\\sqrt{1 - r^2}}\n\\] where:\n\n\\(r\\): Pearson correlation coefficient\n\\(n\\): Number of observations\n\nDegrees of Freedom (\\(df\\)): \\[\ndf = n - 2\n\\]\nCompute the p-value using the t-distribution:\n\nA two-tailed p-value is calculated as: \\[\n\\text{p-value} = 2 \\cdot (1 - \\text{CDF}_{t}(t, df))\n\\] where \\(\\text{CDF}_{t}\\) is the cumulative distribution function of the t-distribution.\n\n\nPython Function\nfrom scipy.stats import pearsonr\nExample\n- Scenario: Investigate the relationship between hours studied and exam scores.\n- Hours Studied: [2, 3, 4, 5, 6, 8, 9, 10]\n- Exam Scores: [50, 55, 60, 62, 65, 70, 75, 80]\n\nNull Hypothesis (\\(H_0\\)): No correlation between hours studied and exam scores.\n\nAlternative Hypothesis (\\(H_1\\)): Significant correlation exists between hours studied and exam scores.\n\nPython Code\n\nfrom scipy.stats import pearsonr\nimport matplotlib.pyplot as plt\n\n# Data\nhours_studied = [2, 3, 4, 5, 6, 8, 9, 10]\nexam_scores = [50, 55, 60, 62, 65, 70, 75, 80]\n\n# Pearson correlation\npearson_corr, p_value = pearsonr(hours_studied, exam_scores)\nprint(f\"Pearson's r: {pearson_corr}, P-value: {p_value}\")\n\n# Scatterplot\nplt.scatter(hours_studied, exam_scores, color=\"blue\")\nplt.title('Scatterplot of Hours Studied vs. Exam Scores')\nplt.xlabel('Hours Studied')\nplt.ylabel('Exam Scores')\nplt.show()\n\n# Conclusion\nif p_value &lt; 0.05:\n    print(\"Reject H0: Significant correlation between hours studied and exam scores.\")\nelse:\n    print(\"Fail to reject H0: No significant correlation between hours studied and exam scores.\")\n\nPearson's r: 0.9925428849571527, P-value: 1.0309092235077127e-06\n\n\n\n\n\n\n\n\n\nReject H0: Significant correlation between hours studied and exam scores.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  },
+  {
+    "objectID": "python11_statistical_tests.html#test-selection-guide",
+    "href": "python11_statistical_tests.html#test-selection-guide",
+    "title": "12  Statistical Tests using Python",
+    "section": "12.6 Test Selection Guide",
+    "text": "12.6 Test Selection Guide\nUse the following table as a quick reference for selecting an appropriate test based on data type and analysis requirements:\n\n\n\nTest Name\nUse Case\nData Type\nGroups Compared\nPython Function\n\n\n\n\nz-Test\nCompare sample mean to population mean\nContinuous\nSingle sample\nztest\n\n\nt-Test\nCompare two group means\nContinuous\nTwo independent\nttest_ind\n\n\nPaired t-Test\nCompare paired measurements\nContinuous\nTwo paired samples\nttest_rel\n\n\nChi-Square\nTest independence of categorical variables\nCategorical\nMultiple categories\nchi2_contingency\n\n\nANOVA\nCompare three or more group means\nContinuous\nThree or more groups\nf_oneway\n\n\nTukey’s HSD\nCompare all pairs of group means after ANOVA\nContinuous\nThree or more groups\npairwise_tukeyhsd\n\n\nPearson Correlation\nAssess linear relationship\nContinuous\nTwo variables\npearsonr",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Statistical Tests using Python</span>"
+    ]
+  }
+]

@@ -23,7 +23,7 @@ format:
 
 - It was developed by [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) and first released in 1991.
 
-![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/701px-Python-logo-notext.svg.png)
+![Python](images/python_logo.jpg)
 
 ## Why is it called Python?
 
