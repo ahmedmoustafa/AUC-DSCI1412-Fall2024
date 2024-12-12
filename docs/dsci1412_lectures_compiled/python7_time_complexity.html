@@ -102,8 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-</head><body class="nav-sidebar floating">\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -135,9 +133,9 @@ window.Quarto = {
 };
 </script>
 
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -401,7 +399,7 @@ window.Quarto = {
 </section>
 <section id="visualization-of-time-complexities" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="visualization-of-time-complexities"><span class="header-section-number">9.3</span> Visualization of Time Complexities</h2>
-<div id="43c0bb85" class="cell" data-execution_count="1">
+<div id="f87f1e84" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -542,7 +540,7 @@ window.Quarto = {
 <li>Expected Output: <code>[2, 3, 5, 6, 7, 8]</code></li>
 </ul>
 <div class="fragment">
-<div id="4e32b79e" class="cell" data-execution_count="2">
+<div id="bafdbe6e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a list of unsorted items</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">2</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -625,7 +623,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <ul>
 <li><strong>Example:</strong></li>
 </ul>
-<div id="94565eef" class="cell" data-execution_count="4">
+<div id="33fe098b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>matrix_multiply(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -637,7 +635,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <ul>
 <li><strong>Answer:</strong></li>
 </ul>
-<div id="b99ccc34" class="cell" data-execution_count="5">
+<div id="0d2fc8ec" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matrix_multiply(A, B):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Initialize an empty list to store the result of the matrix multiplication</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> []</span>
@@ -714,7 +712,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <li>Test it with small values like <span class="math inline">\(n = 5\)</span> and <span class="math inline">\(n = 6\)</span>.</li>
 </ul>
 <div class="fragment">
-<div id="0a3c943a" class="cell" data-execution_count="6">
+<div id="bf4d1ec8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci(n):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n</span>
@@ -766,7 +764,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <li>Modify the <code>fibonacci</code> function to count the number of recursive calls.</li>
 </ul>
 <div class="fragment">
-<div id="c8bbcb07" class="cell" data-execution_count="7">
+<div id="7dda132e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci(n):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> call_count</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    call_count <span class="op">+=</span> <span class="dv">1</span></span>
@@ -780,7 +778,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <ul>
 <li>Number of calls for <code>fibonacci(5)</code></li>
 </ul>
-<div id="8ef30d93" class="cell" data-execution_count="8">
+<div id="04a5f3a8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>call_count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>fibonacci(n)</span>
@@ -794,7 +792,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <ul>
 <li>Number of calls for <code>fibonacci(6)</code></li>
 </ul>
-<div id="d95aa3e5" class="cell" data-execution_count="9">
+<div id="32bad09f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>call_count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fibonacci(n)</span>
@@ -811,7 +809,7 @@ C_{i,j} = \sum_{k=1}^{n} A_{i,k}    \times B_{k,j}
 <li>Count the recursive calls for multiple values of <span class="math inline">\(n\)</span> and plot the results.</li>
 </ul>
 <div class="fragment">
-<div id="4031e6c5" class="cell" data-execution_count="10">
+<div id="8112af16" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

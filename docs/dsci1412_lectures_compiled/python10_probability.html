@@ -105,8 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-</head><body class="nav-sidebar floating">\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,9 +136,9 @@ window.Quarto = {
 };
 </script>
 
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -713,7 +711,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <div class="fragment">
 <section id="simulation" class="level3" data-number="15.1.2">
 <h3 data-number="15.1.2" class="anchored" data-anchor-id="simulation"><span class="header-section-number">15.1.2</span> Simulation</h3>
-<div id="ce8aa8f8" class="cell" data-execution_count="1">
+<div id="7c869a4a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_coin_toss(trials):</span>
@@ -730,7 +728,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>simulate_coin_toss(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.49861</code></pre>
+<pre><code>0.49967</code></pre>
 </div>
 </div>
 </section>
@@ -778,7 +776,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <div class="fragment">
 <section id="simulation-1" class="level3" data-number="15.2.2">
 <h3 data-number="15.2.2" class="anchored" data-anchor-id="simulation-1"><span class="header-section-number">15.2.2</span> Simulation</h3>
-<div id="b7f9181e" class="cell" data-execution_count="2">
+<div id="3def9890" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_dice_rolls(trials):</span>
@@ -797,7 +795,7 @@ P(\text{Head}) = \frac{\text{Number of favorable outcomes}}{\text{Total number o
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>simulate_dice_rolls(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>0.55472</code></pre>
+<pre><code>0.5566</code></pre>
 </div>
 </div>
 </section>
@@ -835,7 +833,7 @@ P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Tota
 <div class="fragment">
 <section id="simulation-2" class="level3" data-number="15.3.2">
 <h3 data-number="15.3.2" class="anchored" data-anchor-id="simulation-2"><span class="header-section-number">15.3.2</span> Simulation</h3>
-<div id="cce145ac" class="cell" data-execution_count="3">
+<div id="c0345017" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_ball_draw(trials):</span>
@@ -853,7 +851,7 @@ P(\text{Both balls red}) = \frac{\text{Number of favorable outcomes}}{\text{Tota
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the simulation</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>simulate_ball_draw(num_trials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>0.29992</code></pre>
+<pre><code>0.29945</code></pre>
 </div>
 </div>
 </section>

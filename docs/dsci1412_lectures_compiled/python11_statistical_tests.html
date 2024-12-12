@@ -101,8 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-</head><body class="nav-sidebar floating">\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -134,9 +132,9 @@ window.Quarto = {
 };
 </script>
 
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -321,7 +319,7 @@ where:<br>
 <li><p><strong>Alternative Hypothesis</strong> (<span class="math inline">\(H_1\)</span>): Mean recovery time ≠ 10 days (<span class="math inline">\(\mu \neq 10\)</span>).</p></li>
 </ul>
 <p><strong>Python Code</strong></p>
-<div id="24213ff4" class="cell" data-execution_count="1">
+<div id="4fab20e1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.stats.weightstats <span class="im">import</span> ztest</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -372,7 +370,7 @@ where:<br>
 <li><strong>Alternative Hypothesis</strong> (<span class="math inline">\(H_1\)</span>): Mean weight loss differs (<span class="math inline">\(\mu_1 \neq \mu_2\)</span>).</li>
 </ul>
 <p><strong>Python Code</strong></p>
-<div id="f5a4df7a" class="cell" data-execution_count="2">
+<div id="e5119375" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -441,7 +439,7 @@ F = \frac{{\text{{Between-group variability}}}}{{\text{{Within-group variability
 <li><strong>Alternative Hypothesis</strong> (<span class="math inline">\(H_1\)</span>): At least one teaching method has a different mean score.</li>
 </ul>
 <p><strong>Python Code</strong></p>
-<div id="c3ed5edb" class="cell" data-execution_count="3">
+<div id="a911b205" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> f_oneway</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -484,7 +482,7 @@ F = \frac{{\text{{Between-group variability}}}}{{\text{{Within-group variability
 <section id="tukeys-hsd-post-hoc-test" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="tukeys-hsd-post-hoc-test"><span class="header-section-number">12.3.1</span> Tukey’s HSD Post-Hoc Test</h3>
 <p>After performing an ANOVA test, if you find a significant result (e.g., a p-value less than your chosen <span class="math inline">\(\alpha\)</span> level), you typically need to perform post-hoc tests to determine which specific groups differ from each other. A commonly used post-hoc test is the Tukey’s Honest Significant Difference (HSD) Test:</p>
-<div id="acde64d7" class="cell" data-execution_count="4">
+<div id="ba869cc4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> f_oneway</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -580,7 +578,7 @@ where:<br>
 <li><strong>Alternative Hypothesis</strong> (<span class="math inline">\(H_1\)</span>): Gender and product preference are not independent.</li>
 </ul>
 <p><strong>Python Code</strong></p>
-<div id="3308eeff" class="cell" data-execution_count="5">
+<div id="f2245c95" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -651,7 +649,7 @@ df = n - 2
 <li><strong>Alternative Hypothesis</strong> (<span class="math inline">\(H_1\)</span>): Significant correlation exists between hours studied and exam scores.</li>
 </ul>
 <p><strong>Python Code</strong></p>
-<div id="3547f40d" class="cell" data-execution_count="6">
+<div id="47c0c982" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>

@@ -105,13 +105,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-</head><body class="nav-sidebar floating">\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
 
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -325,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dataset-overview" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="dataset-overview"><span class="header-section-number">10.3</span> Dataset Overview</h2>
-<div id="6e33b65e" class="cell" data-execution_count="2">
+<div id="88b5f72b" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -388,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="fa02ea5c" class="cell" data-execution_count="3">
+<div id="ed827498" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -400,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Purpose</strong>: Helps identify the shape of the data distribution, central tendencies, spread, and any outliers.</li>
 <li><strong>Example</strong>: Here, we use a histogram to show the distribution of heights.</li>
 </ul>
-<div id="31251d1a" class="cell" data-execution_count="4">
+<div id="94fb98d9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Height'</span>, bins<span class="op">=</span><span class="dv">10</span>, kde<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Heights'</span>)</span>
@@ -424,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Purpose</strong>: Bar plots make it easy to see differences between categories.</li>
 <li><strong>Example</strong>: The bar plot below compares the count of individuals by gender.</li>
 </ul>
-<div id="4110b124" class="cell" data-execution_count="5">
+<div id="396c0402" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Sex'</span>, palette<span class="op">=</span><span class="st">'deep'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Bar Plot of Gender Distribution'</span>)</span>
@@ -432,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/1924678188.py:2: FutureWarning:
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_17478/1924678188.py:2: FutureWarning:
 
 
 
@@ -457,7 +455,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Box plots highlight medians, quartiles, and potential outliers, offering insights into variability within groups.</li>
 <li><strong>Example</strong>: The box plot below shows the spread of income across different education levels.</li>
 </ul>
-<div id="a6058ec1" class="cell" data-execution_count="6">
+<div id="ce623115" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> people, x<span class="op">=</span><span class="st">'Education'</span>, y<span class="op">=</span><span class="st">'Salary'</span>, palette<span class="op">=</span><span class="st">'muted'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Salary by Education Level'</span>)</span>
@@ -465,7 +463,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Monthly Salary (USD)'</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/2073472345.py:2: FutureWarning:
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_17478/2073472345.py:2: FutureWarning:
 
 
 
@@ -490,7 +488,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Violin plots combine features of box plots and density plots, revealing not only medians and quartiles but also the shape and symmetry of the data distribution within categories.</li>
 <li><strong>Example</strong>: The violin plot below illustrates the distribution of test scores across different teaching methods.</li>
 </ul>
-<div id="74d6794f" class="cell" data-execution_count="7">
+<div id="497a1d08" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Weight'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>, inner<span class="op">=</span><span class="st">'quartile'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Violin Plot of Weight by Sex'</span>)</span>
@@ -498,7 +496,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Weight (kg)'</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/3578493989.py:2: FutureWarning:
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_17478/3578493989.py:2: FutureWarning:
 
 
 
@@ -556,7 +554,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </table>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="23965ff2" class="cell" data-execution_count="8">
+<div id="066ffa5a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Height'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Height by Sex'</span>)</span>
@@ -564,7 +562,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>)</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/298820851.py:2: FutureWarning:
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_17478/298820851.py:2: FutureWarning:
 
 
 
@@ -584,7 +582,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li>The <strong>box plot</strong> provides a clear summary of medians and outliers for the height for each sex.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="f0e79ee9" class="cell" data-execution_count="9">
+<div id="a7db3dee" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>people, x<span class="op">=</span><span class="st">'Sex'</span>, y<span class="op">=</span><span class="st">'Height'</span>, palette<span class="op">=</span><span class="st">'pastel'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Violin Plot of Height by Sex'</span>)</span>
@@ -592,7 +590,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_16194/186337771.py:2: FutureWarning:
+<pre><code>/var/folders/3l/6jhd2_8s3qv47hy8992mlxpc0000gp/T/ipykernel_17478/186337771.py:2: FutureWarning:
 
 
 
@@ -621,7 +619,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Scatter plots help identify correlations or trends between variables.</li>
 <li><strong>Example</strong>: This scatter plot visualizes the relationship between height and weight.</li>
 </ul>
-<div id="7708a8b2" class="cell" data-execution_count="10">
+<div id="98483438" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> people, x <span class="op">=</span> <span class="st">'Height'</span>, y <span class="op">=</span> <span class="st">'Weight'</span>, hue <span class="op">=</span> <span class="st">'Sex'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, marker <span class="op">=</span> <span class="st">'+'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -643,7 +641,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Heatmaps display relationships or frequencies, with colors representing the strength of correlations or counts.</li>
 <li><strong>Example</strong>: Correlation heatmap</li>
 </ul>
-<div id="394edbff" class="cell" data-execution_count="11">
+<div id="f0d6a09d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> people[[<span class="st">'Height'</span>, <span class="st">'Weight'</span>, <span class="st">'Salary'</span>]].corr()</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
@@ -666,7 +664,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Pie charts are effective for showing relative sizes of categories as parts of a whole, especially when there are few categories and clear differences.</li>
 <li><strong>Example</strong>: The pie chart below illustrates the percentage distribution of eduction levels in the dataset.</li>
 </ul>
-<div id="6f1417eb" class="cell" data-execution_count="12">
+<div id="c10233dd" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>education_counts <span class="op">=</span> people[<span class="st">'Education'</span>].value_counts()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.pie(</span>
@@ -696,7 +694,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li><strong>Purpose</strong>: Line plots reveal patterns or fluctuations over time.</li>
 <li><strong>Example</strong>: Historical stock prices over the past years will be retrieved using the <a href="https://pypi.org/project/yfinance/"><code>yfinance</code></a> package.</li>
 </ul>
-<div id="806e363e" class="cell" data-execution_count="13">
+<div id="e47a4199" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
